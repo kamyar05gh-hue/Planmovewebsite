@@ -1,8 +1,5 @@
 export const BRAND = "PLANMOVE";
 
-export const LOGO_URL =
-  "https://customer-assets-jt897jd0.emergentagent.net/job_voice-offerten/artifacts/b3y8bxbl_photo_2026-07-19_13-37-36.jpg";
-
 export const WHATSAPP_URL =
   "https://wa.me/41794880011?text=" +
   encodeURIComponent(

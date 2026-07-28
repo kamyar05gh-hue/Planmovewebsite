@@ -8,25 +8,45 @@ export const FinalCTA = () => {
   const { t } = useLanguage();
   const subItems = t.finalCta.subItems;
   const videoRef = useRef(null);
+  const sectionRef = useRef(null);
 
-  // iOS Safari requires a .play() call (not just the autoPlay attribute)
-  // and the video must be muted + playsInline for it to work.
+  // Lazy-load the background video only when the section nears the viewport.
+  // This prevents the 12MB MP4 from downloading on initial page load.
   useEffect(() => {
-    const v = videoRef.current;
-    if (v) {
-      v.play().catch(() => {
-        // Autoplay blocked (e.g. Low Power Mode) — play on first touch
-        const resume = () => {
-          v.play().catch(() => {});
-          document.removeEventListener("touchstart", resume);
-        };
-        document.addEventListener("touchstart", resume, { once: true });
-      });
-    }
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start loading the video now
+            video.load();
+            observer.unobserve(section);
+
+            // iOS Safari requires a .play() call (not just the autoPlay attribute)
+            // and the video must be muted + playsInline for it to work.
+            video.play().catch(() => {
+              const resume = () => {
+                video.play().catch(() => {});
+                document.removeEventListener("touchstart", resume);
+              };
+              document.addEventListener("touchstart", resume, { once: true });
+            });
+          }
+        });
+      },
+      { rootMargin: "300px" }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="ueber"
       className="relative py-16 md:py-24 lg:py-28 bg-black overflow-hidden"
       data-testid="final-cta-section"
@@ -42,7 +62,7 @@ export const FinalCTA = () => {
         loop
         playsInline
         webkit-playsinline="true"
-        preload="auto"
+        preload="none"
       />
       {/* Dark overlay for readability */}
       <div

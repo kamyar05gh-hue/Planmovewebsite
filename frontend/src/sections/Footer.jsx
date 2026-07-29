@@ -141,7 +141,10 @@ export const Footer = () => {
             <span className="leading-none">© {new Date().getFullYear()} PLANMOVE</span>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
               <Link to="/impressum" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Impressum</Link>
-              <Link to="/datenschutz" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Datenschutzerklärung</Link>
+              {/* Volle Server-Navigation (kein SPA-Link): /datenschutz/ ist die statische,
+                  mehrsprachige Fassung mit den Google-OAuth-Pflichtangaben — dieselbe URL,
+                  die im Google-Consent-Screen hinterlegt ist. */}
+              <a href="/datenschutz/" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">Datenschutzerklärung</a>
               <Link to="/agb" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">AGB's</Link>
             </div>
           </div>

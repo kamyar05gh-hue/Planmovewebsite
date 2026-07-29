@@ -117,8 +117,11 @@
   <p>Für einzelne Funktionen setzen wir sorgfältig ausgewählte Dienstleister ein:</p>
   <ul>
   <li><strong>Hosting:</strong> Server in Deutschland (EU); verschlüsselte Backups in der EU</li>
-  <li><strong>KI-Funktionen:</strong> OpenAI (Zusammenfassungen, Vorschläge, Übersetzungen) und Google
-  (Sprachassistent) — es werden nur die für die jeweilige Funktion nötigen Inhalte übermittelt</li>
+  <li><strong>KI-Funktionen:</strong> OpenAI und Google (Sprachassistent). Wenn Sie eine KI-Funktion nutzen
+  (Zusammenfassung, Antwortvorschlag, Übersetzung) oder PLANMOVE eine eingehende Anfrage automatisiert
+  auswertet (Lead-Erkennung), werden Betreff und Textinhalt der betreffenden Nachricht an OpenAI übermittelt —
+  ausschliesslich zur Erbringung dieser Funktion, nie für Werbung und nie zum Training allgemeiner
+  KI-Modelle</li>
   <li><strong>E-Mail/Kalender:</strong> Google (Gmail, Google Kalender), Microsoft (Outlook) — jeweils nur bei
   von Ihnen verbundenen Konten</li>
   </ul>
@@ -126,6 +129,9 @@
   <h2>5. Speicherdauer &amp; Sicherheit</h2>
   <ul>
   <li>Daten bleiben gespeichert, solange Ihr Firmenkonto besteht bzw. bis Sie sie löschen</li>
+  <li>Synchronisierte Gmail-Daten: solange die Gmail-Verbindung bzw. das Firmenkonto aktiv ist — oder bis Sie
+  sie löschen, je nachdem, was zuerst eintritt</li>
+  <li>Verschlüsselte Backups werden spätestens nach 30 Tagen automatisch gelöscht</li>
   <li>OAuth-Tokens und Passwörter werden verschlüsselt bzw. gehasht gespeichert</li>
   <li>Übertragung ausschliesslich über TLS (HTTPS)</li>
   <li>Assistent-Verläufe: automatische Löschung nach 90 Tagen; gelöschte Dokumente werden nach 30 Tagen endgültig entfernt</li>
@@ -138,7 +144,9 @@
   <li><strong>Gmail trennen:</strong> Einstellungen → Verbindungen → «Trennen» — dabei widerrufen wir den
   Zugriff auch bei Google (Token-Revocation)</li>
   <li><strong>Gmail-Daten löschen:</strong> Einstellungen → Verbindungen → «Gmail-Daten löschen» — entfernt
-  alle synchronisierten E-Mails vollständig von unseren Servern</li>
+  alle synchronisierten E-Mails samt Übersetzungen und KI-Zusammenfassungen vollständig aus den aktiven
+  Systemen. E-Mail-Anhänge speichern wir nicht dauerhaft (sie werden bei Bedarf direkt von Gmail geladen).
+  Restkopien in verschlüsselten Backups werden spätestens nach 30 Tagen automatisch gelöscht</li>
   <li><strong>WhatsApp trennen:</strong> Einstellungen → Verbindungen → Nummer «Abmelden» — die Verbindung zur
   WhatsApp-Nummer wird getrennt</li>
   <li><strong>WhatsApp-Daten löschen:</strong> Einstellungen → Verbindungen → Nummer «Entfernen» — löscht die
@@ -200,8 +208,10 @@
   <h2>4. Processors</h2>
   <ul>
   <li><strong>Hosting:</strong> servers in Germany (EU); encrypted backups in the EU</li>
-  <li><strong>AI features:</strong> OpenAI (summaries, suggestions, translations) and Google (voice assistant)
-  — only the content required for the respective feature is transmitted</li>
+  <li><strong>AI features:</strong> OpenAI and Google (voice assistant). When you use an AI feature (summary,
+  reply suggestion, translation) or PLANMOVE automatically evaluates an incoming request (lead detection),
+  the subject and body of the message concerned are transmitted to OpenAI — solely to provide that feature,
+  never for advertising and never to train general-purpose AI models</li>
   <li><strong>Email/calendar:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — only for accounts
   you have connected</li>
   </ul>
@@ -209,6 +219,9 @@
   <h2>5. Retention &amp; security</h2>
   <ul>
   <li>Data is stored for as long as your company account exists or until you delete it</li>
+  <li>Synced Gmail data: while the Gmail connection or company account remains active — or until you delete
+  it, whichever occurs first</li>
+  <li>Encrypted backups are deleted automatically after 30 days at the latest</li>
   <li>OAuth tokens and passwords are stored encrypted or hashed</li>
   <li>Transmission exclusively over TLS (HTTPS)</li>
   <li>Assistant histories: automatic deletion after 90 days; deleted documents are permanently removed after 30 days</li>
@@ -221,7 +234,9 @@
   <li><strong>Disconnect Gmail:</strong> Settings → Connections → “Disconnect” — we also revoke the access
   with Google (token revocation)</li>
   <li><strong>Delete Gmail data:</strong> Settings → Connections → “Delete Gmail data” — removes all synced
-  emails completely from our servers</li>
+  emails, including translations and AI summaries, completely from our active systems. Email attachments are
+  not stored permanently (they are loaded from Gmail on demand). Residual copies in encrypted backups are
+  deleted automatically after 30 days at the latest</li>
   <li><strong>Disconnect WhatsApp:</strong> Settings → Connections → number “Log out”</li>
   <li><strong>Delete WhatsApp data:</strong> Settings → Connections → number “Remove” — deletes the connection
   and all synced chats, messages and media files completely from our servers</li>
@@ -284,8 +299,10 @@
   <h2>4. Sous-traitants</h2>
   <ul>
   <li><strong>Hébergement :</strong> serveurs en Allemagne (UE) ; sauvegardes chiffrées dans l'UE</li>
-  <li><strong>Fonctions IA :</strong> OpenAI et Google (assistant vocal) — seul le contenu nécessaire à la
-  fonction concernée est transmis</li>
+  <li><strong>Fonctions IA :</strong> OpenAI et Google (assistant vocal). Lorsque vous utilisez une
+  fonction IA (résumé, suggestion de réponse, traduction) ou que PLANMOVE évalue automatiquement une demande
+  entrante (détection de leads), l'objet et le corps du message concerné sont transmis à OpenAI — uniquement
+  pour fournir cette fonction, jamais pour la publicité ni pour entraîner des modèles d'IA généralisés</li>
   <li><strong>E-mail/agenda :</strong> Google (Gmail, Google Agenda), Microsoft (Outlook) — uniquement pour les
   comptes que vous avez connectés</li>
   </ul>
@@ -293,6 +310,9 @@
   <h2>5. Conservation &amp; sécurité</h2>
   <ul>
   <li>Les données sont conservées tant que le compte de votre entreprise existe ou jusqu'à leur suppression</li>
+  <li>Données Gmail synchronisées : tant que la connexion Gmail ou le compte de l'entreprise est actif — ou
+  jusqu'à leur suppression par vous, selon la première éventualité</li>
+  <li>Les sauvegardes chiffrées sont supprimées automatiquement au plus tard après 30 jours</li>
   <li>Jetons OAuth et mots de passe stockés chiffrés ou hachés</li>
   <li>Transmission exclusivement via TLS (HTTPS)</li>
   <li>Historiques de l'assistant : suppression automatique après 90 jours ; documents supprimés définitivement après 30 jours</li>
@@ -303,7 +323,9 @@
   <li><strong>Déconnecter Gmail :</strong> Réglages → Connexions → « Déconnecter » — l'accès est aussi révoqué
   chez Google</li>
   <li><strong>Supprimer les données Gmail :</strong> Réglages → Connexions → « Supprimer les données Gmail » —
-  supprime tous les e-mails synchronisés de nos serveurs</li>
+  supprime tous les e-mails synchronisés, y compris traductions et résumés IA, de nos systèmes actifs.
+  Les pièces jointes ne sont pas stockées durablement (chargées à la demande depuis Gmail). Les copies
+  résiduelles dans les sauvegardes chiffrées sont supprimées automatiquement au plus tard après 30 jours</li>
   <li><strong>Déconnecter WhatsApp :</strong> Réglages → Connexions → numéro « Se déconnecter »</li>
   <li><strong>Supprimer les données WhatsApp :</strong> Réglages → Connexions → numéro « Supprimer » — efface la
   connexion et tous les chats, messages et fichiers médias synchronisés</li>
@@ -366,8 +388,10 @@
   <h2>4. Responsabili del trattamento</h2>
   <ul>
   <li><strong>Hosting:</strong> server in Germania (UE); backup cifrati nell'UE</li>
-  <li><strong>Funzioni IA:</strong> OpenAI e Google (assistente vocale) — viene trasmesso solo il contenuto
-  necessario alla funzione</li>
+  <li><strong>Funzioni IA:</strong> OpenAI e Google (assistente vocale). Quando usate una funzione IA
+  (riassunto, suggerimento di risposta, traduzione) o PLANMOVE valuta automaticamente una richiesta in arrivo
+  (rilevamento lead), oggetto e corpo del messaggio interessato vengono trasmessi a OpenAI — esclusivamente
+  per fornire quella funzione, mai per pubblicità né per addestrare modelli IA generalizzati</li>
   <li><strong>E-mail/calendario:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — solo per gli
   account da voi collegati</li>
   </ul>
@@ -375,6 +399,9 @@
   <h2>5. Conservazione &amp; sicurezza</h2>
   <ul>
   <li>I dati restano salvati finché esiste l'account aziendale o finché non li eliminate</li>
+  <li>Dati Gmail sincronizzati: finché la connessione Gmail o l'account aziendale è attivo — o finché non li
+  eliminate, a seconda di cosa avviene prima</li>
+  <li>I backup cifrati vengono eliminati automaticamente al più tardi dopo 30 giorni</li>
   <li>Token OAuth e password salvati cifrati o con hash</li>
   <li>Trasmissione esclusivamente via TLS (HTTPS)</li>
   <li>Cronologie dell'assistente: eliminazione automatica dopo 90 giorni; i documenti eliminati vengono rimossi definitivamente dopo 30 giorni</li>
@@ -384,8 +411,9 @@
   <ul>
   <li><strong>Scollegare Gmail:</strong> Impostazioni → Connessioni → «Scollega» — revochiamo l'accesso anche
   presso Google</li>
-  <li><strong>Eliminare i dati Gmail:</strong> Impostazioni → Connessioni → «Elimina dati Gmail» — rimuove
-  tutte le e-mail sincronizzate dai nostri server</li>
+  <li><strong>Eliminare i dati Gmail:</strong> Impostazioni → Connessioni → «Elimina dati Gmail» — rimuove tutte le e-mail sincronizzate, incluse traduzioni e riassunti IA, dai nostri sistemi attivi.
+  Gli allegati non vengono salvati in modo permanente (caricati da Gmail su richiesta). Le copie residue nei
+  backup cifrati vengono eliminate automaticamente al più tardi dopo 30 giorni</li>
   <li><strong>Scollegare WhatsApp:</strong> Impostazioni → Connessioni → numero «Disconnetti»</li>
   <li><strong>Eliminare i dati WhatsApp:</strong> Impostazioni → Connessioni → numero «Rimuovi» — elimina la
   connessione e tutte le chat, i messaggi e i file multimediali sincronizzati</li>
@@ -447,8 +475,10 @@
   <h2>4. Subcontratantes</h2>
   <ul>
   <li><strong>Alojamento:</strong> servidores na Alemanha (UE); cópias de segurança encriptadas na UE</li>
-  <li><strong>Funções de IA:</strong> OpenAI e Google (assistente de voz) — apenas o conteúdo necessário à
-  função é transmitido</li>
+  <li><strong>Funções de IA:</strong> OpenAI e Google (assistente de voz). Quando usa uma função de IA
+  (resumo, sugestão de resposta, tradução) ou o PLANMOVE avalia automaticamente um pedido recebido (deteção de
+  leads), o assunto e o corpo da mensagem em causa são transmitidos à OpenAI — exclusivamente para fornecer
+  essa função, nunca para publicidade nem para treinar modelos de IA generalizados</li>
   <li><strong>E-mail/calendário:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — apenas para
   contas que ligou</li>
   </ul>
@@ -456,6 +486,9 @@
   <h2>5. Conservação &amp; segurança</h2>
   <ul>
   <li>Os dados ficam guardados enquanto a conta da empresa existir ou até os apagar</li>
+  <li>Dados Gmail sincronizados: enquanto a ligação Gmail ou a conta da empresa estiver ativa — ou até os
+  apagar, o que ocorrer primeiro</li>
+  <li>As cópias de segurança encriptadas são apagadas automaticamente no máximo após 30 dias</li>
   <li>Tokens OAuth e palavras-passe guardados encriptados ou com hash</li>
   <li>Transmissão exclusivamente via TLS (HTTPS)</li>
   <li>Históricos do assistente: eliminação automática após 90 dias; documentos apagados são removidos definitivamente após 30 dias</li>
@@ -465,8 +498,9 @@
   <ul>
   <li><strong>Desligar o Gmail:</strong> Definições → Ligações → «Desligar» — o acesso também é revogado na
   Google</li>
-  <li><strong>Apagar dados do Gmail:</strong> Definições → Ligações → «Apagar dados do Gmail» — remove todos os
-  e-mails sincronizados dos nossos servidores</li>
+  <li><strong>Apagar dados do Gmail:</strong> Definições → Ligações → «Apagar dados do Gmail» — remove todos os e-mails sincronizados, incluindo traduções e resumos de IA, dos nossos sistemas
+  ativos. Os anexos não são guardados permanentemente (carregados do Gmail a pedido). As cópias residuais nas
+  cópias de segurança encriptadas são apagadas automaticamente no máximo após 30 dias</li>
   <li><strong>Desligar o WhatsApp:</strong> Definições → Ligações → número «Terminar sessão»</li>
   <li><strong>Apagar dados do WhatsApp:</strong> Definições → Ligações → número «Remover» — apaga a ligação e
   todos os chats, mensagens e ficheiros multimédia sincronizados</li>
@@ -528,8 +562,10 @@
   <h2>4. Veri işleyiciler</h2>
   <ul>
   <li><strong>Barındırma:</strong> Almanya'da sunucular (AB); AB'de şifreli yedekler</li>
-  <li><strong>Yapay zekâ:</strong> OpenAI ve Google (sesli asistan) — yalnızca ilgili işlev için gerekli
-  içerik iletilir</li>
+  <li><strong>Yapay zekâ:</strong> OpenAI ve Google (sesli asistan). Bir YZ işlevi kullandığınızda
+  (özet, yanıt önerisi, çeviri) veya PLANMOVE gelen bir talebi otomatik değerlendirdiğinde (lead tespiti),
+  ilgili mesajın konusu ve gövdesi OpenAI'ye iletilir — yalnızca o işlevi sunmak için, asla reklam veya genel
+  YZ modellerinin eğitimi için değil</li>
   <li><strong>E-posta/takvim:</strong> Google (Gmail, Google Takvim), Microsoft (Outlook) — yalnızca
   bağladığınız hesaplar için</li>
   </ul>
@@ -537,6 +573,9 @@
   <h2>5. Saklama &amp; güvenlik</h2>
   <ul>
   <li>Veriler, firma hesabınız var olduğu sürece veya siz silene kadar saklanır</li>
+  <li>Senkronize Gmail verileri: Gmail bağlantısı veya firma hesabı aktif olduğu sürece — ya da siz silene
+  kadar (hangisi önce gerçekleşirse)</li>
+  <li>Şifreli yedekler en geç 30 gün sonra otomatik silinir</li>
   <li>OAuth token'ları ve şifreler şifreli/hash'li saklanır</li>
   <li>İletim yalnızca TLS (HTTPS) üzerinden</li>
   <li>Asistan geçmişleri: 90 gün sonra otomatik silme; silinen belgeler 30 gün sonra kalıcı olarak kaldırılır</li>
@@ -546,8 +585,9 @@
   <ul>
   <li><strong>Gmail bağlantısını kesme:</strong> Ayarlar → Bağlantılar → «Bağlantıyı kes» — erişimi Google
   tarafında da iptal ederiz</li>
-  <li><strong>Gmail verilerini silme:</strong> Ayarlar → Bağlantılar → «Gmail verilerini sil» — senkronize tüm
-  e-postaları sunucularımızdan tamamen kaldırır</li>
+  <li><strong>Gmail verilerini silme:</strong> Ayarlar → Bağlantılar → «Gmail verilerini sil» — senkronize tüm e-postaları, çeviriler ve YZ özetleri dâhil, aktif sistemlerimizden tamamen kaldırır.
+  Ekler kalıcı olarak saklanmaz (gerektiğinde Gmail'den yüklenir). Şifreli yedeklerdeki kalan kopyalar en geç
+  30 gün sonra otomatik silinir</li>
   <li><strong>WhatsApp bağlantısını kesme:</strong> Ayarlar → Bağlantılar → numara «Oturumu kapat»</li>
   <li><strong>WhatsApp verilerini silme:</strong> Ayarlar → Bağlantılar → numara «Kaldır» — bağlantıyı ve tüm
   senkronize sohbetleri, mesajları ve medya dosyalarını tamamen siler</li>
@@ -609,8 +649,10 @@
   <h2>4. Përpunuesit</h2>
   <ul>
   <li><strong>Hostimi:</strong> serverë në Gjermani (BE); kopje rezervë të enkriptuara në BE</li>
-  <li><strong>Funksionet IA:</strong> OpenAI dhe Google (asistenti zanor) — transmetohet vetëm përmbajtja e
-  nevojshme për funksionin</li>
+  <li><strong>Funksionet IA:</strong> OpenAI dhe Google (asistenti zanor). Kur përdorni një funksion IA
+  (përmbledhje, sugjerim përgjigjeje, përkthim) ose PLANMOVE vlerëson automatikisht një kërkesë hyrëse
+  (zbulim lead-esh), subjekti dhe teksti i mesazhit përkatës i transmetohen OpenAI — vetëm për të ofruar atë
+  funksion, kurrë për reklama dhe kurrë për trajnimin e modeleve të përgjithshme të IA-së</li>
   <li><strong>E-mail/kalendar:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — vetëm për
   llogaritë që keni lidhur</li>
   </ul>
@@ -618,6 +660,9 @@
   <h2>5. Ruajtja &amp; siguria</h2>
   <ul>
   <li>Të dhënat ruhen sa ekziston llogaria e firmës ose derisa t'i fshini</li>
+  <li>Të dhënat e sinkronizuara të Gmail: sa është aktive lidhja Gmail ose llogaria e firmës — ose derisa t'i
+  fshini ju, cilado ndodh e para</li>
+  <li>Kopjet rezervë të enkriptuara fshihen automatikisht më së voni pas 30 ditësh</li>
   <li>Token-ët OAuth dhe fjalëkalimet ruhen të enkriptuar ose me hash</li>
   <li>Transmetimi vetëm përmes TLS (HTTPS)</li>
   <li>Historiku i asistentit: fshirje automatike pas 90 ditësh; dokumentet e fshira hiqen përfundimisht pas 30 ditësh</li>
@@ -626,8 +671,9 @@
   <h2>6. Të drejtat tuaja — shkëputje &amp; fshirje të dhënash</h2>
   <ul>
   <li><strong>Shkëputni Gmail:</strong> Cilësimet → Lidhjet → «Shkëput» — qasjen e revokojmë edhe te Google</li>
-  <li><strong>Fshini të dhënat e Gmail:</strong> Cilësimet → Lidhjet → «Fshi të dhënat e Gmail» — heq të gjitha
-  e-mailet e sinkronizuara nga serverët tanë</li>
+  <li><strong>Fshini të dhënat e Gmail:</strong> Cilësimet → Lidhjet → «Fshi të dhënat e Gmail» — heq të gjitha e-mailet e sinkronizuara, përfshirë përkthimet dhe përmbledhjet IA, plotësisht nga
+  sistemet tona aktive. Bashkëngjitjet nuk ruhen përgjithmonë (ngarkohen nga Gmail sipas nevojës). Kopjet e
+  mbetura në kopjet rezervë të enkriptuara fshihen automatikisht më së voni pas 30 ditësh</li>
   <li><strong>Shkëputni WhatsApp:</strong> Cilësimet → Lidhjet → numri «Dilni»</li>
   <li><strong>Fshini të dhënat e WhatsApp:</strong> Cilësimet → Lidhjet → numri «Hiq» — fshin lidhjen dhe të
   gjitha bisedat, mesazhet dhe skedarët mediatikë të sinkronizuar</li>
@@ -690,8 +736,10 @@
   <h2>4. Обработчики</h2>
   <ul>
   <li><strong>Хостинг:</strong> серверы в Германии (ЕС); зашифрованные резервные копии в ЕС</li>
-  <li><strong>Функции ИИ:</strong> OpenAI и Google (голосовой ассистент) — передаётся только контент,
-  необходимый для конкретной функции</li>
+  <li><strong>Функции ИИ:</strong> OpenAI и Google (голосовой ассистент). Когда вы используете функцию
+  ИИ (резюме, вариант ответа, перевод) или PLANMOVE автоматически оценивает входящий запрос (распознавание
+  лидов), тема и текст соответствующего сообщения передаются в OpenAI — исключительно для предоставления этой
+  функции, никогда для рекламы и никогда для обучения универсальных моделей ИИ</li>
   <li><strong>E-mail/календарь:</strong> Google (Gmail, Google Календарь), Microsoft (Outlook) — только для
   подключённых вами аккаунтов</li>
   </ul>
@@ -699,6 +747,9 @@
   <h2>5. Хранение и безопасность</h2>
   <ul>
   <li>Данные хранятся, пока существует аккаунт компании или пока вы их не удалите</li>
+  <li>Синхронизированные данные Gmail: пока активно подключение Gmail или аккаунт компании — либо пока вы их
+  не удалите, в зависимости от того, что наступит раньше</li>
+  <li>Зашифрованные резервные копии автоматически удаляются не позднее чем через 30 дней</li>
   <li>OAuth-токены и пароли хранятся в зашифрованном/хешированном виде</li>
   <li>Передача исключительно по TLS (HTTPS)</li>
   <li>Истории ассистента: автоматическое удаление через 90 дней; удалённые документы окончательно удаляются через 30 дней</li>
@@ -708,8 +759,9 @@
   <ul>
   <li><strong>Отключить Gmail:</strong> Настройки → Подключения → «Отключить» — доступ отзывается и на стороне
   Google</li>
-  <li><strong>Удалить данные Gmail:</strong> Настройки → Подключения → «Удалить данные Gmail» — полностью
-  удаляет все синхронизированные письма с наших серверов</li>
+  <li><strong>Удалить данные Gmail:</strong> Настройки → Подключения → «Удалить данные Gmail» — полностью удаляет все синхронизированные письма, включая переводы и ИИ-резюме, из наших активных
+  систем. Вложения постоянно не хранятся (загружаются из Gmail по запросу). Остаточные копии в зашифрованных
+  резервных копиях автоматически удаляются не позднее чем через 30 дней</li>
   <li><strong>Отключить WhatsApp:</strong> Настройки → Подключения → номер «Выйти»</li>
   <li><strong>Удалить данные WhatsApp:</strong> Настройки → Подключения → номер «Удалить» — удаляет
   подключение и все синхронизированные чаты, сообщения и медиафайлы</li>
@@ -768,8 +820,10 @@
   <h2>4. معالجو البيانات</h2>
   <ul>
   <li><strong>الاستضافة:</strong> خوادم في ألمانيا (الاتحاد الأوروبي)؛ نسخ احتياطية مشفَّرة داخل الاتحاد</li>
-  <li><strong>وظائف الذكاء الاصطناعي:</strong> OpenAI وGoogle (المساعد الصوتي) — يُرسَل فقط المحتوى اللازم
-  للوظيفة المعنية</li>
+  <li><strong>وظائف الذكاء الاصطناعي:</strong> OpenAI وGoogle (المساعد الصوتي). عندما تستخدم وظيفة ذكاء
+  اصطناعي (ملخص، اقتراح رد، ترجمة) أو يقيّم PLANMOVE طلباً وارداً تلقائياً (اكتشاف العملاء المحتملين)، يُرسَل
+  موضوع الرسالة المعنية ونصها إلى OpenAI — حصراً لتقديم تلك الوظيفة، وليس أبداً للإعلانات ولا لتدريب نماذج
+  ذكاء اصطناعي عامة</li>
   <li><strong>البريد/التقويم:</strong> Google (Gmail وتقويم Google) وMicrosoft (Outlook) — فقط للحسابات التي
   ربطتها بنفسك</li>
   </ul>
@@ -777,6 +831,9 @@
   <h2>5. مدة الحفظ والأمان</h2>
   <ul>
   <li>تبقى البيانات محفوظة ما دام حساب شركتك قائماً أو حتى تحذفها</li>
+  <li>بيانات Gmail المتزامنة: ما دام اتصال Gmail أو حساب الشركة نشطاً — أو حتى تحذفها أنت، أيهما يقع
+  أولاً</li>
+  <li>النسخ الاحتياطية المشفَّرة تُحذف تلقائياً بعد 30 يوماً على الأكثر</li>
   <li>رموز OAuth وكلمات المرور تُخزَّن مشفَّرة أو كتجزئة</li>
   <li>النقل حصراً عبر TLS (HTTPS)</li>
   <li>سجلات المساعد: حذف تلقائي بعد 90 يوماً؛ والمستندات المحذوفة تُزال نهائياً بعد 30 يوماً</li>
@@ -785,8 +842,9 @@
   <h2>6. حقوقك — فصل الاتصال وحذف البيانات</h2>
   <ul>
   <li><strong>فصل Gmail:</strong> الإعدادات ← الاتصالات ← «فصل» — ونلغي الوصول لدى Google أيضاً</li>
-  <li><strong>حذف بيانات Gmail:</strong> الإعدادات ← الاتصالات ← «حذف بيانات Gmail» — يزيل كل الرسائل
-  المتزامنة نهائياً من خوادمنا</li>
+  <li><strong>حذف بيانات Gmail:</strong> الإعدادات ← الاتصالات ← «حذف بيانات Gmail» — يزيل كل الرسائل المتزامنة، بما فيها الترجمات وملخصات الذكاء الاصطناعي، نهائياً من أنظمتنا النشطة.
+  المرفقات لا تُخزَّن بشكل دائم (تُحمَّل من Gmail عند الحاجة). النسخ المتبقية في النسخ الاحتياطية المشفَّرة
+  تُحذف تلقائياً بعد 30 يوماً على الأكثر</li>
   <li><strong>فصل واتساب:</strong> الإعدادات ← الاتصالات ← الرقم «تسجيل الخروج»</li>
   <li><strong>حذف بيانات واتساب:</strong> الإعدادات ← الاتصالات ← الرقم «إزالة» — يحذف الاتصال وكل المحادثات
   والرسائل وملفات الوسائط المتزامنة نهائياً</li>
@@ -847,8 +905,10 @@
   <h2>۴. پردازشگران داده</h2>
   <ul>
   <li><strong>میزبانی:</strong> سرورها در آلمان (اتحادیه اروپا)؛ پشتیبان‌های رمزنگاری‌شده در اتحادیه اروپا</li>
-  <li><strong>امکانات هوش مصنوعی:</strong> OpenAI و Google (دستیار صوتی) — فقط محتوای لازم برای همان قابلیت
-  ارسال می‌شود</li>
+  <li><strong>امکانات هوش مصنوعی:</strong> OpenAI و Google (دستیار صوتی). وقتی از یک قابلیت هوش مصنوعی
+  استفاده می‌کنید (خلاصه، پیشنهاد پاسخ، ترجمه) یا PLANMOVE درخواست دریافتی را خودکار ارزیابی می‌کند (تشخیص
+  لید)، موضوع و متن همان پیام به OpenAI ارسال می‌شود — فقط برای ارائهٔ همان قابلیت؛ هرگز برای تبلیغات و هرگز
+  برای آموزش مدل‌های عمومی هوش مصنوعی</li>
   <li><strong>ایمیل/تقویم:</strong> Google (Gmail، تقویم گوگل)، Microsoft (Outlook) — فقط برای حساب‌هایی که
   خودتان متصل کرده‌اید</li>
   </ul>
@@ -856,6 +916,9 @@
   <h2>۵. مدت نگهداری و امنیت</h2>
   <ul>
   <li>داده‌ها تا زمانی که حساب شرکت شما وجود دارد یا تا زمان حذف توسط شما نگهداری می‌شوند</li>
+  <li>داده‌های همگام‌شدهٔ Gmail: تا وقتی اتصال Gmail یا حساب شرکت فعال است — یا تا وقتی خودتان حذفشان کنید،
+  هر کدام زودتر رخ دهد</li>
+  <li>پشتیبان‌های رمزنگاری‌شده حداکثر پس از ۳۰ روز به‌طور خودکار حذف می‌شوند</li>
   <li>توکن‌های OAuth و گذرواژه‌ها رمزنگاری‌شده یا هش‌شده ذخیره می‌شوند</li>
   <li>انتقال فقط از طریق TLS (HTTPS)</li>
   <li>سوابق دستیار: حذف خودکار پس از ۹۰ روز؛ اسناد حذف‌شده پس از ۳۰ روز برای همیشه پاک می‌شوند</li>
@@ -864,8 +927,9 @@
   <h2>۶. حقوق شما — قطع اتصال و حذف داده‌ها</h2>
   <ul>
   <li><strong>قطع Gmail:</strong> تنظیمات ← اتصالات ← «قطع اتصال» — دسترسی را نزد گوگل هم لغو می‌کنیم</li>
-  <li><strong>حذف داده‌های Gmail:</strong> تنظیمات ← اتصالات ← «حذف داده‌های Gmail» — همهٔ ایمیل‌های
-  همگام‌شده را کاملاً از سرورهای ما پاک می‌کند</li>
+  <li><strong>حذف داده‌های Gmail:</strong> تنظیمات ← اتصالات ← «حذف داده‌های Gmail» — همهٔ ایمیل‌های همگام‌شده را همراه با ترجمه‌ها و خلاصه‌های هوش مصنوعی کاملاً از سیستم‌های فعال ما پاک
+  می‌کند. پیوست‌ها به‌طور دائمی ذخیره نمی‌شوند (در صورت نیاز مستقیم از Gmail بارگیری می‌شوند). نسخه‌های
+  باقی‌مانده در پشتیبان‌های رمزنگاری‌شده حداکثر پس از ۳۰ روز خودکار حذف می‌شوند</li>
   <li><strong>قطع واتساپ:</strong> تنظیمات ← اتصالات ← شماره «خروج»</li>
   <li><strong>حذف داده‌های واتساپ:</strong> تنظیمات ← اتصالات ← شماره «حذف» — اتصال و همهٔ گفتگوها، پیام‌ها و
   فایل‌های رسانه‌ای همگام‌شده را برای همیشه پاک می‌کند</li>
@@ -927,7 +991,10 @@
   <h2>4. Pêvajokerên daneyan</h2>
   <ul>
   <li><strong>Hosting:</strong> server li Almanyayê (YE); paşekopiyên şîfrekirî li YE</li>
-  <li><strong>Fonksiyonên AI:</strong> OpenAI û Google (alîkarê dengî) — tenê naveroka pêwîst tê şandin</li>
+  <li><strong>Fonksiyonên AI:</strong> OpenAI û Google (alîkarê dengî). Dema hûn fonksiyoneke AI bi kar
+  tînin (kurte, pêşniyara bersivê, werger) an PLANMOVE daxwazeke hatî bixweber dinirxîne (naskirina lead),
+  mijar û naveroka peyama têkildar ji OpenAI re tê şandin — tenê ji bo pêşkêşkirina wê fonksiyonê, tu carî ji
+  bo reklamê û tu carî ji bo perwerdekirina modelên giştî yên AI</li>
   <li><strong>E-name/salname:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — tenê ji bo
   hesabên ku we girêdane</li>
   </ul>
@@ -935,6 +1002,9 @@
   <h2>5. Dema tomarkirinê &amp; ewlehî</h2>
   <ul>
   <li>Dane heta ku hesabê şirketa we hebe an heta hûn jê bibin tên tomarkirin</li>
+  <li>Daneyên Gmail ên hevdemkirî: heta ku girêdana Gmail an hesabê şirketê çalak be — an heta hûn wan jê
+  bibin, kîjan pêşî çêbibe</li>
+  <li>Paşekopiyên şîfrekirî herî dereng piştî 30 rojan bixweber tên jêbirin</li>
   <li>Tokenên OAuth û şîfre şîfrekirî an hashkirî tên tomarkirin</li>
   <li>Veguhastin tenê bi TLS (HTTPS)</li>
   <li>Dîroka alîkar: jêbirina bixweber piştî 90 rojan; belgeyên jêbirî piştî 30 rojan bi dawî tên rakirin</li>
@@ -944,8 +1014,9 @@
   <ul>
   <li><strong>Gmail veqetîne:</strong> Mîheng → Girêdan → «Veqetîne» — em gihiştinê li cem Google jî betal
   dikin</li>
-  <li><strong>Daneyên Gmail jê bibe:</strong> Mîheng → Girêdan → «Daneyên Gmail jê bibe» — hemû e-nameyên
-  hevdemkirî bi temamî ji serverên me radike</li>
+  <li><strong>Daneyên Gmail jê bibe:</strong> Mîheng → Girêdan → «Daneyên Gmail jê bibe» — hemû e-nameyên hevdemkirî, tevî werger û kurteyên AI, bi temamî ji pergalên me yên çalak radike.
+  Pêvek bi domdarî nayên tomarkirin (li gorî pêwîstiyê ji Gmail tên barkirin). Kopiyên mayî di paşekopiyên
+  şîfrekirî de herî dereng piştî 30 rojan bixweber tên jêbirin</li>
   <li><strong>WhatsApp veqetîne:</strong> Mîheng → Girêdan → hejmar «Derkeve»</li>
   <li><strong>Daneyên WhatsApp jê bibe:</strong> Mîheng → Girêdan → hejmar «Rake» — girêdan û hemû sohbet,
   peyam û pelên medyayê yên hevdemkirî bi temamî jê dibe</li>

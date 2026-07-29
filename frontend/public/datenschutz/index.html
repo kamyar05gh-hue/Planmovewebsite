@@ -7,135 +7,957 @@
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: #1a1a2e; background: #f7f7f4; line-height: 1.65; font-size: 16px;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1a1a2e;
+        background: #f7f7f4; line-height: 1.65; font-size: 16px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
   h1 { font-size: 28px; letter-spacing: -0.5px; margin: 0 0 6px; }
-  .updated { color: #777; font-size: 13.5px; margin-bottom: 36px; }
+  .updated { color: #777; font-size: 13.5px; margin-bottom: 28px; }
   h2 { font-size: 19px; margin: 36px 0 10px; letter-spacing: -0.3px; }
   p, li { color: #333; }
-  ul { padding-left: 20px; }
-  .card {
-    background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px;
-    padding: 16px 18px; margin: 14px 0;
-  }
-  .highlight { border-left: 4px solid #22c55e; }
+  ul { padding-inline-start: 20px; }
+  .card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px;
+          padding: 16px 18px; margin: 14px 0; }
+  .highlight { border-inline-start: 4px solid #22c55e; }
   a { color: #16803c; }
-  .top { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+  .top { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
   .top a { font-weight: 700; text-decoration: none; font-size: 14px; }
+  .note { background: #fffbe6; border: 1px solid #f2e4a2; border-radius: 10px;
+          padding: 8px 12px; font-size: 13px; color: #7a6413; margin-bottom: 22px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 26px; }
+  .lp { border: 1px solid rgba(0,0,0,0.14); background: #fff; color: #1a1a2e;
+        border-radius: 999px; padding: 6px 13px; font: inherit; font-size: 13px;
+        font-weight: 600; cursor: pointer; }
+  .lp.on { background: #16803c; border-color: #16803c; color: #fff; }
+  [dir="rtl"] { text-align: right; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top"><a href="https://planmove.ch">← planmove.ch</a></div>
+  <div class="langs">
+      <button class="lp" data-l="de" type="button">Deutsch</button>
+      <button class="lp" data-l="en" type="button">English</button>
+      <button class="lp" data-l="fr" type="button">Français</button>
+      <button class="lp" data-l="it" type="button">Italiano</button>
+      <button class="lp" data-l="pt" type="button">Português</button>
+      <button class="lp" data-l="tr" type="button">Türkçe</button>
+      <button class="lp" data-l="sq" type="button">Shqip</button>
+      <button class="lp" data-l="ru" type="button">Русский</button>
+      <button class="lp" data-l="ar" type="button">العربية</button>
+      <button class="lp" data-l="fa" type="button">فارسی</button>
+      <button class="lp" data-l="ku" type="button">Kurdî</button>
+  </div>
+<div class="lang" data-lang="de" lang="de" hidden>
 
   <h1>Datenschutzerklärung</h1>
   <div class="updated">Stand: 29. Juli 2026</div>
 
   <h2>1. Verantwortliche Stelle</h2>
-  <p>
-    Future Media GmbH<br>
-    Schweiz<br>
-    E-Mail: <a href="mailto:info@future-media.ch">info@future-media.ch</a>
-  </p>
-  <p>
-    PLANMOVE ist eine Software für Umzugs- und Reinigungsfirmen (erreichbar unter
-    <a href="https://app.planmove.ch">app.planmove.ch</a>). Diese Erklärung beschreibt,
-    welche Daten wir bearbeiten, wofür — und welche Rechte Sie haben. Es gelten das
-    schweizerische Datenschutzgesetz (DSG) und, soweit anwendbar, die DSGVO.
-  </p>
+  <p>Future Media GmbH<br>Schweiz<br>E-Mail: <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE ist eine Software für Umzugs- und Reinigungsfirmen (erreichbar unter
+  <a href="https://app.planmove.ch">app.planmove.ch</a>). Diese Erklärung beschreibt, welche Daten wir
+  bearbeiten, wofür — und welche Rechte Sie haben. Es gelten das schweizerische Datenschutzgesetz (DSG)
+  und, soweit anwendbar, die DSGVO.</p>
 
   <h2>2. Welche Daten wir bearbeiten</h2>
-  <div class="card">
-    <strong>Kontodaten</strong>
-    <p>Name, geschäftliche E-Mail-Adresse, Firmenangaben (Name, Adresse, Logo, IBAN für
-    Rechnungs-QR-Codes), Passwort (nur als Hash gespeichert).</p>
-  </div>
-  <div class="card">
-    <strong>Kundendaten Ihrer Firma</strong>
-    <p>Kontakte, Anfragen (Leads), Offerten, Rechnungen, Termine und Arbeitszeiten, die Sie
-    oder Ihre Mitarbeitenden in PLANMOVE erfassen. Diese Daten gehören Ihrer Firma; jede
-    Firma sieht ausschliesslich ihre eigenen Daten.</p>
-  </div>
-  <div class="card">
-    <strong>Gmail-Daten (nur mit Ihrer ausdrücklichen Einwilligung)</strong>
-    <p>Wenn Sie Ihr Gmail-Konto verbinden, lesen wir eingehende E-Mails
-    (Berechtigung <em>gmail.readonly</em>), um Kundenanfragen anzuzeigen und zu organisieren,
-    und versenden in Ihrem Auftrag E-Mails wie Offerten und Rechnungen
-    (Berechtigung <em>gmail.send</em>). Zugriffs-Schlüssel (OAuth-Tokens) speichern wir
-    ausschliesslich verschlüsselt (AES-256-GCM).</p>
-  </div>
-  <div class="card">
-    <strong>WhatsApp-Nachrichten</strong>
-    <p>Wenn Sie eine WhatsApp-Nummer verbinden, verarbeiten wir die darüber geführten
-    Kundengespräche, um sie Ihnen in PLANMOVE anzuzeigen und zu übersetzen.</p>
-  </div>
-  <div class="card">
-    <strong>Sprachassistent</strong>
-    <p>Bei Nutzung des Sprachassistenten wird das Gespräch transkribiert und Ihrem
-    Benutzerkonto zugeordnet; Verläufe werden nach 90 Tagen automatisch gelöscht.</p>
-  </div>
+  <div class="card"><strong>Kontodaten</strong>
+  <p>Name, geschäftliche E-Mail-Adresse, Firmenangaben (Name, Adresse, Logo, IBAN für Rechnungs-QR-Codes),
+  Passwort (nur als Hash gespeichert).</p></div>
+  <div class="card"><strong>Kundendaten Ihrer Firma</strong>
+  <p>Kontakte, Anfragen (Leads), Offerten, Rechnungen, Termine und Arbeitszeiten, die Sie oder Ihre
+  Mitarbeitenden in PLANMOVE erfassen. Diese Daten gehören Ihrer Firma; jede Firma sieht ausschliesslich
+  ihre eigenen Daten.</p></div>
+  <div class="card"><strong>Gmail-Daten (nur mit Ihrer ausdrücklichen Einwilligung)</strong>
+  <p>Wenn Sie Ihr Gmail-Konto verbinden, lesen wir eingehende E-Mails (Berechtigung <em>gmail.readonly</em>),
+  um Kundenanfragen anzuzeigen und zu organisieren, und versenden in Ihrem Auftrag E-Mails wie Offerten und
+  Rechnungen (Berechtigung <em>gmail.send</em>). Zugriffs-Schlüssel (OAuth-Tokens) speichern wir
+  ausschliesslich verschlüsselt (AES-256-GCM).</p></div>
+  <div class="card"><strong>WhatsApp-Nachrichten</strong>
+  <p>Wenn Sie eine WhatsApp-Nummer verbinden, verarbeiten wir die darüber geführten Kundengespräche, um sie
+  Ihnen in PLANMOVE anzuzeigen und zu übersetzen.</p></div>
+  <div class="card"><strong>Sprachassistent</strong>
+  <p>Bei Nutzung des Sprachassistenten wird das Gespräch transkribiert und Ihrem Benutzerkonto zugeordnet;
+  Verläufe werden nach 90 Tagen automatisch gelöscht.</p></div>
 
   <h2>3. Wofür wir die Daten nutzen</h2>
   <ul>
-    <li>Bereitstellung der PLANMOVE-Funktionen (CRM, Offerten/Rechnungen, E-Mail, WhatsApp, Kalender, Assistent)</li>
-    <li>KI-gestützte Funktionen wie Zusammenfassungen, Antwortvorschläge und Übersetzungen — nur auf Ihre Veranlassung</li>
-    <li>Keine Werbung, kein Verkauf von Daten, kein Profiling zu fremden Zwecken</li>
+  <li>Bereitstellung der PLANMOVE-Funktionen (CRM, Offerten/Rechnungen, E-Mail, WhatsApp, Kalender, Assistent)</li>
+  <li>KI-gestützte Funktionen wie Zusammenfassungen, Antwortvorschläge und Übersetzungen — nur auf Ihre Veranlassung</li>
+  <li>Keine Werbung, kein Verkauf von Daten, kein Profiling zu fremden Zwecken</li>
   </ul>
-
-  <div class="card highlight">
-    <strong>Google API Services – Limited Use</strong>
-    <p>Die Nutzung von Daten, die wir über Google-APIs erhalten, richtet sich nach der
-    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">
-    Google API Services User Data Policy</a>, einschliesslich der
-    <strong>Limited-Use-Anforderungen</strong>. Insbesondere: Wir verwenden Gmail-Daten nur,
-    um die oben beschriebenen, für Sie sichtbaren Funktionen bereitzustellen; wir übertragen
-    sie nicht an Dritte (ausser als Auftragsverarbeiter für genau diese Funktionen), nutzen
-    sie nicht für Werbung und lassen sie nicht durch Menschen lesen, ausser mit Ihrer
-    Einwilligung, aus Sicherheitsgründen oder wo gesetzlich verlangt. Gmail-Daten werden
-    nicht zum Training allgemeiner KI-Modelle verwendet.</p>
-  </div>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Die Nutzung von Daten, die wir über Google-APIs erhalten, richtet sich nach der
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, einschliesslich der <strong>Limited-Use-Anforderungen</strong>.
+  Insbesondere: Wir verwenden Gmail-Daten nur, um die oben beschriebenen, für Sie sichtbaren Funktionen
+  bereitzustellen; wir übertragen sie nicht an Dritte (ausser als Auftragsverarbeiter für genau diese
+  Funktionen), nutzen sie nicht für Werbung und lassen sie nicht durch Menschen lesen, ausser mit Ihrer
+  Einwilligung, aus Sicherheitsgründen oder wo gesetzlich verlangt. Gmail-Daten werden nicht zum Training
+  allgemeiner KI-Modelle verwendet.</p></div>
 
   <h2>4. Auftragsverarbeiter</h2>
   <p>Für einzelne Funktionen setzen wir sorgfältig ausgewählte Dienstleister ein:</p>
   <ul>
-    <li><strong>Hosting:</strong> Server in Deutschland (EU); verschlüsselte Backups in der EU</li>
-    <li><strong>KI-Funktionen:</strong> OpenAI (Zusammenfassungen, Vorschläge, Übersetzungen) und
-        Google (Sprachassistent) — es werden nur die für die jeweilige Funktion nötigen Inhalte übermittelt</li>
-    <li><strong>E-Mail/Kalender:</strong> Google (Gmail, Google Kalender), Microsoft (Outlook) — jeweils nur bei von Ihnen verbundenen Konten</li>
+  <li><strong>Hosting:</strong> Server in Deutschland (EU); verschlüsselte Backups in der EU</li>
+  <li><strong>KI-Funktionen:</strong> OpenAI (Zusammenfassungen, Vorschläge, Übersetzungen) und Google
+  (Sprachassistent) — es werden nur die für die jeweilige Funktion nötigen Inhalte übermittelt</li>
+  <li><strong>E-Mail/Kalender:</strong> Google (Gmail, Google Kalender), Microsoft (Outlook) — jeweils nur bei
+  von Ihnen verbundenen Konten</li>
   </ul>
 
   <h2>5. Speicherdauer &amp; Sicherheit</h2>
   <ul>
-    <li>Daten bleiben gespeichert, solange Ihr Firmenkonto besteht bzw. bis Sie sie löschen</li>
-    <li>OAuth-Tokens und Passwörter werden verschlüsselt bzw. gehasht gespeichert</li>
-    <li>Übertragung ausschliesslich über TLS (HTTPS)</li>
-    <li>Assistent-Verläufe: automatische Löschung nach 90 Tagen; gelöschte Dokumente werden nach 30 Tagen endgültig entfernt</li>
+  <li>Daten bleiben gespeichert, solange Ihr Firmenkonto besteht bzw. bis Sie sie löschen</li>
+  <li>OAuth-Tokens und Passwörter werden verschlüsselt bzw. gehasht gespeichert</li>
+  <li>Übertragung ausschliesslich über TLS (HTTPS)</li>
+  <li>Assistent-Verläufe: automatische Löschung nach 90 Tagen; gelöschte Dokumente werden nach 30 Tagen endgültig entfernt</li>
   </ul>
 
   <h2>6. Ihre Rechte — Verbindung trennen &amp; Daten löschen</h2>
-  <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Datenübertragung.
-  Direkt in der App können Sie jederzeit:</p>
+  <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Datenübertragung. Direkt in der App können
+  Sie jederzeit:</p>
   <ul>
-    <li><strong>Gmail trennen:</strong> Einstellungen → Verbindungen → «Trennen» — dabei widerrufen
-        wir den Zugriff auch bei Google (Token-Revocation)</li>
-    <li><strong>Gmail-Daten löschen:</strong> Einstellungen → Verbindungen → «Gmail-Daten löschen» —
-        entfernt alle synchronisierten E-Mails vollständig von unseren Servern</li>
-    <li><strong>WhatsApp trennen:</strong> Einstellungen → Verbindungen → Nummer «Abmelden» —
-        die Verbindung zur WhatsApp-Nummer wird getrennt</li>
-    <li><strong>WhatsApp-Daten löschen:</strong> Einstellungen → Verbindungen → Nummer «Entfernen» —
-        löscht die Verbindung und alle synchronisierten Chats, Nachrichten und Mediendateien
-        vollständig von unseren Servern</li>
+  <li><strong>Gmail trennen:</strong> Einstellungen → Verbindungen → «Trennen» — dabei widerrufen wir den
+  Zugriff auch bei Google (Token-Revocation)</li>
+  <li><strong>Gmail-Daten löschen:</strong> Einstellungen → Verbindungen → «Gmail-Daten löschen» — entfernt
+  alle synchronisierten E-Mails vollständig von unseren Servern</li>
+  <li><strong>WhatsApp trennen:</strong> Einstellungen → Verbindungen → Nummer «Abmelden» — die Verbindung zur
+  WhatsApp-Nummer wird getrennt</li>
+  <li><strong>WhatsApp-Daten löschen:</strong> Einstellungen → Verbindungen → Nummer «Entfernen» — löscht die
+  Verbindung und alle synchronisierten Chats, Nachrichten und Mediendateien vollständig von unseren Servern</li>
   </ul>
   <p>Zusätzlich können Sie den Zugriff jederzeit in Ihrem Google-Konto unter
   <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>
   widerrufen. Für alle weiteren Anliegen: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
 
   <h2>7. Änderungen</h2>
-  <p>Wir passen diese Erklärung bei Bedarf an; die jeweils aktuelle Fassung finden Sie auf
-  dieser Seite.</p>
+  <p>Wir passen diese Erklärung bei Bedarf an; die jeweils aktuelle Fassung finden Sie auf dieser Seite.</p>
+
 </div>
+<div class="lang" data-lang="en" lang="en" hidden>
+<div class="note">This is a courtesy translation. The German version is legally binding.</div>
+
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: 29 July 2026</div>
+
+  <h2>1. Who we are</h2>
+  <p>Future Media GmbH, Switzerland — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE is software for moving and cleaning companies (available at
+  <a href="https://app.planmove.ch">app.planmove.ch</a>). This policy explains what data we process, why —
+  and what rights you have. The Swiss Data Protection Act (DSG) and, where applicable, the GDPR apply.</p>
+
+  <h2>2. What data we process</h2>
+  <div class="card"><strong>Account data</strong>
+  <p>Name, business email address, company details (name, address, logo, IBAN for invoice QR codes),
+  password (stored only as a hash).</p></div>
+  <div class="card"><strong>Your company's customer data</strong>
+  <p>Contacts, requests (leads), offers, invoices, appointments and working hours that you or your employees
+  enter in PLANMOVE. This data belongs to your company; each company sees only its own data.</p></div>
+  <div class="card"><strong>Gmail data (only with your explicit consent)</strong>
+  <p>If you connect your Gmail account, we read incoming emails (<em>gmail.readonly</em> permission) to show
+  and organise customer requests, and send emails such as offers and invoices on your behalf
+  (<em>gmail.send</em> permission). Access keys (OAuth tokens) are stored encrypted only (AES-256-GCM).</p></div>
+  <div class="card"><strong>WhatsApp messages</strong>
+  <p>If you connect a WhatsApp number, we process the customer conversations held on it to display and
+  translate them for you in PLANMOVE.</p></div>
+  <div class="card"><strong>Voice assistant</strong>
+  <p>When you use the voice assistant, the conversation is transcribed and linked to your user account;
+  histories are deleted automatically after 90 days.</p></div>
+
+  <h2>3. What we use the data for</h2>
+  <ul>
+  <li>Providing the PLANMOVE features (CRM, offers/invoices, email, WhatsApp, calendar, assistant)</li>
+  <li>AI-powered features such as summaries, reply suggestions and translations — only at your request</li>
+  <li>No advertising, no sale of data, no profiling for third-party purposes</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Our use of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, including the <strong>Limited Use requirements</strong>. In particular:
+  we use Gmail data only to provide the user-facing features described above; we do not transfer it to third
+  parties (except as processors for exactly these features), do not use it for advertising, and do not allow
+  humans to read it except with your consent, for security purposes, or where required by law. Gmail data is
+  not used to train generalised AI models.</p></div>
+
+  <h2>4. Processors</h2>
+  <ul>
+  <li><strong>Hosting:</strong> servers in Germany (EU); encrypted backups in the EU</li>
+  <li><strong>AI features:</strong> OpenAI (summaries, suggestions, translations) and Google (voice assistant)
+  — only the content required for the respective feature is transmitted</li>
+  <li><strong>Email/calendar:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — only for accounts
+  you have connected</li>
+  </ul>
+
+  <h2>5. Retention &amp; security</h2>
+  <ul>
+  <li>Data is stored for as long as your company account exists or until you delete it</li>
+  <li>OAuth tokens and passwords are stored encrypted or hashed</li>
+  <li>Transmission exclusively over TLS (HTTPS)</li>
+  <li>Assistant histories: automatic deletion after 90 days; deleted documents are permanently removed after 30 days</li>
+  </ul>
+
+  <h2>6. Your rights — disconnect &amp; delete data</h2>
+  <p>You have the right to access, rectification, deletion and data portability. Directly in the app you can
+  at any time:</p>
+  <ul>
+  <li><strong>Disconnect Gmail:</strong> Settings → Connections → “Disconnect” — we also revoke the access
+  with Google (token revocation)</li>
+  <li><strong>Delete Gmail data:</strong> Settings → Connections → “Delete Gmail data” — removes all synced
+  emails completely from our servers</li>
+  <li><strong>Disconnect WhatsApp:</strong> Settings → Connections → number “Log out”</li>
+  <li><strong>Delete WhatsApp data:</strong> Settings → Connections → number “Remove” — deletes the connection
+  and all synced chats, messages and media files completely from our servers</li>
+  </ul>
+  <p>You can also revoke access at any time in your Google account at
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  For anything else: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Changes</h2>
+  <p>We update this policy when necessary; the current version is always available on this page.</p>
+
+</div>
+<div class="lang" data-lang="fr" lang="fr" hidden>
+<div class="note">Ceci est une traduction de courtoisie. La version allemande fait foi.</div>
+
+  <h1>Politique de confidentialité</h1>
+  <div class="updated">Version du 29 juillet 2026</div>
+
+  <h2>1. Responsable du traitement</h2>
+  <p>Future Media GmbH, Suisse — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE est un logiciel pour les entreprises de déménagement et de nettoyage
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Cette politique décrit les données que nous
+  traitons, dans quel but — et vos droits. La loi suisse sur la protection des données (LPD) et, le cas
+  échéant, le RGPD s'appliquent.</p>
+
+  <h2>2. Données traitées</h2>
+  <div class="card"><strong>Données de compte</strong>
+  <p>Nom, e-mail professionnel, informations sur l'entreprise (nom, adresse, logo, IBAN pour les QR-codes de
+  facture), mot de passe (stocké uniquement sous forme de hachage).</p></div>
+  <div class="card"><strong>Données clients de votre entreprise</strong>
+  <p>Contacts, demandes (leads), offres, factures, rendez-vous et heures de travail saisis dans PLANMOVE.
+  Ces données appartiennent à votre entreprise ; chaque entreprise ne voit que ses propres données.</p></div>
+  <div class="card"><strong>Données Gmail (uniquement avec votre consentement explicite)</strong>
+  <p>Si vous connectez votre compte Gmail, nous lisons les e-mails entrants (autorisation
+  <em>gmail.readonly</em>) pour afficher et organiser les demandes clients, et envoyons en votre nom des
+  e-mails tels qu'offres et factures (autorisation <em>gmail.send</em>). Les clés d'accès (jetons OAuth) sont
+  stockées exclusivement chiffrées (AES-256-GCM).</p></div>
+  <div class="card"><strong>Messages WhatsApp</strong>
+  <p>Si vous connectez un numéro WhatsApp, nous traitons les conversations clients pour les afficher et les
+  traduire dans PLANMOVE.</p></div>
+  <div class="card"><strong>Assistant vocal</strong>
+  <p>Lors de l'utilisation de l'assistant vocal, la conversation est transcrite et associée à votre compte ;
+  les historiques sont supprimés automatiquement après 90 jours.</p></div>
+
+  <h2>3. Finalités</h2>
+  <ul>
+  <li>Fourniture des fonctions PLANMOVE (CRM, offres/factures, e-mail, WhatsApp, calendrier, assistant)</li>
+  <li>Fonctions IA (résumés, suggestions de réponse, traductions) — uniquement à votre demande</li>
+  <li>Pas de publicité, pas de vente de données, pas de profilage à des fins tierces</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>L'utilisation des données reçues via les API Google est conforme à la
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, y compris les exigences de <strong>Limited Use</strong> : les données
+  Gmail ne servent qu'aux fonctions visibles décrites ci-dessus ; pas de transfert à des tiers (sauf
+  sous-traitants pour ces mêmes fonctions), pas de publicité, pas de lecture humaine sauf avec votre accord,
+  pour des raisons de sécurité ou lorsque la loi l'exige. Les données Gmail ne servent pas à entraîner des
+  modèles d'IA généralisés.</p></div>
+
+  <h2>4. Sous-traitants</h2>
+  <ul>
+  <li><strong>Hébergement :</strong> serveurs en Allemagne (UE) ; sauvegardes chiffrées dans l'UE</li>
+  <li><strong>Fonctions IA :</strong> OpenAI et Google (assistant vocal) — seul le contenu nécessaire à la
+  fonction concernée est transmis</li>
+  <li><strong>E-mail/agenda :</strong> Google (Gmail, Google Agenda), Microsoft (Outlook) — uniquement pour les
+  comptes que vous avez connectés</li>
+  </ul>
+
+  <h2>5. Conservation &amp; sécurité</h2>
+  <ul>
+  <li>Les données sont conservées tant que le compte de votre entreprise existe ou jusqu'à leur suppression</li>
+  <li>Jetons OAuth et mots de passe stockés chiffrés ou hachés</li>
+  <li>Transmission exclusivement via TLS (HTTPS)</li>
+  <li>Historiques de l'assistant : suppression automatique après 90 jours ; documents supprimés définitivement après 30 jours</li>
+  </ul>
+
+  <h2>6. Vos droits — déconnexion &amp; suppression</h2>
+  <ul>
+  <li><strong>Déconnecter Gmail :</strong> Réglages → Connexions → « Déconnecter » — l'accès est aussi révoqué
+  chez Google</li>
+  <li><strong>Supprimer les données Gmail :</strong> Réglages → Connexions → « Supprimer les données Gmail » —
+  supprime tous les e-mails synchronisés de nos serveurs</li>
+  <li><strong>Déconnecter WhatsApp :</strong> Réglages → Connexions → numéro « Se déconnecter »</li>
+  <li><strong>Supprimer les données WhatsApp :</strong> Réglages → Connexions → numéro « Supprimer » — efface la
+  connexion et tous les chats, messages et fichiers médias synchronisés</li>
+  </ul>
+  <p>Vous pouvez aussi révoquer l'accès dans votre compte Google :
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Contact : <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Modifications</h2>
+  <p>Nous adaptons cette politique si nécessaire ; la version actuelle figure sur cette page.</p>
+
+</div>
+<div class="lang" data-lang="it" lang="it" hidden>
+<div class="note">Questa è una traduzione di cortesia. Fa fede la versione tedesca.</div>
+
+  <h1>Informativa sulla privacy</h1>
+  <div class="updated">Aggiornata al 29 luglio 2026</div>
+
+  <h2>1. Titolare del trattamento</h2>
+  <p>Future Media GmbH, Svizzera — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE è un software per imprese di traslochi e pulizie
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Questa informativa descrive quali dati trattiamo,
+  perché — e i vostri diritti. Si applicano la legge svizzera sulla protezione dei dati (LPD) e, ove
+  applicabile, il GDPR.</p>
+
+  <h2>2. Dati trattati</h2>
+  <div class="card"><strong>Dati dell'account</strong>
+  <p>Nome, e-mail aziendale, dati dell'azienda (nome, indirizzo, logo, IBAN per i QR-code delle fatture),
+  password (salvata solo come hash).</p></div>
+  <div class="card"><strong>Dati dei clienti della vostra azienda</strong>
+  <p>Contatti, richieste (lead), offerte, fatture, appuntamenti e ore di lavoro inseriti in PLANMOVE. Questi
+  dati appartengono alla vostra azienda; ogni azienda vede solo i propri dati.</p></div>
+  <div class="card"><strong>Dati Gmail (solo con il vostro consenso esplicito)</strong>
+  <p>Se collegate il vostro account Gmail, leggiamo le e-mail in arrivo (autorizzazione
+  <em>gmail.readonly</em>) per mostrare e organizzare le richieste dei clienti, e inviamo per vostro conto
+  e-mail come offerte e fatture (autorizzazione <em>gmail.send</em>). Le chiavi di accesso (token OAuth) sono
+  salvate esclusivamente cifrate (AES-256-GCM).</p></div>
+  <div class="card"><strong>Messaggi WhatsApp</strong>
+  <p>Se collegate un numero WhatsApp, trattiamo le conversazioni con i clienti per mostrarle e tradurle in
+  PLANMOVE.</p></div>
+  <div class="card"><strong>Assistente vocale</strong>
+  <p>Con l'assistente vocale la conversazione viene trascritta e associata al vostro account; le cronologie
+  vengono eliminate automaticamente dopo 90 giorni.</p></div>
+
+  <h2>3. Finalità</h2>
+  <ul>
+  <li>Fornitura delle funzioni PLANMOVE (CRM, offerte/fatture, e-mail, WhatsApp, calendario, assistente)</li>
+  <li>Funzioni IA (riassunti, suggerimenti di risposta, traduzioni) — solo su vostra richiesta</li>
+  <li>Nessuna pubblicità, nessuna vendita di dati, nessuna profilazione per scopi di terzi</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>L'uso dei dati ricevuti tramite le API di Google rispetta la
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, compresi i requisiti di <strong>Limited Use</strong>: i dati Gmail servono
+  solo alle funzioni visibili sopra descritte; nessun trasferimento a terzi (salvo responsabili del
+  trattamento per queste stesse funzioni), nessuna pubblicità, nessuna lettura umana salvo vostro consenso,
+  motivi di sicurezza o obblighi di legge. I dati Gmail non vengono usati per addestrare modelli IA
+  generalizzati.</p></div>
+
+  <h2>4. Responsabili del trattamento</h2>
+  <ul>
+  <li><strong>Hosting:</strong> server in Germania (UE); backup cifrati nell'UE</li>
+  <li><strong>Funzioni IA:</strong> OpenAI e Google (assistente vocale) — viene trasmesso solo il contenuto
+  necessario alla funzione</li>
+  <li><strong>E-mail/calendario:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — solo per gli
+  account da voi collegati</li>
+  </ul>
+
+  <h2>5. Conservazione &amp; sicurezza</h2>
+  <ul>
+  <li>I dati restano salvati finché esiste l'account aziendale o finché non li eliminate</li>
+  <li>Token OAuth e password salvati cifrati o con hash</li>
+  <li>Trasmissione esclusivamente via TLS (HTTPS)</li>
+  <li>Cronologie dell'assistente: eliminazione automatica dopo 90 giorni; i documenti eliminati vengono rimossi definitivamente dopo 30 giorni</li>
+  </ul>
+
+  <h2>6. I vostri diritti — disconnessione &amp; cancellazione</h2>
+  <ul>
+  <li><strong>Scollegare Gmail:</strong> Impostazioni → Connessioni → «Scollega» — revochiamo l'accesso anche
+  presso Google</li>
+  <li><strong>Eliminare i dati Gmail:</strong> Impostazioni → Connessioni → «Elimina dati Gmail» — rimuove
+  tutte le e-mail sincronizzate dai nostri server</li>
+  <li><strong>Scollegare WhatsApp:</strong> Impostazioni → Connessioni → numero «Disconnetti»</li>
+  <li><strong>Eliminare i dati WhatsApp:</strong> Impostazioni → Connessioni → numero «Rimuovi» — elimina la
+  connessione e tutte le chat, i messaggi e i file multimediali sincronizzati</li>
+  </ul>
+  <p>Potete inoltre revocare l'accesso nel vostro account Google:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Contatto: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Modifiche</h2>
+  <p>Aggiorniamo questa informativa quando necessario; la versione attuale è sempre su questa pagina.</p>
+
+</div>
+<div class="lang" data-lang="pt" lang="pt" hidden>
+<div class="note">Esta é uma tradução de cortesia. A versão alemã é a juridicamente vinculativa.</div>
+
+  <h1>Política de Privacidade</h1>
+  <div class="updated">Atualizada em 29 de julho de 2026</div>
+
+  <h2>1. Responsável</h2>
+  <p>Future Media GmbH, Suíça — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>O PLANMOVE é um software para empresas de mudanças e limpeza
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Esta política descreve os dados que tratamos, para
+  quê — e os seus direitos. Aplicam-se a lei suíça de proteção de dados (DSG) e, quando aplicável, o RGPD.</p>
+
+  <h2>2. Dados tratados</h2>
+  <div class="card"><strong>Dados da conta</strong>
+  <p>Nome, e-mail profissional, dados da empresa (nome, endereço, logótipo, IBAN para códigos QR das faturas),
+  palavra-passe (guardada apenas como hash).</p></div>
+  <div class="card"><strong>Dados de clientes da sua empresa</strong>
+  <p>Contactos, pedidos (leads), propostas, faturas, compromissos e horas de trabalho registados no PLANMOVE.
+  Estes dados pertencem à sua empresa; cada empresa vê apenas os seus próprios dados.</p></div>
+  <div class="card"><strong>Dados do Gmail (apenas com o seu consentimento explícito)</strong>
+  <p>Se ligar a sua conta Gmail, lemos e-mails recebidos (permissão <em>gmail.readonly</em>) para mostrar e
+  organizar pedidos de clientes, e enviamos em seu nome e-mails como propostas e faturas (permissão
+  <em>gmail.send</em>). As chaves de acesso (tokens OAuth) são guardadas exclusivamente encriptadas
+  (AES-256-GCM).</p></div>
+  <div class="card"><strong>Mensagens WhatsApp</strong>
+  <p>Se ligar um número WhatsApp, tratamos as conversas com clientes para as mostrar e traduzir no
+  PLANMOVE.</p></div>
+  <div class="card"><strong>Assistente de voz</strong>
+  <p>Ao usar o assistente de voz, a conversa é transcrita e associada à sua conta; os históricos são apagados
+  automaticamente após 90 dias.</p></div>
+
+  <h2>3. Finalidades</h2>
+  <ul>
+  <li>Disponibilização das funções PLANMOVE (CRM, propostas/faturas, e-mail, WhatsApp, calendário, assistente)</li>
+  <li>Funções de IA (resumos, sugestões de resposta, traduções) — apenas a seu pedido</li>
+  <li>Sem publicidade, sem venda de dados, sem criação de perfis para fins de terceiros</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>O uso de dados recebidos através das APIs da Google segue a
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, incluindo os requisitos de <strong>Limited Use</strong>: usamos dados do
+  Gmail apenas para as funções visíveis descritas acima; não os transferimos a terceiros (exceto
+  subcontratantes para estas mesmas funções), não os usamos para publicidade e não permitimos leitura humana,
+  salvo com o seu consentimento, por segurança ou exigência legal. Os dados do Gmail não são usados para
+  treinar modelos de IA generalizados.</p></div>
+
+  <h2>4. Subcontratantes</h2>
+  <ul>
+  <li><strong>Alojamento:</strong> servidores na Alemanha (UE); cópias de segurança encriptadas na UE</li>
+  <li><strong>Funções de IA:</strong> OpenAI e Google (assistente de voz) — apenas o conteúdo necessário à
+  função é transmitido</li>
+  <li><strong>E-mail/calendário:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — apenas para
+  contas que ligou</li>
+  </ul>
+
+  <h2>5. Conservação &amp; segurança</h2>
+  <ul>
+  <li>Os dados ficam guardados enquanto a conta da empresa existir ou até os apagar</li>
+  <li>Tokens OAuth e palavras-passe guardados encriptados ou com hash</li>
+  <li>Transmissão exclusivamente via TLS (HTTPS)</li>
+  <li>Históricos do assistente: eliminação automática após 90 dias; documentos apagados são removidos definitivamente após 30 dias</li>
+  </ul>
+
+  <h2>6. Os seus direitos — desligar &amp; apagar dados</h2>
+  <ul>
+  <li><strong>Desligar o Gmail:</strong> Definições → Ligações → «Desligar» — o acesso também é revogado na
+  Google</li>
+  <li><strong>Apagar dados do Gmail:</strong> Definições → Ligações → «Apagar dados do Gmail» — remove todos os
+  e-mails sincronizados dos nossos servidores</li>
+  <li><strong>Desligar o WhatsApp:</strong> Definições → Ligações → número «Terminar sessão»</li>
+  <li><strong>Apagar dados do WhatsApp:</strong> Definições → Ligações → número «Remover» — apaga a ligação e
+  todos os chats, mensagens e ficheiros multimédia sincronizados</li>
+  </ul>
+  <p>Pode ainda revogar o acesso na sua conta Google:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Contacto: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Alterações</h2>
+  <p>Atualizamos esta política quando necessário; a versão atual está sempre nesta página.</p>
+
+</div>
+<div class="lang" data-lang="tr" lang="tr" hidden>
+<div class="note">Bu, bilgilendirme amaçlı bir çeviridir. Hukuken bağlayıcı olan Almanca sürümdür.</div>
+
+  <h1>Gizlilik Politikası</h1>
+  <div class="updated">Güncelleme: 29 Temmuz 2026</div>
+
+  <h2>1. Veri sorumlusu</h2>
+  <p>Future Media GmbH, İsviçre — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE, taşımacılık ve temizlik firmaları için bir yazılımdır
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Bu politika hangi verileri neden işlediğimizi ve
+  haklarınızı açıklar. İsviçre Veri Koruma Kanunu (DSG) ve uygulanabilir olduğunda GDPR geçerlidir.</p>
+
+  <h2>2. İşlediğimiz veriler</h2>
+  <div class="card"><strong>Hesap verileri</strong>
+  <p>Ad, iş e-postası, firma bilgileri (ad, adres, logo, fatura QR kodları için IBAN), şifre (yalnızca hash
+  olarak saklanır).</p></div>
+  <div class="card"><strong>Firmanızın müşteri verileri</strong>
+  <p>PLANMOVE'a girdiğiniz kişiler, talepler (lead), teklifler, faturalar, randevular ve çalışma saatleri. Bu
+  veriler firmanıza aittir; her firma yalnızca kendi verilerini görür.</p></div>
+  <div class="card"><strong>Gmail verileri (yalnızca açık onayınızla)</strong>
+  <p>Gmail hesabınızı bağlarsanız, müşteri taleplerini göstermek ve düzenlemek için gelen e-postaları okuruz
+  (<em>gmail.readonly</em> izni) ve sizin adınıza teklif/fatura gibi e-postalar göndeririz
+  (<em>gmail.send</em> izni). Erişim anahtarları (OAuth token) yalnızca şifrelenmiş olarak saklanır
+  (AES-256-GCM).</p></div>
+  <div class="card"><strong>WhatsApp mesajları</strong>
+  <p>Bir WhatsApp numarası bağlarsanız, müşteri konuşmalarını PLANMOVE'da göstermek ve çevirmek için
+  işleriz.</p></div>
+  <div class="card"><strong>Sesli asistan</strong>
+  <p>Sesli asistan kullanıldığında konuşma yazıya dökülür ve hesabınıza bağlanır; geçmişler 90 gün sonra
+  otomatik silinir.</p></div>
+
+  <h2>3. Kullanım amaçları</h2>
+  <ul>
+  <li>PLANMOVE işlevlerinin sunulması (CRM, teklif/fatura, e-posta, WhatsApp, takvim, asistan)</li>
+  <li>Yapay zekâ işlevleri (özetler, yanıt önerileri, çeviriler) — yalnızca sizin talebinizle</li>
+  <li>Reklam yok, veri satışı yok, üçüncü taraf amaçlı profilleme yok</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Google API'lerinden alınan verilerin kullanımı,
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>'ye ve <strong>Limited Use</strong> gerekliliklerine uygundur: Gmail
+  verilerini yalnızca yukarıda açıklanan görünür işlevler için kullanırız; üçüncü taraflara aktarmayız (bu
+  işlevler için çalışan işleyiciler hariç), reklamda kullanmayız ve onayınız, güvenlik nedenleri veya yasal
+  zorunluluk dışında insanların okumasına izin vermeyiz. Gmail verileri genel yapay zekâ modellerinin
+  eğitiminde kullanılmaz.</p></div>
+
+  <h2>4. Veri işleyiciler</h2>
+  <ul>
+  <li><strong>Barındırma:</strong> Almanya'da sunucular (AB); AB'de şifreli yedekler</li>
+  <li><strong>Yapay zekâ:</strong> OpenAI ve Google (sesli asistan) — yalnızca ilgili işlev için gerekli
+  içerik iletilir</li>
+  <li><strong>E-posta/takvim:</strong> Google (Gmail, Google Takvim), Microsoft (Outlook) — yalnızca
+  bağladığınız hesaplar için</li>
+  </ul>
+
+  <h2>5. Saklama &amp; güvenlik</h2>
+  <ul>
+  <li>Veriler, firma hesabınız var olduğu sürece veya siz silene kadar saklanır</li>
+  <li>OAuth token'ları ve şifreler şifreli/hash'li saklanır</li>
+  <li>İletim yalnızca TLS (HTTPS) üzerinden</li>
+  <li>Asistan geçmişleri: 90 gün sonra otomatik silme; silinen belgeler 30 gün sonra kalıcı olarak kaldırılır</li>
+  </ul>
+
+  <h2>6. Haklarınız — bağlantıyı kesme &amp; veri silme</h2>
+  <ul>
+  <li><strong>Gmail bağlantısını kesme:</strong> Ayarlar → Bağlantılar → «Bağlantıyı kes» — erişimi Google
+  tarafında da iptal ederiz</li>
+  <li><strong>Gmail verilerini silme:</strong> Ayarlar → Bağlantılar → «Gmail verilerini sil» — senkronize tüm
+  e-postaları sunucularımızdan tamamen kaldırır</li>
+  <li><strong>WhatsApp bağlantısını kesme:</strong> Ayarlar → Bağlantılar → numara «Oturumu kapat»</li>
+  <li><strong>WhatsApp verilerini silme:</strong> Ayarlar → Bağlantılar → numara «Kaldır» — bağlantıyı ve tüm
+  senkronize sohbetleri, mesajları ve medya dosyalarını tamamen siler</li>
+  </ul>
+  <p>Erişimi ayrıca Google hesabınızdan iptal edebilirsiniz:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  İletişim: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Değişiklikler</h2>
+  <p>Bu politikayı gerektiğinde güncelleriz; güncel sürüm her zaman bu sayfadadır.</p>
+
+</div>
+<div class="lang" data-lang="sq" lang="sq" hidden>
+<div class="note">Ky është një përkthim informues. Versioni gjermanisht është ligjërisht i detyrueshëm.</div>
+
+  <h1>Politika e privatësisë</h1>
+  <div class="updated">Përditësuar: 29 korrik 2026</div>
+
+  <h2>1. Përgjegjësi i të dhënave</h2>
+  <p>Future Media GmbH, Zvicër — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE është një softuer për firma transporti dhe pastrimi
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Kjo politikë përshkruan cilat të dhëna përpunojmë,
+  përse — dhe të drejtat tuaja. Zbatohen ligji zviceran i mbrojtjes së të dhënave (DSG) dhe, kur është e
+  zbatueshme, GDPR.</p>
+
+  <h2>2. Të dhënat që përpunojmë</h2>
+  <div class="card"><strong>Të dhënat e llogarisë</strong>
+  <p>Emri, e-maili i punës, të dhënat e firmës (emri, adresa, logoja, IBAN për kodet QR të faturave),
+  fjalëkalimi (ruhet vetëm si hash).</p></div>
+  <div class="card"><strong>Të dhënat e klientëve të firmës suaj</strong>
+  <p>Kontaktet, kërkesat (leads), ofertat, faturat, terminet dhe orët e punës të futura në PLANMOVE. Këto të
+  dhëna i përkasin firmës suaj; çdo firmë sheh vetëm të dhënat e veta.</p></div>
+  <div class="card"><strong>Të dhënat e Gmail (vetëm me pëlqimin tuaj të qartë)</strong>
+  <p>Nëse lidhni llogarinë tuaj Gmail, lexojmë e-mailet hyrëse (leja <em>gmail.readonly</em>) për të shfaqur
+  dhe organizuar kërkesat e klientëve, dhe dërgojmë në emrin tuaj e-maile si oferta dhe fatura (leja
+  <em>gmail.send</em>). Çelësat e qasjes (token OAuth) ruhen vetëm të enkriptuar (AES-256-GCM).</p></div>
+  <div class="card"><strong>Mesazhet WhatsApp</strong>
+  <p>Nëse lidhni një numër WhatsApp, përpunojmë bisedat me klientët për t'i shfaqur dhe përkthyer në
+  PLANMOVE.</p></div>
+  <div class="card"><strong>Asistenti zanor</strong>
+  <p>Kur përdorni asistentin zanor, biseda transkriptohet dhe lidhet me llogarinë tuaj; historiku fshihet
+  automatikisht pas 90 ditësh.</p></div>
+
+  <h2>3. Qëllimet</h2>
+  <ul>
+  <li>Ofrimi i funksioneve PLANMOVE (CRM, oferta/fatura, e-mail, WhatsApp, kalendar, asistent)</li>
+  <li>Funksione me IA (përmbledhje, sugjerime përgjigjesh, përkthime) — vetëm me kërkesën tuaj</li>
+  <li>Pa reklama, pa shitje të dhënash, pa profilizim për qëllime të të tretëve</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Përdorimi i të dhënave nga API-të e Google respekton
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, përfshirë kërkesat e <strong>Limited Use</strong>: të dhënat e Gmail i
+  përdorim vetëm për funksionet e dukshme të përshkruara më lart; nuk i transferojmë te të tretë (përveç
+  përpunuesve për pikërisht këto funksione), nuk i përdorim për reklama dhe nuk lejojmë lexim njerëzor, përveç
+  me pëlqimin tuaj, për arsye sigurie ose kur e kërkon ligji. Të dhënat e Gmail nuk përdoren për trajnimin e
+  modeleve të përgjithshme të IA-së.</p></div>
+
+  <h2>4. Përpunuesit</h2>
+  <ul>
+  <li><strong>Hostimi:</strong> serverë në Gjermani (BE); kopje rezervë të enkriptuara në BE</li>
+  <li><strong>Funksionet IA:</strong> OpenAI dhe Google (asistenti zanor) — transmetohet vetëm përmbajtja e
+  nevojshme për funksionin</li>
+  <li><strong>E-mail/kalendar:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — vetëm për
+  llogaritë që keni lidhur</li>
+  </ul>
+
+  <h2>5. Ruajtja &amp; siguria</h2>
+  <ul>
+  <li>Të dhënat ruhen sa ekziston llogaria e firmës ose derisa t'i fshini</li>
+  <li>Token-ët OAuth dhe fjalëkalimet ruhen të enkriptuar ose me hash</li>
+  <li>Transmetimi vetëm përmes TLS (HTTPS)</li>
+  <li>Historiku i asistentit: fshirje automatike pas 90 ditësh; dokumentet e fshira hiqen përfundimisht pas 30 ditësh</li>
+  </ul>
+
+  <h2>6. Të drejtat tuaja — shkëputje &amp; fshirje të dhënash</h2>
+  <ul>
+  <li><strong>Shkëputni Gmail:</strong> Cilësimet → Lidhjet → «Shkëput» — qasjen e revokojmë edhe te Google</li>
+  <li><strong>Fshini të dhënat e Gmail:</strong> Cilësimet → Lidhjet → «Fshi të dhënat e Gmail» — heq të gjitha
+  e-mailet e sinkronizuara nga serverët tanë</li>
+  <li><strong>Shkëputni WhatsApp:</strong> Cilësimet → Lidhjet → numri «Dilni»</li>
+  <li><strong>Fshini të dhënat e WhatsApp:</strong> Cilësimet → Lidhjet → numri «Hiq» — fshin lidhjen dhe të
+  gjitha bisedat, mesazhet dhe skedarët mediatikë të sinkronizuar</li>
+  </ul>
+  <p>Qasjen mund ta revokoni edhe në llogarinë tuaj Google:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Kontakt: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Ndryshimet</h2>
+  <p>Këtë politikë e përditësojmë sipas nevojës; versioni aktual gjendet gjithmonë në këtë faqe.</p>
+
+</div>
+<div class="lang" data-lang="ru" lang="ru" hidden>
+<div class="note">Это ознакомительный перевод. Юридически обязательной является немецкая версия.</div>
+
+  <h1>Политика конфиденциальности</h1>
+  <div class="updated">Обновлено: 29 июля 2026</div>
+
+  <h2>1. Ответственный за обработку</h2>
+  <p>Future Media GmbH, Швейцария — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE — программное обеспечение для компаний по переездам и уборке
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Эта политика описывает, какие данные мы
+  обрабатываем, зачем — и ваши права. Применяются швейцарский закон о защите данных (DSG) и, где применимо,
+  GDPR.</p>
+
+  <h2>2. Какие данные мы обрабатываем</h2>
+  <div class="card"><strong>Данные учётной записи</strong>
+  <p>Имя, рабочий e-mail, данные компании (название, адрес, логотип, IBAN для QR-кодов счетов), пароль
+  (хранится только в виде хеша).</p></div>
+  <div class="card"><strong>Данные клиентов вашей компании</strong>
+  <p>Контакты, заявки (лиды), предложения, счета, встречи и рабочие часы, внесённые в PLANMOVE. Эти данные
+  принадлежат вашей компании; каждая компания видит только свои данные.</p></div>
+  <div class="card"><strong>Данные Gmail (только с вашего явного согласия)</strong>
+  <p>Если вы подключите свой аккаунт Gmail, мы читаем входящие письма (разрешение <em>gmail.readonly</em>),
+  чтобы показывать и организовывать запросы клиентов, и отправляем от вашего имени письма, например
+  предложения и счета (разрешение <em>gmail.send</em>). Ключи доступа (OAuth-токены) хранятся исключительно в
+  зашифрованном виде (AES-256-GCM).</p></div>
+  <div class="card"><strong>Сообщения WhatsApp</strong>
+  <p>Если вы подключите номер WhatsApp, мы обрабатываем переписку с клиентами, чтобы показывать и переводить
+  её в PLANMOVE.</p></div>
+  <div class="card"><strong>Голосовой ассистент</strong>
+  <p>При использовании голосового ассистента разговор транскрибируется и привязывается к вашей учётной записи;
+  истории автоматически удаляются через 90 дней.</p></div>
+
+  <h2>3. Для чего мы используем данные</h2>
+  <ul>
+  <li>Предоставление функций PLANMOVE (CRM, предложения/счета, e-mail, WhatsApp, календарь, ассистент)</li>
+  <li>Функции ИИ (резюме, варианты ответов, переводы) — только по вашему запросу</li>
+  <li>Без рекламы, без продажи данных, без профилирования в чужих целях</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Использование данных, полученных через API Google, соответствует
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a>, включая требования <strong>Limited Use</strong>: данные Gmail
+  используются только для описанных выше видимых функций; мы не передаём их третьим лицам (кроме обработчиков
+  для этих же функций), не используем для рекламы и не допускаем чтения людьми, кроме как с вашего согласия,
+  по соображениям безопасности или по требованию закона. Данные Gmail не используются для обучения
+  универсальных моделей ИИ.</p></div>
+
+  <h2>4. Обработчики</h2>
+  <ul>
+  <li><strong>Хостинг:</strong> серверы в Германии (ЕС); зашифрованные резервные копии в ЕС</li>
+  <li><strong>Функции ИИ:</strong> OpenAI и Google (голосовой ассистент) — передаётся только контент,
+  необходимый для конкретной функции</li>
+  <li><strong>E-mail/календарь:</strong> Google (Gmail, Google Календарь), Microsoft (Outlook) — только для
+  подключённых вами аккаунтов</li>
+  </ul>
+
+  <h2>5. Хранение и безопасность</h2>
+  <ul>
+  <li>Данные хранятся, пока существует аккаунт компании или пока вы их не удалите</li>
+  <li>OAuth-токены и пароли хранятся в зашифрованном/хешированном виде</li>
+  <li>Передача исключительно по TLS (HTTPS)</li>
+  <li>Истории ассистента: автоматическое удаление через 90 дней; удалённые документы окончательно удаляются через 30 дней</li>
+  </ul>
+
+  <h2>6. Ваши права — отключение и удаление данных</h2>
+  <ul>
+  <li><strong>Отключить Gmail:</strong> Настройки → Подключения → «Отключить» — доступ отзывается и на стороне
+  Google</li>
+  <li><strong>Удалить данные Gmail:</strong> Настройки → Подключения → «Удалить данные Gmail» — полностью
+  удаляет все синхронизированные письма с наших серверов</li>
+  <li><strong>Отключить WhatsApp:</strong> Настройки → Подключения → номер «Выйти»</li>
+  <li><strong>Удалить данные WhatsApp:</strong> Настройки → Подключения → номер «Удалить» — удаляет
+  подключение и все синхронизированные чаты, сообщения и медиафайлы</li>
+  </ul>
+  <p>Вы также можете отозвать доступ в своём аккаунте Google:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Контакт: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Изменения</h2>
+  <p>Мы обновляем эту политику при необходимости; актуальная версия всегда на этой странице.</p>
+
+</div>
+<div class="lang" data-lang="ar" lang="ar" dir="rtl" hidden>
+<div class="note">هذه ترجمة للاطلاع فقط. النسخة الألمانية هي الملزمة قانونًا.</div>
+
+  <h1>سياسة الخصوصية</h1>
+  <div class="updated">آخر تحديث: 29 يوليو 2026</div>
+
+  <h2>1. الجهة المسؤولة</h2>
+  <p>Future Media GmbH، سويسرا — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE برنامج لشركات النقل والتنظيف (<a href="https://app.planmove.ch">app.planmove.ch</a>). توضّح هذه
+  السياسة البيانات التي نعالجها ولماذا — وحقوقك. يسري قانون حماية البيانات السويسري (DSG) وكذلك اللائحة
+  الأوروبية GDPR حيثما تنطبق.</p>
+
+  <h2>2. البيانات التي نعالجها</h2>
+  <div class="card"><strong>بيانات الحساب</strong>
+  <p>الاسم، البريد الإلكتروني للعمل، بيانات الشركة (الاسم، العنوان، الشعار، رقم IBAN لرموز QR في الفواتير)،
+  كلمة المرور (تُخزَّن كتجزئة hash فقط).</p></div>
+  <div class="card"><strong>بيانات عملاء شركتك</strong>
+  <p>جهات الاتصال والطلبات (Leads) والعروض والفواتير والمواعيد وساعات العمل التي تُدخلها أنت أو موظفوك في
+  PLANMOVE. هذه البيانات ملك لشركتك؛ وكل شركة ترى بياناتها فقط.</p></div>
+  <div class="card"><strong>بيانات Gmail (فقط بموافقتك الصريحة)</strong>
+  <p>إذا ربطت حساب Gmail، نقرأ الرسائل الواردة (صلاحية <em>gmail.readonly</em>) لعرض طلبات العملاء وتنظيمها،
+  ونرسل باسمك رسائل مثل العروض والفواتير (صلاحية <em>gmail.send</em>). مفاتيح الوصول (رموز OAuth) تُخزَّن
+  مشفَّرة حصراً (AES-256-GCM).</p></div>
+  <div class="card"><strong>رسائل واتساب</strong>
+  <p>إذا ربطت رقم واتساب، نعالج محادثات العملاء لعرضها وترجمتها لك داخل PLANMOVE.</p></div>
+  <div class="card"><strong>المساعد الصوتي</strong>
+  <p>عند استخدام المساعد الصوتي تُدوَّن المحادثة نصياً وتُربط بحسابك؛ وتُحذف السجلات تلقائياً بعد 90
+  يوماً.</p></div>
+
+  <h2>3. أغراض الاستخدام</h2>
+  <ul>
+  <li>تقديم وظائف PLANMOVE (إدارة العملاء، العروض/الفواتير، البريد، واتساب، التقويم، المساعد)</li>
+  <li>وظائف الذكاء الاصطناعي (ملخصات، اقتراحات ردود، ترجمات) — بطلبك فقط</li>
+  <li>لا إعلانات، لا بيع للبيانات، لا تنميط لأغراض جهات خارجية</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>يلتزم استخدامنا للبيانات الواردة عبر واجهات Google بسياسة
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a> بما فيها متطلبات <strong>الاستخدام المحدود (Limited Use)</strong>: نستخدم
+  بيانات Gmail فقط للوظائف الظاهرة الموصوفة أعلاه؛ ولا ننقلها إلى أطراف ثالثة (باستثناء معالجي البيانات لهذه
+  الوظائف نفسها)، ولا نستخدمها للإعلانات، ولا نسمح بقراءتها بشرياً إلا بموافقتك أو لأسباب أمنية أو بمقتضى
+  القانون. ولا تُستخدم بيانات Gmail لتدريب نماذج ذكاء اصطناعي عامة.</p></div>
+
+  <h2>4. معالجو البيانات</h2>
+  <ul>
+  <li><strong>الاستضافة:</strong> خوادم في ألمانيا (الاتحاد الأوروبي)؛ نسخ احتياطية مشفَّرة داخل الاتحاد</li>
+  <li><strong>وظائف الذكاء الاصطناعي:</strong> OpenAI وGoogle (المساعد الصوتي) — يُرسَل فقط المحتوى اللازم
+  للوظيفة المعنية</li>
+  <li><strong>البريد/التقويم:</strong> Google (Gmail وتقويم Google) وMicrosoft (Outlook) — فقط للحسابات التي
+  ربطتها بنفسك</li>
+  </ul>
+
+  <h2>5. مدة الحفظ والأمان</h2>
+  <ul>
+  <li>تبقى البيانات محفوظة ما دام حساب شركتك قائماً أو حتى تحذفها</li>
+  <li>رموز OAuth وكلمات المرور تُخزَّن مشفَّرة أو كتجزئة</li>
+  <li>النقل حصراً عبر TLS (HTTPS)</li>
+  <li>سجلات المساعد: حذف تلقائي بعد 90 يوماً؛ والمستندات المحذوفة تُزال نهائياً بعد 30 يوماً</li>
+  </ul>
+
+  <h2>6. حقوقك — فصل الاتصال وحذف البيانات</h2>
+  <ul>
+  <li><strong>فصل Gmail:</strong> الإعدادات ← الاتصالات ← «فصل» — ونلغي الوصول لدى Google أيضاً</li>
+  <li><strong>حذف بيانات Gmail:</strong> الإعدادات ← الاتصالات ← «حذف بيانات Gmail» — يزيل كل الرسائل
+  المتزامنة نهائياً من خوادمنا</li>
+  <li><strong>فصل واتساب:</strong> الإعدادات ← الاتصالات ← الرقم «تسجيل الخروج»</li>
+  <li><strong>حذف بيانات واتساب:</strong> الإعدادات ← الاتصالات ← الرقم «إزالة» — يحذف الاتصال وكل المحادثات
+  والرسائل وملفات الوسائط المتزامنة نهائياً</li>
+  </ul>
+  <p>يمكنك أيضاً إلغاء الوصول في أي وقت من حساب Google:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  للتواصل: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. التعديلات</h2>
+  <p>نحدّث هذه السياسة عند الحاجة؛ وتجد النسخة الحالية دائماً في هذه الصفحة.</p>
+
+</div>
+<div class="lang" data-lang="fa" lang="fa" dir="rtl" hidden>
+<div class="note">این یک ترجمهٔ آگاهی‌رسان است. نسخهٔ آلمانی از نظر حقوقی معتبر است.</div>
+
+  <h1>سیاست حفظ حریم خصوصی</h1>
+  <div class="updated">آخرین به‌روزرسانی: ۲۹ ژوئیه ۲۰۲۶</div>
+
+  <h2>۱. مسئول پردازش داده‌ها</h2>
+  <p>Future Media GmbH، سوئیس — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE نرم‌افزاری برای شرکت‌های اسباب‌کشی و نظافت است
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). این سند توضیح می‌دهد چه داده‌هایی را، به چه منظوری
+  پردازش می‌کنیم — و شما چه حقوقی دارید. قانون حفاظت از داده‌های سوئیس (DSG) و در صورت لزوم GDPR اعمال
+  می‌شود.</p>
+
+  <h2>۲. چه داده‌هایی پردازش می‌شوند</h2>
+  <div class="card"><strong>داده‌های حساب کاربری</strong>
+  <p>نام، ایمیل کاری، مشخصات شرکت (نام، نشانی، لوگو، شماره IBAN برای کد QR فاکتورها)، گذرواژه (فقط به صورت
+  هش ذخیره می‌شود).</p></div>
+  <div class="card"><strong>داده‌های مشتریان شرکت شما</strong>
+  <p>مخاطبین، درخواست‌ها (لیدها)، پیشنهادها، فاکتورها، قرارها و ساعات کاری که شما یا کارکنان‌تان در PLANMOVE
+  وارد می‌کنید. این داده‌ها متعلق به شرکت شماست؛ هر شرکت فقط داده‌های خودش را می‌بیند.</p></div>
+  <div class="card"><strong>داده‌های Gmail (فقط با رضایت صریح شما)</strong>
+  <p>اگر حساب Gmail خود را متصل کنید، ایمیل‌های دریافتی را می‌خوانیم (مجوز <em>gmail.readonly</em>) تا
+  درخواست‌های مشتریان را نمایش و سازمان دهیم، و از طرف شما ایمیل‌هایی مانند پیشنهاد و فاکتور ارسال می‌کنیم
+  (مجوز <em>gmail.send</em>). کلیدهای دسترسی (توکن‌های OAuth) فقط به صورت رمزنگاری‌شده ذخیره می‌شوند
+  (AES-256-GCM).</p></div>
+  <div class="card"><strong>پیام‌های واتساپ</strong>
+  <p>اگر شماره واتساپی متصل کنید، گفتگوهای مشتریان را برای نمایش و ترجمه در PLANMOVE پردازش می‌کنیم.</p></div>
+  <div class="card"><strong>دستیار صوتی</strong>
+  <p>هنگام استفاده از دستیار صوتی، گفتگو به متن تبدیل و به حساب شما مرتبط می‌شود؛ سوابق پس از ۹۰ روز
+  به‌طور خودکار حذف می‌شوند.</p></div>
+
+  <h2>۳. اهداف استفاده</h2>
+  <ul>
+  <li>ارائه امکانات PLANMOVE (مدیریت مشتری، پیشنهاد/فاکتور، ایمیل، واتساپ، تقویم، دستیار)</li>
+  <li>امکانات هوش مصنوعی (خلاصه‌سازی، پیشنهاد پاسخ، ترجمه) — فقط به درخواست شما</li>
+  <li>بدون تبلیغات، بدون فروش داده، بدون پروفایل‌سازی برای اهداف دیگران</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>استفاده ما از داده‌های دریافتی از APIهای گوگل تابع
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a> از جمله الزامات <strong>استفاده محدود (Limited Use)</strong> است: داده‌های
+  Gmail را فقط برای امکانات قابل‌مشاهدهٔ بالا به کار می‌بریم؛ به اشخاص ثالث منتقل نمی‌کنیم (به‌جز پردازشگران
+  همین امکانات)، برای تبلیغات استفاده نمی‌کنیم و اجازهٔ خواندن انسانی نمی‌دهیم مگر با رضایت شما، به دلایل
+  امنیتی یا الزام قانونی. از داده‌های Gmail برای آموزش مدل‌های عمومی هوش مصنوعی استفاده نمی‌شود.</p></div>
+
+  <h2>۴. پردازشگران داده</h2>
+  <ul>
+  <li><strong>میزبانی:</strong> سرورها در آلمان (اتحادیه اروپا)؛ پشتیبان‌های رمزنگاری‌شده در اتحادیه اروپا</li>
+  <li><strong>امکانات هوش مصنوعی:</strong> OpenAI و Google (دستیار صوتی) — فقط محتوای لازم برای همان قابلیت
+  ارسال می‌شود</li>
+  <li><strong>ایمیل/تقویم:</strong> Google (Gmail، تقویم گوگل)، Microsoft (Outlook) — فقط برای حساب‌هایی که
+  خودتان متصل کرده‌اید</li>
+  </ul>
+
+  <h2>۵. مدت نگهداری و امنیت</h2>
+  <ul>
+  <li>داده‌ها تا زمانی که حساب شرکت شما وجود دارد یا تا زمان حذف توسط شما نگهداری می‌شوند</li>
+  <li>توکن‌های OAuth و گذرواژه‌ها رمزنگاری‌شده یا هش‌شده ذخیره می‌شوند</li>
+  <li>انتقال فقط از طریق TLS (HTTPS)</li>
+  <li>سوابق دستیار: حذف خودکار پس از ۹۰ روز؛ اسناد حذف‌شده پس از ۳۰ روز برای همیشه پاک می‌شوند</li>
+  </ul>
+
+  <h2>۶. حقوق شما — قطع اتصال و حذف داده‌ها</h2>
+  <ul>
+  <li><strong>قطع Gmail:</strong> تنظیمات ← اتصالات ← «قطع اتصال» — دسترسی را نزد گوگل هم لغو می‌کنیم</li>
+  <li><strong>حذف داده‌های Gmail:</strong> تنظیمات ← اتصالات ← «حذف داده‌های Gmail» — همهٔ ایمیل‌های
+  همگام‌شده را کاملاً از سرورهای ما پاک می‌کند</li>
+  <li><strong>قطع واتساپ:</strong> تنظیمات ← اتصالات ← شماره «خروج»</li>
+  <li><strong>حذف داده‌های واتساپ:</strong> تنظیمات ← اتصالات ← شماره «حذف» — اتصال و همهٔ گفتگوها، پیام‌ها و
+  فایل‌های رسانه‌ای همگام‌شده را برای همیشه پاک می‌کند</li>
+  </ul>
+  <p>همچنین می‌توانید دسترسی را هر زمان در حساب گوگل خود لغو کنید:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  تماس: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>۷. تغییرات</h2>
+  <p>در صورت نیاز این سند را به‌روزرسانی می‌کنیم؛ نسخهٔ جاری همیشه در همین صفحه است.</p>
+
+</div>
+<div class="lang" data-lang="ku" lang="ku" hidden>
+<div class="note">Ev wergereke agahdariyê ye. Guhertoya almanî ji aliyê hiqûqî ve girêdayî ye.</div>
+
+  <h1>Polîtîkaya nepenîtiyê</h1>
+  <div class="updated">Rojanekirin: 29 Tîrmeh 2026</div>
+
+  <h2>1. Berpirsê daneyan</h2>
+  <p>Future Media GmbH, Swîsre — <a href="mailto:info@future-media.ch">info@future-media.ch</a></p>
+  <p>PLANMOVE nermalavek e ji bo şirketên barkirin û paqijiyê
+  (<a href="https://app.planmove.ch">app.planmove.ch</a>). Ev polîtîka diyar dike ka em kîjan daneyan, ji bo
+  çi berhev dikin — û mafên we çi ne. Qanûna parastina daneyan a Swîsreyê (DSG) û, li cihê pêwîst, GDPR
+  derbasdar in.</p>
+
+  <h2>2. Daneyên ku em berhev dikin</h2>
+  <div class="card"><strong>Daneyên hesabê</strong>
+  <p>Nav, e-nameya kar, agahiyên şirketê (nav, navnîşan, logo, IBAN ji bo kodên QR yên fatûreyan), şîfre
+  (tenê wek hash tê tomarkirin).</p></div>
+  <div class="card"><strong>Daneyên mişteriyên şirketa we</strong>
+  <p>Têkilî, daxwaz (lead), pêşniyar, fatûre, randevû û demjimêrên kar ên ku hûn an karmendên we di PLANMOVE
+  de tomar dikin. Ev dane yên şirketa we ne; her şirket tenê daneyên xwe dibîne.</p></div>
+  <div class="card"><strong>Daneyên Gmail (tenê bi razîbûna we ya eşkere)</strong>
+  <p>Heke hûn hesabê Gmail girê bidin, em e-nameyên hatî dixwînin (destûra <em>gmail.readonly</em>) da ku
+  daxwazên mişteriyan nîşan bidin û rêk bixin, û bi navê we e-nameyan wek pêşniyar û fatûre dişînin (destûra
+  <em>gmail.send</em>). Kilîtên gihiştinê (tokenên OAuth) tenê şîfrekirî tên tomarkirin (AES-256-GCM).</p></div>
+  <div class="card"><strong>Peyamên WhatsApp</strong>
+  <p>Heke hûn hejmareke WhatsApp girê bidin, em axaftinên mişteriyan berhev dikin da ku di PLANMOVE de nîşan
+  bidin û werger bikin.</p></div>
+  <div class="card"><strong>Alîkarê dengî</strong>
+  <p>Bi bikaranîna alîkarê dengî, axaftin tê nivîsandin û bi hesabê we ve tê girêdan; dîrok piştî 90 rojan
+  bixweber tên jêbirin.</p></div>
+
+  <h2>3. Armancên bikaranînê</h2>
+  <ul>
+  <li>Pêşkêşkirina fonksiyonên PLANMOVE (CRM, pêşniyar/fatûre, e-name, WhatsApp, salname, alîkar)</li>
+  <li>Fonksiyonên AI (kurte, pêşniyarên bersivê, werger) — tenê bi daxwaza we</li>
+  <li>Bê reklam, bê firotina daneyan, bê profîlkirin ji bo armancên kesên din</li>
+  </ul>
+  <div class="card highlight"><strong>Google API Services – Limited Use</strong>
+  <p>Bikaranîna daneyên ku em bi rêya APIyên Google distînin, li gorî
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+  API Services User Data Policy</a> ye, tevî şertên <strong>Limited Use</strong>: em daneyên Gmail tenê ji bo
+  fonksiyonên xuyayî yên li jor bi kar tînin; em wan nagihînin aliyên sêyem (ji bilî pêvajokerên van
+  fonksiyonan), ji bo reklamê bi kar naynin û destûra xwendina mirovî nadin, ji bilî bi razîbûna we, ji ber
+  sedemên ewlehiyê an daxwaza qanûnê. Daneyên Gmail ji bo perwerdekirina modelên giştî yên AI nayên
+  bikaranîn.</p></div>
+
+  <h2>4. Pêvajokerên daneyan</h2>
+  <ul>
+  <li><strong>Hosting:</strong> server li Almanyayê (YE); paşekopiyên şîfrekirî li YE</li>
+  <li><strong>Fonksiyonên AI:</strong> OpenAI û Google (alîkarê dengî) — tenê naveroka pêwîst tê şandin</li>
+  <li><strong>E-name/salname:</strong> Google (Gmail, Google Calendar), Microsoft (Outlook) — tenê ji bo
+  hesabên ku we girêdane</li>
+  </ul>
+
+  <h2>5. Dema tomarkirinê &amp; ewlehî</h2>
+  <ul>
+  <li>Dane heta ku hesabê şirketa we hebe an heta hûn jê bibin tên tomarkirin</li>
+  <li>Tokenên OAuth û şîfre şîfrekirî an hashkirî tên tomarkirin</li>
+  <li>Veguhastin tenê bi TLS (HTTPS)</li>
+  <li>Dîroka alîkar: jêbirina bixweber piştî 90 rojan; belgeyên jêbirî piştî 30 rojan bi dawî tên rakirin</li>
+  </ul>
+
+  <h2>6. Mafên we — veqetandin &amp; jêbirina daneyan</h2>
+  <ul>
+  <li><strong>Gmail veqetîne:</strong> Mîheng → Girêdan → «Veqetîne» — em gihiştinê li cem Google jî betal
+  dikin</li>
+  <li><strong>Daneyên Gmail jê bibe:</strong> Mîheng → Girêdan → «Daneyên Gmail jê bibe» — hemû e-nameyên
+  hevdemkirî bi temamî ji serverên me radike</li>
+  <li><strong>WhatsApp veqetîne:</strong> Mîheng → Girêdan → hejmar «Derkeve»</li>
+  <li><strong>Daneyên WhatsApp jê bibe:</strong> Mîheng → Girêdan → hejmar «Rake» — girêdan û hemû sohbet,
+  peyam û pelên medyayê yên hevdemkirî bi temamî jê dibe</li>
+  </ul>
+  <p>Hûn dikarin gihiştinê her dem di hesabê xwe yê Google de jî betal bikin:
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+  Têkilî: <a href="mailto:info@future-media.ch">info@future-media.ch</a>.</p>
+
+  <h2>7. Guhertin</h2>
+  <p>Em vê polîtîkayê li gorî pêwîstiyê rojane dikin; guhertoya heyî her dem li ser vê rûpelê ye.</p>
+
+</div>
+</div>
+<script>
+  var CODES = ["de", "en", "fr", "it", "pt", "tr", "sq", "ru", "ar", "fa", "ku"];
+  var RTL = ["ar", "fa"];
+  function pick(l) {
+    if (CODES.indexOf(l) === -1) l = 'de';
+    document.querySelectorAll('.lang').forEach(function (d) { d.hidden = d.getAttribute('data-lang') !== l; });
+    document.querySelectorAll('.lp').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-l') === l); });
+    document.documentElement.lang = l;
+    try { localStorage.setItem('pm-ds-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.lp').forEach(function (b) {
+    b.addEventListener('click', function () { pick(b.getAttribute('data-l')); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('pm-ds-lang'); } catch (e) {}
+  var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
+  pick(saved || nav);
+</script>
 </body>
 </html>

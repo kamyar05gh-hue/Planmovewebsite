@@ -23,11 +23,24 @@
   .top a { font-weight: 700; text-decoration: none; font-size: 14px; }
   .note { background: #fffbe6; border: 1px solid #f2e4a2; border-radius: 10px;
           padding: 8px 12px; font-size: 13px; color: #7a6413; margin-bottom: 22px; }
-  .langs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 26px; }
-  .lp { border: 1px solid rgba(0,0,0,0.14); background: #fff; color: #1a1a2e;
-        border-radius: 999px; padding: 6px 13px; font: inherit; font-size: 13px;
-        font-weight: 600; cursor: pointer; }
-  .lp.on { background: #16803c; border-color: #16803c; color: #fff; }
+  .langs { position: relative; display: inline-block; margin-bottom: 26px; }
+  .ld-btn { display: inline-flex; align-items: center; gap: 8px;
+            border: 1px solid rgba(0,0,0,0.14); background: #fff; color: #1a1a2e;
+            border-radius: 12px; padding: 9px 14px; font: inherit; font-size: 14px;
+            font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .ld-btn .ld-caret { font-size: 11px; color: #777; }
+  .ld-menu { position: absolute; top: calc(100% + 6px); inset-inline-start: 0; z-index: 10;
+             background: #fff; border: 1px solid rgba(0,0,0,0.12); border-radius: 14px;
+             box-shadow: 0 10px 30px rgba(0,0,0,0.14); padding: 6px; min-width: 190px;
+             max-height: 320px; overflow-y: auto; display: none; }
+  .ld-menu.open { display: block; }
+  .ld-item { display: flex; align-items: center; gap: 10px; width: 100%;
+             border: 0; background: none; color: #1a1a2e; border-radius: 9px;
+             padding: 9px 11px; font: inherit; font-size: 14px; font-weight: 600;
+             cursor: pointer; text-align: start; }
+  .ld-item:hover { background: rgba(0,0,0,0.05); }
+  .ld-item.on { background: #e8f5ec; color: #16803c; }
+  .ld-flag { font-size: 18px; line-height: 1; }
   [dir="rtl"] { text-align: right; }
 </style>
 </head>
@@ -35,17 +48,22 @@
 <div class="wrap">
   <div class="top"><a href="https://planmove.ch">← planmove.ch</a></div>
   <div class="langs">
-      <button class="lp" data-l="de" type="button">Deutsch</button>
-      <button class="lp" data-l="en" type="button">English</button>
-      <button class="lp" data-l="fr" type="button">Français</button>
-      <button class="lp" data-l="it" type="button">Italiano</button>
-      <button class="lp" data-l="pt" type="button">Português</button>
-      <button class="lp" data-l="tr" type="button">Türkçe</button>
-      <button class="lp" data-l="sq" type="button">Shqip</button>
-      <button class="lp" data-l="ru" type="button">Русский</button>
-      <button class="lp" data-l="ar" type="button">العربية</button>
-      <button class="lp" data-l="fa" type="button">فارسی</button>
-      <button class="lp" data-l="ku" type="button">Kurdî</button>
+    <button class="ld-btn" id="ldBtn" type="button" aria-haspopup="listbox">
+      <span id="ldCurrent">🇩🇪 Deutsch</span><span class="ld-caret">▾</span>
+    </button>
+    <div class="ld-menu" id="ldMenu" role="listbox">
+        <button class="ld-item" data-l="de" type="button" role="option"><span class="ld-flag">🇩🇪</span><span>Deutsch</span></button>
+        <button class="ld-item" data-l="en" type="button" role="option"><span class="ld-flag">🇬🇧</span><span>English</span></button>
+        <button class="ld-item" data-l="fr" type="button" role="option"><span class="ld-flag">🇫🇷</span><span>Français</span></button>
+        <button class="ld-item" data-l="it" type="button" role="option"><span class="ld-flag">🇮🇹</span><span>Italiano</span></button>
+        <button class="ld-item" data-l="pt" type="button" role="option"><span class="ld-flag">🇵🇹</span><span>Português</span></button>
+        <button class="ld-item" data-l="tr" type="button" role="option"><span class="ld-flag">🇹🇷</span><span>Türkçe</span></button>
+        <button class="ld-item" data-l="sq" type="button" role="option"><span class="ld-flag">🇦🇱</span><span>Shqip</span></button>
+        <button class="ld-item" data-l="ru" type="button" role="option"><span class="ld-flag">🇷🇺</span><span>Русский</span></button>
+        <button class="ld-item" data-l="ar" type="button" role="option"><span class="ld-flag">🇸🇦</span><span>العربية</span></button>
+        <button class="ld-item" data-l="fa" type="button" role="option"><span class="ld-flag">🇮🇷</span><span>فارسی</span></button>
+        <button class="ld-item" data-l="ku" type="button" role="option"><span class="ld-flag">☀️</span><span>Kurdî</span></button>
+    </div>
   </div>
 <div class="lang" data-lang="de" lang="de" hidden>
 
@@ -944,15 +962,21 @@
 <script>
   var CODES = ["de", "en", "fr", "it", "pt", "tr", "sq", "ru", "ar", "fa", "ku"];
   var RTL = ["ar", "fa"];
+  var LABELS = {"de": "🇩🇪 Deutsch", "en": "🇬🇧 English", "fr": "🇫🇷 Français", "it": "🇮🇹 Italiano", "pt": "🇵🇹 Português", "tr": "🇹🇷 Türkçe", "sq": "🇦🇱 Shqip", "ru": "🇷🇺 Русский", "ar": "🇸🇦 العربية", "fa": "🇮🇷 فارسی", "ku": "☀️ Kurdî"};
   function pick(l) {
     if (CODES.indexOf(l) === -1) l = 'de';
     document.querySelectorAll('.lang').forEach(function (d) { d.hidden = d.getAttribute('data-lang') !== l; });
-    document.querySelectorAll('.lp').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-l') === l); });
+    document.querySelectorAll('.ld-item').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-l') === l); });
+    document.getElementById('ldCurrent').textContent = LABELS[l];
     document.documentElement.lang = l;
     try { localStorage.setItem('pm-ds-lang', l); } catch (e) {}
   }
-  document.querySelectorAll('.lp').forEach(function (b) {
-    b.addEventListener('click', function () { pick(b.getAttribute('data-l')); });
+  var btn = document.getElementById('ldBtn');
+  var menu = document.getElementById('ldMenu');
+  btn.addEventListener('click', function (e) { e.stopPropagation(); menu.classList.toggle('open'); });
+  document.addEventListener('click', function () { menu.classList.remove('open'); });
+  document.querySelectorAll('.ld-item').forEach(function (b) {
+    b.addEventListener('click', function () { pick(b.getAttribute('data-l')); menu.classList.remove('open'); });
   });
   var saved = null;
   try { saved = localStorage.getItem('pm-ds-lang'); } catch (e) {}

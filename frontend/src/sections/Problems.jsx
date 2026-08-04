@@ -112,7 +112,7 @@ const ProblemCard = ({ p, card }) => {
         />
         {/* Number badge — top-left */}
         <span
-          className="absolute top-4 left-4 grid place-items-center h-9 w-9 md:h-10 md:w-10 rounded-full bg-[#25D366] text-white font-display font-extrabold text-[16px] md:text-[17px] shadow-[0_10px_25px_-8px_rgba(37,211,102,0.6)] tabular-nums"
+          className="absolute top-4 left-4 grid place-items-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-[#25D366] text-white font-display font-extrabold text-[15px] md:text-[16px] shadow-[0_10px_25px_-8px_rgba(37,211,102,0.6)] tabular-nums"
           aria-hidden
         >
           {p.n}
@@ -120,11 +120,11 @@ const ProblemCard = ({ p, card }) => {
       </div>
 
       {/* Copy */}
-      <div className="flex flex-col flex-1 items-start text-left p-7 md:p-10">
-        <h3 className="font-display font-extrabold tracking-[-0.02em] text-[24px] md:text-[30px] leading-[1.1] text-black">
+      <div className="flex flex-col flex-1 items-start text-left p-6 md:p-7">
+        <h3 className="font-display font-extrabold tracking-[-0.02em] text-[20px] md:text-[22px] leading-[1.1] text-black">
           <Segs segs={card.title} hlClass="text-[#1EB955]" />
         </h3>
-        <p className="mt-5 md:mt-6 text-[16px] md:text-[18px] leading-[1.7] text-black/60 max-w-[540px]">
+        <p className="mt-4 md:mt-5 text-[15px] md:text-[16px] leading-[1.7] text-black/60 max-w-[540px]">
           <BodySegs segs={card.body} hlClass="text-[#1EB955] font-semibold" />
         </p>
       </div>
@@ -268,8 +268,8 @@ export const Problems = () => {
         </motion.div>
 
         <div id="loesungen" className="relative">
-          {/* 2-col grid on desktop, single on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+          {/* 3-col grid on desktop (2 rows of 3), 2-col on tablet, single on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-stretch">
             {problems.map((p) => (
               <ProblemCard key={p.n} p={p} card={t.problems.cards[p.n - 1]} />
             ))}

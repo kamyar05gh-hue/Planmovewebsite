@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -23,6 +23,29 @@ export const HeroVisual = () => {
   const [muted, setMuted] = useState(true);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  // Autoplay: try with sound first (allowed for returning/engaged visitors);
+  // browsers that block unmuted autoplay fall back to muted + unmute on first tap.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    const attempt = v.play();
+    if (!attempt || !attempt.catch) return;
+    attempt
+      .then(() => setMuted(false))
+      .catch(() => {
+        v.muted = true;
+        setMuted(true);
+        v.play().catch(() => {});
+        const unmute = () => {
+          v.muted = false;
+          setMuted(false);
+        };
+        window.addEventListener("pointerdown", unmute, { once: true });
+        window.addEventListener("keydown", unmute, { once: true });
+      });
+  }, []);
 
   const togglePlay = () => {
     const v = videoRef.current;
@@ -65,23 +88,22 @@ export const HeroVisual = () => {
         }}
       />
 
-      {/* Caption headline (two lines) + bouncing arrow chip pointing at the video */}
+      {/* Caption headline (two lines on desktop, balanced wrap on mobile) + bouncing arrow */}
       <h3
-        className="mb-4 md:mb-5 text-center font-display font-extrabold tracking-[-0.02em] text-[22px] md:text-[30px] leading-[1.15] text-black"
+        className="mb-3 md:mb-4 max-w-[560px] px-2 text-center text-balance font-display font-extrabold tracking-[-0.02em] text-[24px] md:text-[34px] leading-[1.2] md:leading-[1.15] text-black"
         data-testid="hero-video-caption"
       >
         {t.hero.videoCaptionA}
         <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
         {t.hero.videoCaptionB}
-        <br />
+        <br className="hidden md:block" />
         <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl2}</span>
       </h3>
-      <span
+      <ArrowDown
         aria-hidden
-        className="mb-5 md:mb-7 grid place-items-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-b from-[#0EA5E9] to-[#0369A1] shadow-[0_12px_25px_-8px_rgba(14,165,233,0.6),inset_0_1px_1px_rgba(255,255,255,0.35)] animate-bounce-slow"
-      >
-        <ArrowDown className="h-5 w-5 md:h-6 md:w-6 text-white" strokeWidth={3} />
-      </span>
+        strokeWidth={2.75}
+        className="mb-5 md:mb-7 h-7 w-7 md:h-8 md:w-8 text-[#0EA5E9] animate-bounce-slow"
+      />
 
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}
       <div

@@ -1,14 +1,14 @@
 import { Check } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-// Pill chip with gradient tick — used in the scrolling marquee
+// Pill chip with a standard flat check — used in the scrolling marquee
 const TrustPill = ({ label, testId }) => (
   <li
     {...(testId ? { "data-testid": testId } : {})}
-    className="flex items-center gap-2.5 rounded-full border border-black/[0.06] bg-white pl-2 pr-5 py-2 shadow-[0_8px_20px_-12px_rgba(2,32,71,0.25)] whitespace-nowrap"
+    className="mr-4 md:mr-5 flex items-center gap-2.5 rounded-full border border-black/[0.06] bg-white pl-2 pr-5 py-2 shadow-[0_8px_20px_-12px_rgba(2,32,71,0.25)] whitespace-nowrap"
   >
-    <span className="grid place-items-center h-7 w-7 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] shadow-[inset_0_1px_1px_rgba(255,255,255,0.35)] shrink-0">
-      <Check className="h-3.5 w-3.5 text-white" strokeWidth={3.5} />
+    <span className="grid place-items-center h-6 w-6 rounded-full bg-[#0EA5E9] shrink-0">
+      <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
     </span>
     <span className="text-[13px] md:text-[14px] font-semibold tracking-tight text-black/75">
       {label}
@@ -35,8 +35,9 @@ export const TrustBar = () => {
           aria-hidden
           className="absolute inset-y-0 right-0 w-16 md:w-32 z-10 pointer-events-none bg-gradient-to-l from-[#F9FAFB] to-transparent"
         />
-        {/* Seamless loop: list rendered twice, marquee translates -50% */}
-        <ul className="trust-marquee flex items-center gap-4 md:gap-5 w-max">
+        {/* Seamless loop: list rendered twice, each pill carries its own right
+            margin so translateX(-50%) lands exactly on the second copy */}
+        <ul className="trust-marquee flex items-center w-max">
           {[...items, ...items].map((label, i) => (
             <TrustPill
               key={i}

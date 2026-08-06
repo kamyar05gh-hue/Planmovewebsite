@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, Volume2, VolumeX, Maximize, ArrowDown } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const ACCENT = "#0EA5E9";
@@ -90,20 +90,28 @@ export const HeroVisual = () => {
 
       {/* Caption headline (two lines on desktop, balanced wrap on mobile) + bouncing arrow */}
       <h3
-        className="mb-3 md:mb-4 max-w-[560px] px-2 text-center text-balance font-display font-extrabold tracking-[-0.02em] text-[24px] md:text-[34px] leading-[1.2] md:leading-[1.15] text-black"
+        className="mb-3 md:mb-4 max-w-[640px] px-2 text-center text-balance font-display tracking-[-0.02em] text-[26px] md:text-[38px] leading-[1.2] md:leading-[1.15] text-black"
         data-testid="hero-video-caption"
       >
         {t.hero.videoCaptionA}
-        <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
+        <span className="font-semibold text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
         {t.hero.videoCaptionB}
         <br className="hidden md:block" />
-        <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl2}</span>
+        <span className="font-extrabold">{t.hero.videoCaptionHl2}</span>
       </h3>
-      <ArrowDown
+      <svg
         aria-hidden
-        strokeWidth={2.75}
-        className="mb-5 md:mb-7 h-7 w-7 md:h-8 md:w-8 text-[#0EA5E9] animate-bounce-slow"
-      />
+        viewBox="0 0 20 40"
+        className="mb-5 md:mb-7 h-9 w-[18px] md:h-11 md:w-[22px] text-[#0EA5E9] animate-bounce-slow"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="10" y1="3" x2="10" y2="32" />
+        <polyline points="3,26 10,35 17,26" />
+      </svg>
 
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}
       <div

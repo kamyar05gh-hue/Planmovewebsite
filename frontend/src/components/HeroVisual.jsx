@@ -94,7 +94,7 @@ export const HeroVisual = () => {
         data-testid="hero-video-caption"
       >
         {t.hero.videoCaptionA}
-        <span className="font-semibold text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
+        <span className="font-bold text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
         {t.hero.videoCaptionB}
         <br className="hidden md:block" />
         <span className="font-extrabold">{t.hero.videoCaptionHl2}</span>

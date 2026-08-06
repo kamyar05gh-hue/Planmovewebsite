@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const ACCENT = "#0EA5E9";
@@ -54,7 +54,7 @@ export const HeroVisual = () => {
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center" data-testid="hero-visual">
+    <div className="relative w-full flex flex-col items-center justify-center" data-testid="hero-visual">
       {/* Ambient glow */}
       <div
         aria-hidden
@@ -63,6 +63,22 @@ export const HeroVisual = () => {
           background:
             "radial-gradient(55% 50% at 55% 50%, rgba(14,165,233,0.16), transparent 65%)",
         }}
+      />
+
+      {/* Caption + bouncing arrow pointing at the video */}
+      <p
+        className="mb-2.5 md:mb-3 text-center text-[14px] md:text-[16px] font-semibold text-black/70"
+        data-testid="hero-video-caption"
+      >
+        {t.hero.videoCaptionA}
+        <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
+        {t.hero.videoCaptionB}
+        <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl2}</span>
+      </p>
+      <ArrowDown
+        aria-hidden
+        strokeWidth={2.5}
+        className="mb-3 md:mb-4 h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9] animate-bounce-slow"
       />
 
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}

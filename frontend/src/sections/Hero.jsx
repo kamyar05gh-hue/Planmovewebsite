@@ -34,11 +34,11 @@ export const Hero = () => {
       />
 
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* LEFT — Copy */}
           <div className="lg:col-span-5 relative z-10">
             <p
-              className="pm-fade-up text-[13px] md:text-[15px] tracking-[0.08em] md:tracking-[0.1em] uppercase font-bold text-[#ee7736]"
+              className="pm-fade-up text-[13px] md:text-[15px] tracking-[0.08em] md:tracking-[0.1em] uppercase font-bold text-[#0369A1]"
               style={{ animationDelay: "0.2s", animationDuration: "0.6s" }}
               data-testid="hero-tagline"
             >
@@ -70,6 +70,14 @@ export const Hero = () => {
               ]}
             />
 
+            <p
+              className="pm-fade-up mt-4 md:mt-5 max-w-xl text-[15px] md:text-[17px] font-bold leading-snug text-black/80"
+              style={{ animationDelay: "0.9s" }}
+              data-testid="hero-subtitle"
+            >
+              {t.hero.subtitle}
+            </p>
+
             <ul
               className="pm-fade-up mt-6 max-w-xl space-y-2.5 text-[14px] md:text-[15px] leading-relaxed text-black/75 font-semibold"
               style={{ animationDelay: "1.05s" }}
@@ -84,7 +92,7 @@ export const Hero = () => {
             </ul>
 
             <div
-              className="pm-fade-up mt-7 md:mt-8 flex flex-col items-start gap-3.5"
+              className="pm-fade-up mt-7 md:mt-8 flex flex-col items-start gap-6"
               style={{ animationDelay: "1.25s" }}
             >
               {/* Google Review chip */}

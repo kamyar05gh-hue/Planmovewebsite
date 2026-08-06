@@ -35,7 +35,7 @@ const TestimonialCard = ({ tr }) => (
     </div>
 
     <p className="relative mt-5 font-display font-medium tracking-tight text-[15px] md:text-[17px] leading-[1.55] text-white/85 flex-1">
-      “{tr.quote.replace(/^["«„]|["»”]$/g, "")}”
+      {tr.quote.replace(/^["«„“]+|["»”"]+$/g, "")}
     </p>
 
     <div className="relative mt-6 pt-5 border-t border-[#0EA5E9]/15 flex items-center gap-3">

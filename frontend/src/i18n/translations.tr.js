@@ -26,12 +26,15 @@ export const tr = {
     flagAria: "İsviçre",
     headlines: ["Daha fazla müşteri.", "Daha fazla zaman.", "Daha fazla para."],
     headlineHighlight: "Daha az stres.",
+    subtitle:
+      "Ofis için ilk yapay zekâ çalışanı – taşıma ve temizlik şirketleri için özel olarak tasarlandı.",
+    videoCaptionA: "Sadece ",
+    videoCaptionHl1: "60 saniye",
+    videoCaptionB: " içinde ",
+    videoCaptionHl2: "PlanMove'un nasıl çalıştığını anında anlarsınız.",
     benefits: [
       "PLANMOVE KI teklifleri, faturaları ve yanıtları oluşturur – sadece sesli komut veya WhatsApp ile.",
       "Sadece kendi ana dilinizde konuşun – PLANMOVE KI mükemmel Almanca veya müşterinizin dilinde yazar.",
-      "E-postaları ve mektupları saniyeler içinde halledin – PLANMOVE KI içeriği açıklar ve anında profesyonel bir yanıt oluşturur.",
-      "Bir daha gece geç saatlere kadar ofiste kalmayın – PLANMOVE KI talepleri yanıtlar ve ofis işlerinizi sizin için halleder.",
-      "Artık hiçbir müşteri unutulmuyor – PLANMOVE KI açık teklifler için müşterileri otomatik olarak hatırlatır.",
     ],
     starsAria: "5 üzerinden 4,9 yıldız",
     reviews: "120+ değerlendirme",
@@ -194,37 +197,37 @@ export const tr = {
         name: "Markus H.",
         role: "Taşıma girişimcisi",
         quote:
-          "“Eskiden mesai sonrası iki saat evrak işi vardı. Şimdi telefona 40 saniye konuşuyorum — bitti. Akşamlarımı geri kazandım.”",
+          "Eskiden mesai sonrası iki saat evrak işi vardı. Şimdi telefona 40 saniye konuşuyorum — bitti. Akşamlarımı geri kazandım.",
       },
       {
         name: "Elena B.",
         role: "Temizlik girişimcisi",
         quote:
-          "“Portekiz'de büyüdüm. PLANMOVE KI ana dilimi anlıyor ve düzgün Almanca yazıyor. Müşterilerim farkı hissediyor.”",
+          "Portekiz'de büyüdüm. PLANMOVE KI ana dilimi anlıyor ve düzgün Almanca yazıyor. Müşterilerim farkı hissediyor.",
       },
       {
         name: "Thomas K.",
         role: "Nakliye girişimcisi",
         quote:
-          "“Otomatik takip geçen ay, aksi halde unutacağım üç işi kurtardı. PLANMOVE KI kendini katbekat amorti ediyor.”",
+          "Otomatik takip geçen ay, aksi halde unutacağım üç işi kurtardı. PLANMOVE KI kendini katbekat amorti ediyor.",
       },
       {
         name: "Sara M.",
         role: "Temizlik girişimcisi",
         quote:
-          "“PLANMOVE KI talepleri geceleri ve hafta sonları yanıtlıyor — bu bana gerçek bir huzur veriyor.”",
+          "PLANMOVE KI talepleri geceleri ve hafta sonları yanıtlıyor — bu bana gerçek bir huzur veriyor.",
       },
       {
         name: "David R.",
         role: "Taşıma girişimcisi",
         quote:
-          "“PLANMOVE KI kullanmaya başladığımızdan beri dakikalar içinde profesyonel teklifler hazırlıyoruz. Bu zaman kazandırıyor ve müşterilerin gözünde çok daha güvenilir görünüyoruz.”",
+          "PLANMOVE KI kullanmaya başladığımızdan beri dakikalar içinde profesyonel teklifler hazırlıyoruz. Bu zaman kazandırıyor ve müşterilerin gözünde çok daha güvenilir görünüyoruz.",
       },
       {
         name: "Primemove Ekibi",
         role: "Primemove",
         quote:
-          "“PLANMOVE KI ofis hayatımızı tamamen değiştirdi. Daha fazla zaman, daha az stres, mutlu müşteriler.”",
+          "PLANMOVE KI ofis hayatımızı tamamen değiştirdi. Daha fazla zaman, daha az stres, mutlu müşteriler.",
       },
     ],
   },

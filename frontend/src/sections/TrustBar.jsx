@@ -1,12 +1,19 @@
 import { Check } from "lucide-react";
-import Reveal from "@/components/Reveal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-// Gradient icon tile — modern glassy chip with soft accent glow
-const TickTile = () => (
-  <span className="relative grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-2xl shrink-0 bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] shadow-[0_10px_22px_-8px_rgba(14,165,233,0.55),inset_0_1px_1px_rgba(255,255,255,0.35)] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
-    <Check className="h-5 w-5 md:h-[22px] md:w-[22px] text-white" strokeWidth={3.2} />
-  </span>
+// Pill chip with gradient tick — used in the scrolling marquee
+const TrustPill = ({ label, testId }) => (
+  <li
+    {...(testId ? { "data-testid": testId } : {})}
+    className="flex items-center gap-2.5 rounded-full border border-black/[0.06] bg-white pl-2 pr-5 py-2 shadow-[0_8px_20px_-12px_rgba(2,32,71,0.25)] whitespace-nowrap"
+  >
+    <span className="grid place-items-center h-7 w-7 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] shadow-[inset_0_1px_1px_rgba(255,255,255,0.35)] shrink-0">
+      <Check className="h-3.5 w-3.5 text-white" strokeWidth={3.5} />
+    </span>
+    <span className="text-[13px] md:text-[14px] font-semibold tracking-tight text-black/75">
+      {label}
+    </span>
+  </li>
 );
 
 export const TrustBar = () => {
@@ -15,28 +22,29 @@ export const TrustBar = () => {
   return (
     <section
       id="vorteile"
-      className="relative bg-[#F9FAFB] border-b border-black/[0.06]"
+      className="relative bg-[#F9FAFB] border-b border-black/[0.06] overflow-hidden"
       data-testid="trust-bar"
     >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-8 md:py-14">
-        <Reveal>
-          <div className="rounded-[1.5rem] md:rounded-[2rem] border border-black/[0.05] bg-white shadow-[0_20px_50px_-30px_rgba(2,32,71,0.15)] px-6 py-7 md:px-10 md:py-9">
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-7 md:gap-y-8">
-              {items.map((label, i) => (
-                <li
-                  key={i}
-                  className="group flex flex-col items-center text-center"
-                  data-testid={`trust-item-${i}`}
-                >
-                  <TickTile />
-                  <p className="mt-3.5 md:mt-4 text-[12px] md:text-[14px] font-semibold tracking-tight text-black/75 leading-snug max-w-[180px] transition-colors duration-300 group-hover:text-black">
-                    {label}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+      <div className="trust-marquee-wrap relative py-6 md:py-10">
+        {/* Edge fades */}
+        <div
+          aria-hidden
+          className="absolute inset-y-0 left-0 w-16 md:w-32 z-10 pointer-events-none bg-gradient-to-r from-[#F9FAFB] to-transparent"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-y-0 right-0 w-16 md:w-32 z-10 pointer-events-none bg-gradient-to-l from-[#F9FAFB] to-transparent"
+        />
+        {/* Seamless loop: list rendered twice, marquee translates -50% */}
+        <ul className="trust-marquee flex items-center gap-4 md:gap-5 w-max">
+          {[...items, ...items].map((label, i) => (
+            <TrustPill
+              key={i}
+              label={label}
+              testId={i < items.length ? `trust-item-${i}` : undefined}
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

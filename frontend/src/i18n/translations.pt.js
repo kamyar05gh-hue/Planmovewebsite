@@ -18,12 +18,15 @@ export const pt = {
     flagAria: "Suíça",
     headlines: ["Mais clientes.", "Mais tempo.", "Mais dinheiro."],
     headlineHighlight: "Menos stress.",
+    subtitle:
+      "O primeiro funcionário de IA para o escritório – feito especificamente para empresas de mudanças e limpeza.",
+    videoCaptionA: "Apenas ",
+    videoCaptionHl1: "60 segundos",
+    videoCaptionB: " e percebe imediatamente como ",
+    videoCaptionHl2: "o PlanMove funciona.",
     benefits: [
       "O PLANMOVE KI cria orçamentos, faturas e respostas – simplesmente por voz ou WhatsApp.",
       "Fale simplesmente na sua língua materna – o PLANMOVE KI escreve em alemão perfeito ou na língua do seu cliente.",
-      "Trate de e-mails e cartas em segundos – o PLANMOVE KI explica o conteúdo e cria de imediato uma resposta profissional.",
-      "Nunca mais fique no escritório até tarde – o PLANMOVE KI responde a pedidos e trata do seu trabalho de escritório por si.",
-      "Nenhum cliente volta a ficar esquecido – o PLANMOVE KI lembra os clientes automaticamente de orçamentos pendentes.",
     ],
     starsAria: "4.9 de 5 estrelas",
     reviews: "Mais de 120 avaliações",
@@ -186,37 +189,37 @@ export const pt = {
         name: "Markus H.",
         role: "Empresário de mudanças",
         quote:
-          "«Antes, duas horas de papelada depois do trabalho. Hoje falo 40 segundos para o telemóvel — está feito. Recuperei o meu fim de dia.»",
+          "Antes, duas horas de papelada depois do trabalho. Hoje falo 40 segundos para o telemóvel — está feito. Recuperei o meu fim de dia.",
       },
       {
         name: "Elena B.",
         role: "Empresária de limpeza",
         quote:
-          "«Cresci em Portugal. O PLANMOVE KI percebe a minha língua materna e escreve um alemão impecável. Os meus clientes notam a diferença.»",
+          "Cresci em Portugal. O PLANMOVE KI percebe a minha língua materna e escreve um alemão impecável. Os meus clientes notam a diferença.",
       },
       {
         name: "Thomas K.",
         role: "Empresário de transportes",
         quote:
-          "«O follow-up automático salvou-me três encomendas no mês passado, que de outra forma teria esquecido. O PLANMOVE KI compensa várias vezes.»",
+          "O follow-up automático salvou-me três encomendas no mês passado, que de outra forma teria esquecido. O PLANMOVE KI compensa várias vezes.",
       },
       {
         name: "Sara M.",
         role: "Empresária de limpeza",
         quote:
-          "«O PLANMOVE KI responde a pedidos de noite e ao fim de semana — isso dá-me uma verdadeira tranquilidade.»",
+          "O PLANMOVE KI responde a pedidos de noite e ao fim de semana — isso dá-me uma verdadeira tranquilidade.",
       },
       {
         name: "David R.",
         role: "Empresário de mudanças",
         quote:
-          "«Desde que usamos o PLANMOVE KI, escrevemos orçamentos profissionais em questão de minutos. Poupa tempo e parece muito mais sério aos olhos dos clientes.»",
+          "Desde que usamos o PLANMOVE KI, escrevemos orçamentos profissionais em questão de minutos. Poupa tempo e parece muito mais sério aos olhos dos clientes.",
       },
       {
         name: "Equipa Primemove",
         role: "Primemove",
         quote:
-          "«O PLANMOVE KI mudou completamente o nosso dia a dia no escritório. Mais tempo, menos stress, clientes satisfeitos.»",
+          "O PLANMOVE KI mudou completamente o nosso dia a dia no escritório. Mais tempo, menos stress, clientes satisfeitos.",
       },
     ],
   },

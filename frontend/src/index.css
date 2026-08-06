@@ -58,6 +58,20 @@ body {
     color: #ffffff;
 }
 
+/* Soft bouncing arrow above the hero video (slow, gentle) */
+@keyframes pmBounceSoft {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+.animate-bounce-slow {
+    animation: pmBounceSoft 2.4s ease-in-out infinite;
+}
+
 /* ---- Hero video player timeline — accent-colored, no hover color shift ---- */
 .pm-video-range {
     -webkit-appearance: none;

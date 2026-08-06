@@ -38,28 +38,28 @@ export const Hero = () => {
           {/* LEFT — Copy */}
           <div className="lg:col-span-5 relative z-10">
             <p
-              className="pm-fade-up text-[12px] md:text-[15px] tracking-[0.08em] md:tracking-[0.1em] uppercase font-bold text-[#0047ff]"
+              className="pm-fade-up text-[13px] md:text-[15px] tracking-[0.08em] md:tracking-[0.1em] uppercase font-bold text-[#ee7736]"
               style={{ animationDelay: "0.2s", animationDuration: "0.6s" }}
               data-testid="hero-tagline"
             >
-              <span className="inline-flex items-center gap-2">
-                <span
+              <span className="inline-flex items-center gap-2.5">
+                <svg
+                  viewBox="0 0 32 32"
+                  role="img"
                   aria-label={t.hero.flagAria}
-                  className="inline-grid place-items-center h-5 w-5 md:h-6 md:w-6 rounded-[4px] bg-[#D52B1E] text-white text-[10px] md:text-[11px] font-black tracking-wide"
-                  style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.15)" }}
+                  className="h-5 w-5 md:h-6 md:w-6 rounded-[4px] shadow-[0_2px_8px_-2px_rgba(213,43,30,0.5)]"
                 >
-                  <span className="relative flex items-center justify-center">
-                    <span className="absolute h-[3px] w-3.5 bg-white rounded-[1px]" />
-                    <span className="absolute w-[3px] h-3.5 bg-white rounded-[1px]" />
-                  </span>
-                </span>
+                  <rect width="32" height="32" rx="4" fill="#D52B1E" />
+                  <rect x="13" y="6" width="6" height="20" fill="#ffffff" />
+                  <rect x="6" y="13" width="20" height="6" fill="#ffffff" />
+                </svg>
                 <span>{t.hero.tagline}</span>
               </span>
             </p>
 
             <RevealText
               as="h1"
-              className="mt-3 md:mt-5 lg:mt-6 font-display font-extrabold tracking-[-0.035em] text-[36px] sm:text-[42px] md:text-[54px] lg:text-[58px] leading-[0.9]"
+              className="mt-4 md:mt-5 font-display font-extrabold tracking-[-0.035em] text-[36px] sm:text-[44px] md:text-[54px] lg:text-[58px] leading-[0.95]"
               lines={[
                 ...t.hero.headlines.map((line, i) => (
                   <span key={`l${i}`}>{line}</span>
@@ -71,7 +71,7 @@ export const Hero = () => {
             />
 
             <ul
-              className="pm-fade-up mt-4 md:mt-4 max-w-xl space-y-2 md:space-y-1.5 text-[13px] md:text-[15px] leading-relaxed md:leading-relaxed text-black/75 font-semibold"
+              className="pm-fade-up mt-6 max-w-xl space-y-2.5 text-[14px] md:text-[15px] leading-relaxed text-black/75 font-semibold"
               style={{ animationDelay: "1.05s" }}
               data-testid="hero-benefits-list"
             >
@@ -84,7 +84,7 @@ export const Hero = () => {
             </ul>
 
             <div
-              className="pm-fade-up mt-5 md:mt-5 flex flex-col items-start gap-3 md:gap-2.5"
+              className="pm-fade-up mt-7 md:mt-8 flex flex-col items-start gap-3.5"
               style={{ animationDelay: "1.25s" }}
             >
               {/* Google Review chip */}
@@ -140,8 +140,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT — Hero video (desktop only) */}
-          <div className="hidden lg:flex lg:col-span-7 relative justify-center h-full items-center">
+          {/* RIGHT — Hero video (below the copy on mobile) */}
+          <div className="flex lg:col-span-7 relative justify-center h-full items-center mt-10 lg:mt-0">
             <HeroVisual />
           </div>
         </div>

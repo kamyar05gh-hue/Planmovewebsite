@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -49,22 +48,24 @@ export const FAQ = () => {
                       <Plus className="h-4 w-4 md:h-5 md:w-5" strokeWidth={2.5} />
                     </span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  {/* One-motion accordion: grid-rows 0fr→1fr, no mount/unmount jank */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div
+                        className={`px-5 md:px-6 pb-5 md:pb-6 pt-0 transition-opacity duration-300 ${
+                          isOpen ? "opacity-100 delay-100" : "opacity-0"
+                        }`}
                       >
-                        <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0">
-                          <p className="text-[14px] md:text-[16px] leading-relaxed text-black/65">
-                            {item.a}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        <p className="text-[14px] md:text-[16px] leading-relaxed text-black/65">
+                          {item.a}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             );

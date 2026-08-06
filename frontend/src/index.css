@@ -58,6 +58,49 @@ body {
     color: #ffffff;
 }
 
+/* ---- Hero video player timeline — accent-colored, no hover color shift ---- */
+.pm-video-range {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+.pm-video-range::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(
+        to right,
+        #0EA5E9 var(--pm-progress, 0%),
+        rgba(255, 255, 255, 0.35) var(--pm-progress, 0%)
+    );
+}
+.pm-video-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 9999px;
+    background: #0EA5E9;
+    border: 2px solid #ffffff;
+    margin-top: -4px;
+}
+.pm-video-range::-moz-range-track {
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.35);
+}
+.pm-video-range::-moz-range-progress {
+    height: 6px;
+    border-radius: 9999px;
+    background: #0EA5E9;
+}
+.pm-video-range::-moz-range-thumb {
+    height: 10px;
+    width: 10px;
+    border-radius: 9999px;
+    background: #0EA5E9;
+    border: 2px solid #ffffff;
+}
+
 /* Lenis smooth scroll */
 html.lenis,
 html.lenis body {

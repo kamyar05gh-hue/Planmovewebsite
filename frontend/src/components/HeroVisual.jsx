@@ -68,10 +68,9 @@ export const HeroVisual = () => {
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}
       <div
         ref={containerRef}
-        className="relative w-full aspect-video"
-        style={{ filter: "drop-shadow(0 30px 60px rgba(2,32,71,0.35)) drop-shadow(0 8px 20px rgba(14,165,233,0.25))" }}
+        className="relative w-full aspect-video lg:scale-[1.05] xl:scale-[1.08] origin-center"
       >
-        <div className="relative h-full w-full rounded-[1.75rem] md:rounded-[2rem] overflow-hidden bg-[#E9E4DA]">
+        <div className="relative h-full w-full rounded-[1.75rem] md:rounded-[2rem] overflow-hidden bg-[#E9E4DA] shadow-[0_30px_60px_-15px_rgba(2,32,71,0.35),0_8px_24px_-8px_rgba(14,165,233,0.3)]">
           <video
             ref={videoRef}
             src="/videos/hero-video.mp4"
@@ -87,7 +86,7 @@ export const HeroVisual = () => {
             onPause={() => setPlaying(false)}
             onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
             onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-            className="absolute inset-0 h-full w-full object-cover cursor-pointer"
+            className="absolute inset-0 h-full w-full object-cover cursor-pointer scale-[1.02]"
           />
 
           {/* Custom control bar */}
@@ -122,8 +121,8 @@ export const HeroVisual = () => {
               value={time}
               onChange={onSeek}
               aria-label="Video timeline"
-              className="flex-1 h-1.5 cursor-pointer"
-              style={{ accentColor: ACCENT }}
+              className="pm-video-range flex-1 h-1.5"
+              style={{ "--pm-progress": `${duration ? (time / duration) * 100 : 0}%` }}
             />
 
             <span className="text-[11px] md:text-[13px] font-semibold text-white/60 tabular-nums shrink-0">

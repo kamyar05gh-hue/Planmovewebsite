@@ -39,8 +39,8 @@ export const translations = {
         "Der erste KI-Mitarbeiter fürs Büro – speziell für Umzugs- und Reinigungsunternehmen.",
       videoCaptionA: "Nur ",
       videoCaptionHl1: "60 Sekunden",
-      videoCaptionB: " und du verstehst sofort, wie ",
-      videoCaptionHl2: "PlanMove funktioniert.",
+      videoCaptionB: " und du verstehst sofort, ",
+      videoCaptionHl2: "wie PlanMove funktioniert.",
       benefits: [
         "PLANMOVE KI erstellt Offerten, Rechnungen & Antworten – einfach per Sprache oder WhatsApp.",
         "Sprechen Sie einfach in Ihrer Muttersprache – PLANMOVE KI schreibt perfektes Deutsch oder die Sprache Ihres Kunden.",

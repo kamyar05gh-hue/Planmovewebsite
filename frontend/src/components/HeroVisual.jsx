@@ -65,26 +65,28 @@ export const HeroVisual = () => {
         }}
       />
 
-      {/* Caption + bouncing arrow pointing at the video */}
-      <p
-        className="mb-2.5 md:mb-3 text-center text-[14px] md:text-[16px] font-semibold text-black/70"
+      {/* Caption headline (two lines) + bouncing arrow chip pointing at the video */}
+      <h3
+        className="mb-4 md:mb-5 text-center font-display font-extrabold tracking-[-0.02em] text-[22px] md:text-[30px] leading-[1.15] text-black"
         data-testid="hero-video-caption"
       >
         {t.hero.videoCaptionA}
         <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl1}</span>
         {t.hero.videoCaptionB}
+        <br />
         <span className="text-[#0EA5E9]">{t.hero.videoCaptionHl2}</span>
-      </p>
-      <ArrowDown
+      </h3>
+      <span
         aria-hidden
-        strokeWidth={2.5}
-        className="mb-3 md:mb-4 h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9] animate-bounce-slow"
-      />
+        className="mb-5 md:mb-7 grid place-items-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-b from-[#0EA5E9] to-[#0369A1] shadow-[0_12px_25px_-8px_rgba(14,165,233,0.6),inset_0_1px_1px_rgba(255,255,255,0.35)] animate-bounce-slow"
+      >
+        <ArrowDown className="h-5 w-5 md:h-6 md:w-6 text-white" strokeWidth={3} />
+      </span>
 
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}
       <div
         ref={containerRef}
-        className="relative w-full aspect-video lg:scale-[1.05] xl:scale-[1.08] origin-center"
+        className="relative w-full aspect-video mt-1 lg:mt-4 lg:scale-[1.05] xl:scale-[1.08] origin-center"
       >
         <div className="relative h-full w-full rounded-[1.75rem] md:rounded-[2rem] overflow-hidden bg-[#E9E4DA] shadow-[0_30px_60px_-15px_rgba(2,32,71,0.35),0_8px_24px_-8px_rgba(14,165,233,0.3)]">
           <video

@@ -19,7 +19,7 @@ export const HeroVisual = () => {
       />
 
       {/* Video canvas — 16:9 ratio matching the hero video so nothing is cropped */}
-      <div className="relative w-full max-w-[540px] md:max-w-[620px] lg:max-w-[680px] aspect-video">
+      <div className="relative w-full max-w-[560px] md:max-w-[700px] lg:max-w-[800px] aspect-video">
         <div className="relative h-full w-full rounded-[1.75rem] md:rounded-[2rem] overflow-hidden bg-[#E9E4DA] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.25)]">
           <video
             src="/videos/hero-video.mp4"
@@ -29,6 +29,7 @@ export const HeroVisual = () => {
             muted
             loop
             playsInline
+            controls
             preload="metadata"
             className="absolute inset-0 h-full w-full object-cover"
           />

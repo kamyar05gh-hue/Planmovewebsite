@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#0A0A0A] text-white">
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-10 mt-2 md:mt-2.5">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-10 mt-2 md:mt-2.5">
           <div className="relative flex items-center justify-between rounded-full px-4 md:px-6 py-2 border border-white/40 bg-white/90 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)]">
             <Link
               to="/"

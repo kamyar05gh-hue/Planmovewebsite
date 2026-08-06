@@ -9,9 +9,9 @@ const GlowCross = () => (
   </span>
 );
 
-// Plain green check — no circular frame
+// Plain blue check — no circular frame
 const GlowCheck = () => (
-  <span className="mt-0.5 grid place-items-center h-6 w-6 md:h-7 md:w-7 shrink-0 text-[#25D366]">
+  <span className="mt-0.5 grid place-items-center h-6 w-6 md:h-7 md:w-7 shrink-0 text-[#0EA5E9]">
     <Check className="h-6 w-6 md:h-7 md:w-7" strokeWidth={2.8} />
   </span>
 );
@@ -22,10 +22,10 @@ export const BeforeAfter = () => {
 
   return (
     <section
-      className="relative py-16 md:py-24 bg-[#F5F4EF] overflow-hidden"
+      className="relative py-16 md:py-28 bg-[#F5F4EF] overflow-hidden"
       data-testid="before-after-section"
     >
-      <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-5 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,12 +35,12 @@ export const BeforeAfter = () => {
         >
           <h2 className="font-display font-extrabold tracking-[-0.03em] text-[28px] sm:text-[38px] md:text-[52px] leading-[1.05] text-black">
             {data.headingBefore}
-            <span className="text-[#25D366]"> → </span>
+            <span className="text-[#0EA5E9]"> → </span>
             {data.headingAfter}
           </h2>
         </motion.div>
 
-        {/* Two-column comparison frame — black canvas, green ambient glow */}
+        {/* Two-column comparison frame — black canvas, blue ambient glow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,13 +48,13 @@ export const BeforeAfter = () => {
           transition={{ duration: 0.8 }}
           className="relative grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[2rem] border border-white/10 bg-[#0A0A0A] overflow-hidden shadow-[0_40px_80px_-40px_rgba(0,0,0,0.5)]"
         >
-          {/* Ambient green gradient wash */}
+          {/* Ambient blue gradient wash */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(60% 55% at 85% 15%, rgba(37,211,102,0.22), transparent 60%), radial-gradient(45% 40% at 15% 90%, rgba(37,211,102,0.10), transparent 65%)",
+                "radial-gradient(60% 55% at 85% 15%, rgba(14,165,233,0.22), transparent 60%), radial-gradient(45% 40% at 15% 90%, rgba(14,165,233,0.10), transparent 65%)",
             }}
           />
           {/* Subtle grid texture */}
@@ -109,7 +109,7 @@ export const BeforeAfter = () => {
           </div>
 
           {/* After column */}
-          <div className="relative p-6 sm:p-8 md:p-12 bg-gradient-to-br from-[#25D366]/[0.08] to-transparent">
+          <div className="relative p-6 sm:p-8 md:p-12 bg-gradient-to-br from-[#0EA5E9]/[0.08] to-transparent">
             <div className="flex items-center gap-3 mb-7 md:mb-9">
               <span className="relative grid place-items-center h-10 w-10 md:h-11 md:w-11 rounded-full shrink-0">
                 <span
@@ -117,11 +117,11 @@ export const BeforeAfter = () => {
                   className="absolute -inset-1.5 rounded-full"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(37,211,102,0.55) 0%, rgba(37,211,102,0.18) 50%, transparent 72%)",
+                      "radial-gradient(circle, rgba(14,165,233,0.55) 0%, rgba(14,165,233,0.18) 50%, transparent 72%)",
                     filter: "blur(5px)",
                   }}
                 />
-                <span className="relative grid place-items-center h-full w-full rounded-full bg-gradient-to-br from-[#25D366] to-[#15924A] shadow-[0_8px_20px_-6px_rgba(37,211,102,0.7)]">
+                <span className="relative grid place-items-center h-full w-full rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] shadow-[0_8px_20px_-6px_rgba(14,165,233,0.7)]">
                   <Check className="h-4 w-4 md:h-5 md:w-5 text-white" strokeWidth={3} />
                 </span>
               </span>

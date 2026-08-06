@@ -12,11 +12,11 @@ export const Footer = () => {
       className="relative bg-[#0A0A0A] text-white overflow-hidden"
       data-testid="site-footer"
     >
-      {/* Ambient green wash */}
+      {/* Ambient blue wash */}
       <div
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[560px] w-[900px] rounded-full blur-3xl pointer-events-none opacity-70"
-        style={{ background: "radial-gradient(circle, rgba(37,211,102,0.22), transparent 60%)" }}
+        style={{ background: "radial-gradient(circle, rgba(14,165,233,0.22), transparent 60%)" }}
       />
       <div
         aria-hidden
@@ -44,7 +44,7 @@ export const Footer = () => {
           >
             {t.footer.headlineA}
             <br />
-            {t.footer.headlineB}<span className="italic font-light text-[#25D366]">{t.footer.headlineHighlight}</span>
+            {t.footer.headlineB}<span className="italic font-light text-[#0EA5E9]">{t.footer.headlineHighlight}</span>
           </h2>
         </Reveal>
 
@@ -73,7 +73,7 @@ export const Footer = () => {
             {/* Standorte */}
             <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-2 mb-4 md:mb-5">
-                <MapPin className="h-4 w-4 text-[#25D366]" strokeWidth={2} />
+                <MapPin className="h-4 w-4 text-[#0EA5E9]" strokeWidth={2} />
                 <p className="text-[12px] md:text-[13px] uppercase tracking-[0.2em] text-white/40 font-semibold">
                   Standorte
                 </p>
@@ -93,7 +93,7 @@ export const Footer = () => {
             {/* E-Mail */}
             <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-2 mb-4 md:mb-5">
-                <Mail className="h-4 w-4 text-[#25D366]" strokeWidth={2} />
+                <Mail className="h-4 w-4 text-[#0EA5E9]" strokeWidth={2} />
                 <p className="text-[12px] md:text-[13px] uppercase tracking-[0.2em] text-white/40 font-semibold">
                   E-Mail
                 </p>
@@ -109,7 +109,7 @@ export const Footer = () => {
             {/* Telefon */}
             <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-2 mb-4 md:mb-5">
-                <Phone className="h-4 w-4 text-[#25D366]" strokeWidth={2} />
+                <Phone className="h-4 w-4 text-[#0EA5E9]" strokeWidth={2} />
                 <p className="text-[12px] md:text-[13px] uppercase tracking-[0.2em] text-white/40 font-semibold">
                   Telefon
                 </p>

@@ -9,7 +9,7 @@ export const WHATSAPP_URL =
 /**
  * Realistic editorial photography for the hero and each Problem card.
  * Aesthetic matches the reference UI mockup: cinematic, warm/muted color palette,
- * subtle green (#25D366) accent tinting applied via overlay in the component.
+ * subtle blue (#0EA5E9) accent tinting applied via overlay in the component.
  */
 export const IMG = {
   hero: {

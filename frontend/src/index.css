@@ -9,8 +9,8 @@
     --pm-ink-2: #4a4a52;
     --pm-line: rgba(9, 9, 11, 0.12);
     --pm-line-soft: rgba(9, 9, 11, 0.06);
-    --pm-accent: #25d366;
-    --pm-accent-hover: #1eb955;
+    --pm-accent: #0EA5E9;
+    --pm-accent-hover: #0284C7;
 }
 
 html,
@@ -116,7 +116,7 @@ html.lenis body {
     content: "";
     position: absolute;
     inset: 0;
-    background: #1eb955;
+    background: #0284C7;
     transform: translateY(101%);
     transition: transform 420ms cubic-bezier(0.65, 0, 0.35, 1);
     z-index: -1;
@@ -203,12 +203,12 @@ html.lenis body {
 /* Pulsing WhatsApp glow */
 @keyframes pmGlow {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.35),
-            0 15px 40px -12px rgba(37, 211, 102, 0.45);
+        box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.35),
+            0 15px 40px -12px rgba(14, 165, 233, 0.45);
     }
     50% {
-        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0),
-            0 25px 60px -12px rgba(37, 211, 102, 0.55);
+        box-shadow: 0 0 0 14px rgba(14, 165, 233, 0),
+            0 25px 60px -12px rgba(14, 165, 233, 0.55);
     }
 }
 
@@ -238,17 +238,17 @@ html.lenis body {
     contain-intrinsic-size: 1px 520px;
 }
 .pm-card-dark {
-    box-shadow: 0 40px 90px -30px rgba(37, 211, 102, 0.25);
+    box-shadow: 0 40px 90px -30px rgba(14, 165, 233, 0.25);
     contain: layout paint;
 }
 
 /* ---- Simple WhatsApp button (no glow, no movement, slide-fill on hover) ---- */
 .pm-wa-btn {
-    background-color: #25d366;
+    background-color: #0EA5E9;
     transition: color 600ms ease-in-out;
 }
 .pm-wa-fill {
-    background-color: #168222;
+    background-color: #0369A1;
     transform: translate3d(-101%, 0, 0);
     will-change: transform;
     transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -329,7 +329,7 @@ html.lenis body {
         box-shadow: 0 10px 25px -18px rgba(0, 0, 0, 0.18);
     }
     .pm-card-dark {
-        box-shadow: 0 20px 40px -20px rgba(37, 211, 102, 0.25);
+        box-shadow: 0 20px 40px -20px rgba(14, 165, 233, 0.25);
     }
     /* Disable expensive backdrop-blur on mobile (repaints every scroll frame) */
     .backdrop-blur-xl,
@@ -393,7 +393,7 @@ html.lenis body {
 .pm-input:focus-visible {
     outline: none;
     border-color: var(--pm-ink);
-    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
 }
 
 /* Hide scrollbar on horizontal scrollers */

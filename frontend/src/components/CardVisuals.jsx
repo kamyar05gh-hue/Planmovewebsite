@@ -32,7 +32,7 @@ const Canvas = ({ children, from = "#0F1013", to = "#1A1D22", accent }) => (
     <div
       aria-hidden
       className="absolute -top-24 -right-24 h-72 w-72 rounded-full blur-3xl opacity-40 pointer-events-none"
-      style={{ background: accent || "radial-gradient(circle, #25D366, transparent 60%)" }}
+      style={{ background: accent || "radial-gradient(circle, #0EA5E9, transparent 60%)" }}
     />
     {/* Grid */}
     <div
@@ -59,7 +59,7 @@ const Chip = ({ children, className = "" }) => (
 );
 
 // ---------- V1 · Reaktionszeit (missed calls floating) ----------
-// DALL-E 3: "Ultra-premium 3D render of a floating black smartphone on a dark studio background, lockscreen shows twelve stacked WhatsApp missed-call notifications in vibrant #25D366 green with timestamps 22:47, 23:12, 23:45, cinematic rim light, soft depth of field, editorial product shot, 8k."
+// DALL-E 3: "Ultra-premium 3D render of a floating black smartphone on a dark studio background, lockscreen shows twelve stacked WhatsApp missed-call notifications in vibrant #0EA5E9 blue with timestamps 22:47, 23:12, 23:45, cinematic rim light, soft depth of field, editorial product shot, 8k."
 export const V_Reaktion = () => {
   const { t } = useLanguage();
   const cv = t.cardVisuals.reaktion;
@@ -77,7 +77,7 @@ export const V_Reaktion = () => {
           className="relative rounded-2xl bg-white/[0.08] border border-white/10 px-4 py-3 mb-3 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]"
         >
           <div className="flex items-start gap-3">
-            <span className="mt-0.5 grid place-items-center h-8 w-8 rounded-full bg-[#25D366]/20 text-[#25D366]">
+            <span className="mt-0.5 grid place-items-center h-8 w-8 rounded-full bg-[#0EA5E9]/20 text-[#0EA5E9]">
               <PhoneMissed className="h-4 w-4" />
             </span>
             <div className="flex-1 min-w-0">
@@ -100,7 +100,7 @@ export const V_Reaktion = () => {
 };
 
 // ---------- V2 · Sprache (multilingual bubbles) ----------
-// DALL-E 3: "Ultra-premium 3D render of glassmorphic speech bubbles floating in dark 3D space, each bubble tinted a different flag color (Swiss white/red, French blue, Italian green, Portuguese red/green), connected by thin luminous #25D366 lines merging into one, cinematic depth of field, editorial 3D."
+// DALL-E 3: "Ultra-premium 3D render of glassmorphic speech bubbles floating in dark 3D space, each bubble tinted a different flag color (Swiss white/red, French blue, Italian green, Portuguese red/green), connected by thin luminous #0EA5E9 lines merging into one, cinematic depth of field, editorial 3D."
 export const V_Sprache = () => {
   const { t } = useLanguage();
   const cv = t.cardVisuals.sprache;
@@ -134,9 +134,9 @@ export const V_Sprache = () => {
         {cv.translated}
         <span className="h-px flex-1 bg-white/25" />
       </div>
-      <div className="rounded-2xl bg-[#25D366]/15 border border-[#25D366]/30 px-4 py-3">
+      <div className="rounded-2xl bg-[#0EA5E9]/15 border border-[#0EA5E9]/30 px-4 py-3">
         <div className="flex items-center gap-2 text-white">
-          <Languages className="h-4 w-4 text-[#25D366]" />
+          <Languages className="h-4 w-4 text-[#0EA5E9]" />
           <span className="text-[13px] font-medium">{cv.reply}</span>
         </div>
       </div>
@@ -146,7 +146,7 @@ export const V_Sprache = () => {
 };
 
 // ---------- V3 · Feierabend (dark spreadsheet with moon) ----------
-// DALL-E 3: "3D isometric render of a dark laptop at midnight, screen glowing with endless spreadsheet rows and email icons, a soft moon crescent above, deep navy tones, one #25D366 accent light beam through the top, cinematic, editorial."
+// DALL-E 3: "3D isometric render of a dark laptop at midnight, screen glowing with endless spreadsheet rows and email icons, a soft moon crescent above, deep navy tones, one #0EA5E9 accent light beam through the top, cinematic, editorial."
 export const V_Feierabend = () => {
   const { t } = useLanguage();
   const cv = t.cardVisuals.feierabend;
@@ -184,7 +184,7 @@ export const V_Feierabend = () => {
 };
 
 // ---------- V4 · Follow-up (calendar reminder cascade) ----------
-// DALL-E 3: "Ultra-premium 3D render of a floating clean calendar card with a green pulsing dot, next to it three softly floating reminder cards labelled 'Herr Müller', 'Frau Meier', 'Top Umzug', minimalist studio, dark bone-white gradient background, cinematic."
+// DALL-E 3: "Ultra-premium 3D render of a floating clean calendar card with a blue pulsing dot, next to it three softly floating reminder cards labelled 'Herr Müller', 'Frau Meier', 'Top Umzug', minimalist studio, dark bone-white gradient background, cinematic."
 export const V_FollowUp = () => {
   const { t } = useLanguage();
   const cv = t.cardVisuals.followUp;
@@ -199,7 +199,7 @@ export const V_FollowUp = () => {
         className="rounded-2xl bg-white/[0.08] border border-white/10 p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]"
       >
         <div className="flex items-center gap-3">
-          <span className="grid place-items-center h-9 w-9 rounded-full bg-[#25D366] text-white">
+          <span className="grid place-items-center h-9 w-9 rounded-full bg-[#0EA5E9] text-white">
             <BellRing className="h-4 w-4" />
           </span>
           <div>
@@ -221,7 +221,7 @@ export const V_FollowUp = () => {
               transition={{ delay: 0.15 * i + 0.4, duration: 0.6 }}
               className="flex items-center gap-2.5 rounded-lg bg-white/[0.05] border border-white/10 px-3 py-2"
             >
-              <CalendarClock className="h-3.5 w-3.5 text-[#25D366]" />
+              <CalendarClock className="h-3.5 w-3.5 text-[#0EA5E9]" />
               <span className="text-[12px] text-white/85 font-medium">{r.name}</span>
               <span className="ml-auto text-[10px] font-mono-pm text-white/50">{r.detail}</span>
             </motion.div>
@@ -234,7 +234,7 @@ export const V_FollowUp = () => {
 };
 
 // ---------- V5 · Anrufe (incoming call handled) ----------
-// DALL-E 3: "3D minimalist render of a black smartphone floating vertically with an incoming call screen 'Unbekannt', a #25D366 ripple pulsing outward, deep studio dark navy background, cinematic soft light, editorial product shot."
+// DALL-E 3: "3D minimalist render of a black smartphone floating vertically with an incoming call screen 'Unbekannt', a #0EA5E9 ripple pulsing outward, deep studio dark navy background, cinematic soft light, editorial product shot."
 export const V_Anrufe = () => {
   const { t } = useLanguage();
   const cv = t.cardVisuals.anrufe;
@@ -245,7 +245,7 @@ export const V_Anrufe = () => {
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#25D366]/30"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#0EA5E9]/30"
           style={{
             width: 200 + i * 80,
             height: 200 + i * 80,
@@ -265,7 +265,7 @@ export const V_Anrufe = () => {
             <span className="grid place-items-center h-11 w-11 rounded-full bg-red-500 text-white">
               <PhoneIncoming className="h-4 w-4 rotate-[135deg]" />
             </span>
-            <span className="grid place-items-center h-11 w-11 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40">
+            <span className="grid place-items-center h-11 w-11 rounded-full bg-[#0EA5E9] text-white shadow-lg shadow-[#0EA5E9]/40">
               <PhoneIncoming className="h-4 w-4" />
             </span>
           </div>
@@ -278,7 +278,7 @@ export const V_Anrufe = () => {
 };
 
 // ---------- V6 · Kanäle (colliding chat bubbles) ----------
-// DALL-E 3: "Ultra-premium 3D render of many glassmorphic chat bubbles, email envelopes and phone icons colliding in dark 3D space, all being pulled together by a bright #25D366 orb in the center, cinematic depth of field, editorial 3D product art."
+// DALL-E 3: "Ultra-premium 3D render of many glassmorphic chat bubbles, email envelopes and phone icons colliding in dark 3D space, all being pulled together by a bright #0EA5E9 orb in the center, cinematic depth of field, editorial 3D product art."
 export const V_Kanaele = () => (
   <Canvas from="#0B0E12" to="#141920">
     <div className="relative w-full h-full grid place-items-center">
@@ -301,7 +301,7 @@ export const V_Kanaele = () => (
         )}
       </div>
       {/* Center orb */}
-      <div className="relative z-10 h-20 w-20 rounded-full bg-[#25D366] shadow-[0_0_80px_20px_rgba(37,211,102,0.4)] grid place-items-center">
+      <div className="relative z-10 h-20 w-20 rounded-full bg-[#0EA5E9] shadow-[0_0_80px_20px_rgba(14,165,233,0.4)] grid place-items-center">
         <Check className="h-8 w-8 text-white" strokeWidth={3} />
       </div>
     </div>

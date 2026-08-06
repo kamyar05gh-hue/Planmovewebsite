@@ -11,7 +11,7 @@ const Avatar = ({ name }) => {
     .toUpperCase();
   return (
     <span
-      className="inline-grid place-items-center h-10 w-10 md:h-11 md:w-11 rounded-full bg-[#0a1f12] border border-[#25D366]/30 text-white font-bold text-[12px] md:text-[13px] shrink-0"
+      className="inline-grid place-items-center h-10 w-10 md:h-11 md:w-11 rounded-full bg-[#0a1520] border border-[#0EA5E9]/30 text-white font-bold text-[12px] md:text-[13px] shrink-0"
       aria-hidden
     >
       {initials}
@@ -20,11 +20,11 @@ const Avatar = ({ name }) => {
 };
 
 const TestimonialCard = ({ tr }) => (
-  <div className="group relative flex flex-col h-full rounded-2xl md:rounded-3xl bg-[#0a120d] border border-[#25D366]/15 p-6 md:p-8 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-[#25D366]/40 hover:shadow-[0_30px_60px_-30px_rgba(37,211,102,0.25)]">
+  <div className="group relative flex flex-col h-full rounded-2xl md:rounded-3xl bg-[#0a1118] border border-[#0EA5E9]/15 p-6 md:p-8 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-[#0EA5E9]/40 hover:shadow-[0_30px_60px_-30px_rgba(14,165,233,0.25)]">
     {/* Top accent line */}
     <div
       aria-hidden
-      className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#25D366] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+      className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500"
     />
 
     {/* Stars */}
@@ -38,27 +38,27 @@ const TestimonialCard = ({ tr }) => (
       “{tr.quote.replace(/^["«„]|["»”]$/g, "")}”
     </p>
 
-    <div className="relative mt-6 pt-5 border-t border-[#25D366]/15 flex items-center gap-3">
+    <div className="relative mt-6 pt-5 border-t border-[#0EA5E9]/15 flex items-center gap-3">
       <Avatar name={tr.name} />
       <div className="min-w-0">
         <p className="text-[14px] md:text-[15px] font-bold text-white truncate">
           {tr.name}
         </p>
         {tr.role && tr.role.toLowerCase().includes("primemove") && (
-          <p className="text-[12px] md:text-[13px] text-[#25D366]/70 truncate">
+          <p className="text-[12px] md:text-[13px] text-[#0EA5E9]/70 truncate">
             {tr.role}
           </p>
         )}
       </div>
     </div>
 
-    {/* Subtle green glow on hover */}
+    {/* Subtle blue glow on hover */}
     <div
       aria-hidden
       className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
       style={{
         background:
-          "radial-gradient(circle, rgba(37,211,102,0.16), transparent 65%)",
+          "radial-gradient(circle, rgba(14,165,233,0.16), transparent 65%)",
       }}
     />
   </div>
@@ -71,16 +71,16 @@ export const Testimonials = () => {
   return (
     <section
       id="stimmen"
-      className="relative py-16 md:py-28 bg-[#070a08] overflow-hidden"
+      className="relative py-16 md:py-28 bg-[#070a0d] overflow-hidden"
       data-testid="testimonials-section"
     >
-      {/* Green ambient glow */}
+      {/* Blue ambient glow */}
       <div
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[420px] w-[720px] rounded-full blur-3xl pointer-events-none opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(37,211,102,0.12), transparent 60%)",
+            "radial-gradient(ellipse, rgba(14,165,233,0.12), transparent 60%)",
         }}
       />
 
@@ -91,7 +91,7 @@ export const Testimonials = () => {
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
             {t.testimonials.headingLine2a}
-            <span className="text-[#25D366]">{t.testimonials.headingLine2Highlight}</span>
+            <span className="text-[#0EA5E9]">{t.testimonials.headingLine2Highlight}</span>
           </h2>
         </Reveal>
 

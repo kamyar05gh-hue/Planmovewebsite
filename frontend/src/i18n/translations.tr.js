@@ -2,7 +2,7 @@
  * Turkish (tr) UI strings for PLANMOVE/PLANMOVE KI.
  * Mirrors the structure of the `de` block in translations.js exactly.
  * - Segment arrays: plain strings are rendered as-is, { hl: "..." } inside
- *   the green highlight span, { b: "..." } inside the black bold span.
+ *   the blue highlight span, { b: "..." } inside the black bold span.
  * - Brand names "PLANMOVE KI" and "PLANMOVE" stay untranslated.
  */
 

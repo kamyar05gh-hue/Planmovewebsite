@@ -85,3 +85,6 @@ android-sdk/frontend/public/images/.venv-bg/lib/python3.11/site-packages/llvmlit
 **/.venv*/
 .venv/
 
+# Local tooling (portable ffmpeg used for asset compression)
+.tools/
+

@@ -31,7 +31,7 @@ export default function ImpressumPage() {
             Impressum
           </h1>
 
-          <div className="prose prose-invert max-w-none prose-p:text-white/70 prose-p:leading-relaxed prose-headings:text-white prose-headings:font-display prose-headings:font-bold prose-a:text-[#25D366] prose-a:no-underline hover:prose-a:underline">
+          <div className="prose prose-invert max-w-none prose-p:text-white/70 prose-p:leading-relaxed prose-headings:text-white prose-headings:font-display prose-headings:font-bold prose-a:text-[#0EA5E9] prose-a:no-underline hover:prose-a:underline">
             <h2 className="text-[20px] md:text-[24px] mt-10 mb-4">Planmove</h2>
             <p>
               Weltpoststrasse 5<br />

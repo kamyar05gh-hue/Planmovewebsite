@@ -193,14 +193,14 @@ export const LanguageSwitcher = () => {
                     onClick={() => selectLang(l.code)}
                     className={`w-full flex items-center gap-2.5 px-3 py-2.5 text-left transition-colors duration-200 ${
                       active
-                        ? "bg-[#25D366]/10"
+                        ? "bg-[#0EA5E9]/10"
                         : "hover:bg-black/[0.04]"
                     }`}
                   >
                     {FLAG_ICONS[l.code]}
                     <span
                       className={`flex-1 text-[13px] font-medium tracking-tight ${
-                        active ? "text-[#0f5f2a]" : "text-black/80"
+                        active ? "text-[#0369A1]" : "text-black/80"
                       }`}
                     >
                       {l.label}
@@ -209,7 +209,7 @@ export const LanguageSwitcher = () => {
                       {l.code}
                     </span>
                     {active && (
-                      <Check className="h-3.5 w-3.5 text-[#1EB955] shrink-0" strokeWidth={3} />
+                      <Check className="h-3.5 w-3.5 text-[#0284C7] shrink-0" strokeWidth={3} />
                     )}
                   </button>
                 </li>

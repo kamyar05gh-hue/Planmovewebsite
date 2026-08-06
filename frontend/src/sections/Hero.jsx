@@ -30,7 +30,7 @@ export const Hero = () => {
       <div
         aria-hidden
         className="absolute -top-40 -right-40 h-[420px] w-[420px] rounded-full blur-3xl pointer-events-none opacity-70"
-        style={{ background: "radial-gradient(circle, rgba(37,211,102,0.18), transparent 60%)" }}
+        style={{ background: "radial-gradient(circle, rgba(14,165,233,0.18), transparent 60%)" }}
       />
 
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-10 w-full">
@@ -64,7 +64,7 @@ export const Hero = () => {
                 ...t.hero.headlines.map((line, i) => (
                   <span key={`l${i}`}>{line}</span>
                 )),
-                <span className="text-[#25D366]" key="l4">
+                <span className="text-[#0EA5E9]" key="l4">
                   {t.hero.headlineHighlight}
                 </span>,
               ]}
@@ -89,13 +89,13 @@ export const Hero = () => {
             >
               {/* Google Review chip */}
               <div className="relative inline-flex">
-                {/* Deep green glow accent */}
+                {/* Deep blue glow accent */}
                 <span
                   aria-hidden
                   className="absolute -inset-3.5 rounded-[1.5rem] pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(circle at 50% 50%, rgba(37,211,102,0.6) 0%, rgba(37,211,102,0.25) 55%, transparent 78%)",
+                      "radial-gradient(circle at 50% 50%, rgba(14,165,233,0.6) 0%, rgba(14,165,233,0.25) 55%, transparent 78%)",
                     filter: "blur(12px)",
                   }}
                 />

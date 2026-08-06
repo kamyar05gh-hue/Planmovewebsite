@@ -37,7 +37,7 @@ export const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50" data-testid="site-header">
       <div
-        className={`mx-auto max-w-[1400px] px-4 md:px-10 mt-2 md:mt-2.5 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`mx-auto max-w-[1400px] px-5 md:px-10 mt-2 md:mt-2.5 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[60px]"
         }`}
       >

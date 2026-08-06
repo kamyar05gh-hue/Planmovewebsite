@@ -42,7 +42,7 @@ export const FAQ = () => {
                       {item.q}
                     </span>
                     <span
-                      className={`grid place-items-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-[#25D366]/10 text-[#1EB955] shrink-0 transition-transform duration-300 ${
+                      className={`grid place-items-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-[#0EA5E9]/10 text-[#0284C7] shrink-0 transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     >

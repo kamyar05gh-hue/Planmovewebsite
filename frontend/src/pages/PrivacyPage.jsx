@@ -61,8 +61,8 @@ export default function PrivacyPage() {
                 Schweiz
               </p>
               <p className="mt-4">
-                E-Mail: <a href="mailto:info@planmove.ch" className="text-[#25D366] hover:underline">info@planmove.ch</a><br />
-                Telefon: <a href="tel:+41794880011" className="text-[#25D366] hover:underline">+41 79 488 00 11</a>
+                E-Mail: <a href="mailto:info@planmove.ch" className="text-[#0EA5E9] hover:underline">info@planmove.ch</a><br />
+                Telefon: <a href="tel:+41794880011" className="text-[#0EA5E9] hover:underline">+41 79 488 00 11</a>
               </p>
             </section>
 
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
               <h3 className="text-white font-semibold mt-4 mb-2">3.5 Ihre Rechte</h3>
               <p>
                 Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Bearbeitung Ihrer Daten. Senden Sie Ihr Gesuch bitte zusammen mit einem Identitätsnachweis an{" "}
-                <a href="mailto:info@planmove.ch" className="text-[#25D366] hover:underline">info@planmove.ch</a>.
+                <a href="mailto:info@planmove.ch" className="text-[#0EA5E9] hover:underline">info@planmove.ch</a>.
               </p>
             </section>
 

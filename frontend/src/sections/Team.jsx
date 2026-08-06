@@ -32,9 +32,9 @@ export const Team = () => {
       className="relative pt-0 pb-16 md:pb-28 bg-[#F5F4EF]"
       data-testid="team-section"
     >
-      <div className="mx-auto max-w-[1200px] px-5 md:px-10">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <Reveal>
-          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-[#1EB955] text-center">
+          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] font-semibold text-[#0284C7] text-center">
             {t.team.kicker}
           </p>
         </Reveal>
@@ -53,18 +53,18 @@ export const Team = () => {
           {MEMBERS.map((m, i) => (
             <Reveal key={m.name} delay={i * 80}>
               <div
-                className="group relative flex flex-col items-center text-center rounded-2xl md:rounded-3xl border border-[#25D366]/15 bg-[#0a120d] p-8 md:p-10 h-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-[#25D366]/40 hover:shadow-[0_30px_60px_-30px_rgba(37,211,102,0.25)]"
+                className="group relative flex flex-col items-center text-center rounded-2xl md:rounded-3xl border border-[#0EA5E9]/15 bg-[#0a1118] p-8 md:p-10 h-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-[#0EA5E9]/40 hover:shadow-[0_30px_60px_-30px_rgba(14,165,233,0.25)]"
                 data-testid={`team-member-${m.name.toLowerCase()}`}
               >
                 {/* Top accent line — mirrors the testimonial cards */}
                 <div
                   aria-hidden
-                  className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#25D366] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                 />
                 <div className="relative">
                   <div
                     aria-hidden
-                    className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#25D366]/40 to-transparent blur-lg opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+                    className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#0EA5E9]/40 to-transparent blur-lg opacity-60 transition-opacity duration-500 group-hover:opacity-100"
                   />
                   {m.image ? (
                     <img
@@ -72,10 +72,10 @@ export const Team = () => {
                       alt={m.name}
                       loading="lazy"
                       decoding="async"
-                      className="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover ring-2 ring-[#25D366]/25 shadow-[0_18px_35px_-15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.04]"
+                      className="relative h-32 w-32 md:h-40 md:w-40 rounded-full object-cover ring-2 ring-[#0EA5E9]/25 shadow-[0_18px_35px_-15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   ) : (
-                    <div className="relative grid place-items-center h-32 w-32 md:h-40 md:w-40 rounded-full bg-[#0a1f12] border border-[#25D366]/30 text-white font-display font-extrabold text-[38px] md:text-[44px] shadow-[0_18px_35px_-15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.04]">
+                    <div className="relative grid place-items-center h-32 w-32 md:h-40 md:w-40 rounded-full bg-[#0a1520] border border-[#0EA5E9]/30 text-white font-display font-extrabold text-[38px] md:text-[44px] shadow-[0_18px_35px_-15px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.04]">
                       {m.initials}
                     </div>
                   )}
@@ -83,7 +83,7 @@ export const Team = () => {
                 <h3 className="mt-6 font-display font-bold tracking-tight text-[20px] md:text-[22px] text-white">
                   {m.name}
                 </h3>
-                <p className="mt-2.5 inline-flex items-center rounded-full bg-[#25D366]/10 px-3 py-1 text-[12px] md:text-[13px] font-semibold text-[#25D366]">
+                <p className="mt-2.5 inline-flex items-center rounded-full bg-[#0EA5E9]/10 px-3 py-1 text-[12px] md:text-[13px] font-semibold text-[#0EA5E9]">
                   {t.team.roles?.[m.name] ?? m.role}
                 </p>
               </div>

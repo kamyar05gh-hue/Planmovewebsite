@@ -32,7 +32,7 @@ export const FloatingWhatsApp = () => {
       rel="noopener noreferrer"
       data-testid="floating-whatsapp"
       aria-label={t.whatsappButton.label}
-      className={`fixed bottom-4 right-4 md:bottom-7 md:right-7 z-40 group grid place-items-center h-11 w-11 md:h-16 md:w-16 rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_-8px_rgba(37,211,102,0.7)] transition-all duration-500 hover:bg-[#168222] ${
+      className={`fixed bottom-4 right-4 md:bottom-7 md:right-7 z-40 group grid place-items-center h-11 w-11 md:h-16 md:w-16 rounded-full bg-[#0EA5E9] text-white shadow-[0_12px_30px_-8px_rgba(14,165,233,0.7)] transition-all duration-500 hover:bg-[#0369A1] ${
         visible
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"
@@ -41,7 +41,7 @@ export const FloatingWhatsApp = () => {
       {/* Pulse ring */}
       <span
         aria-hidden
-        className="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping-slow group-hover:opacity-0"
+        className="absolute inset-0 rounded-full bg-[#0EA5E9]/40 animate-ping-slow group-hover:opacity-0"
       />
       {/* Ambient glow */}
       <span
@@ -49,7 +49,7 @@ export const FloatingWhatsApp = () => {
         className="absolute -inset-2 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(37,211,102,0.45) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(14,165,233,0.45) 0%, transparent 70%)",
           filter: "blur(8px)",
         }}
       />

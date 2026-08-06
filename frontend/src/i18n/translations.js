@@ -4,7 +4,7 @@
  * Structure notes:
  * - Strings that contain highlighted <span>s in JSX are split into
  *   "segment arrays": plain strings are rendered as-is, objects shaped
- *   { hl: "..." } are rendered inside the green highlight span,
+ *   { hl: "..." } are rendered inside the blue highlight span,
  *   { b: "..." } are rendered inside a black bold span.
  * - Quote characters („…", «…») are part of the translated strings.
  * - Brand names "PLANMOVE KI" and "PLANMOVE" stay untranslated.

@@ -48,7 +48,7 @@ export const FinalCTA = () => {
     <section
       ref={sectionRef}
       id="ueber"
-      className="relative py-16 md:py-24 lg:py-28 bg-black overflow-hidden"
+      className="relative py-16 md:py-28 bg-black overflow-hidden"
       data-testid="final-cta-section"
     >
       {/* Background video */}
@@ -76,10 +76,10 @@ export const FinalCTA = () => {
       <div
         aria-hidden
         className="absolute -top-24 left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full blur-3xl pointer-events-none opacity-60"
-        style={{ background: "radial-gradient(circle, rgba(37,211,102,0.20), transparent 60%)" }}
+        style={{ background: "radial-gradient(circle, rgba(14,165,233,0.20), transparent 60%)" }}
       />
 
-      <div className="relative mx-auto max-w-[1200px] px-5 md:px-10 text-center">
+      <div className="relative mx-auto max-w-[1400px] px-5 md:px-10 text-center">
         <Reveal className="flex items-center justify-center gap-3 mb-4 md:mb-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-mono-pm uppercase tracking-[0.22em] text-white">
             <Truck className="h-3.5 w-3.5" strokeWidth={2} />
@@ -98,7 +98,7 @@ export const FinalCTA = () => {
             <br />
             {t.finalCta.headline2}
             <br />
-            <span className="text-[#25D366]">{t.finalCta.headline3}</span>
+            <span className="text-[#0EA5E9]">{t.finalCta.headline3}</span>
           </h2>
         </Reveal>
 
@@ -113,7 +113,7 @@ export const FinalCTA = () => {
         <Reveal delay={500} as="ul" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-white">
           {subItems.map((s, i) => (
             <li key={i} className="inline-flex items-center gap-2">
-              <span className="grid place-items-center h-6 w-6 rounded-full bg-[#25D366]/20 text-[#25D366]">
+              <span className="grid place-items-center h-6 w-6 rounded-full bg-[#0EA5E9]/20 text-[#0EA5E9]">
                 <Check className="h-4 w-4" strokeWidth={2.5} />
               </span>
               {s}

@@ -17,7 +17,7 @@ export const PhoneMockup = () => {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 45% at 50% 45%, rgba(37,211,102,0.12), transparent 65%)",
+            "radial-gradient(60% 45% at 50% 45%, rgba(14,165,233,0.12), transparent 65%)",
         }}
       />
 
@@ -38,7 +38,7 @@ export const PhoneMockup = () => {
                 <span className="text-[11px] tracking-widest uppercase text-black/50 font-mono-pm">
                   {pm.newRequest}
                 </span>
-                <span className="h-2 w-2 rounded-full bg-[#25D366]" />
+                <span className="h-2 w-2 rounded-full bg-[#0EA5E9]" />
               </div>
               <h4 className="font-display text-[20px] md:text-[22px] font-extrabold tracking-tight leading-[1.05] mt-2">
                 {pm.headline1}
@@ -49,14 +49,14 @@ export const PhoneMockup = () => {
 
             <div className="mt-6 mx-5 rounded-2xl bg-black p-5 text-white relative overflow-hidden">
               <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/70 font-mono-pm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0EA5E9] animate-pulse" />
                 {pm.recording}
               </div>
               <div className="mt-4 flex items-end gap-[3px] h-14">
                 {bars.map((_, i) => (
                   <span
                     key={i}
-                    className="voice-bar w-[4px] rounded-full bg-[#25D366]"
+                    className="voice-bar w-[4px] rounded-full bg-[#0EA5E9]"
                     style={{
                       height: `${20 + ((i * 13) % 80)}%`,
                       animationDelay: `${(i % 10) * 0.08}s`,
@@ -69,7 +69,7 @@ export const PhoneMockup = () => {
               </div>
               <button
                 aria-label={pm.micAria}
-                className="absolute -bottom-4 right-4 h-12 w-12 rounded-full bg-[#25D366] grid place-items-center shadow-lg shadow-[#25D366]/40"
+                className="absolute -bottom-4 right-4 h-12 w-12 rounded-full bg-[#0EA5E9] grid place-items-center shadow-lg shadow-[#0EA5E9]/40"
               >
                 <Mic className="h-5 w-5 text-white" />
               </button>
@@ -85,8 +85,8 @@ export const PhoneMockup = () => {
             <div className="mx-5 mt-3 rounded-2xl bg-white border border-black/10 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="h-4 w-4 rounded-full bg-[#25D366]/15 grid place-items-center">
-                    <Check className="h-3 w-3 text-[#1EB955]" strokeWidth={3} />
+                  <span className="h-4 w-4 rounded-full bg-[#0EA5E9]/15 grid place-items-center">
+                    <Check className="h-3 w-3 text-[#0284C7]" strokeWidth={3} />
                   </span>
                   <span className="text-[11px] font-semibold">{pm.quoteNumber}</span>
                 </div>
@@ -103,7 +103,7 @@ export const PhoneMockup = () => {
                   2&apos;480.00
                 </span>
               </div>
-              <button className="mt-3 w-full h-9 rounded-full bg-[#25D366] text-white text-[11px] font-semibold flex items-center justify-center gap-2">
+              <button className="mt-3 w-full h-9 rounded-full bg-[#0EA5E9] text-white text-[11px] font-semibold flex items-center justify-center gap-2">
                 <Send className="h-3.5 w-3.5" /> {pm.sendWhatsApp}
               </button>
             </div>

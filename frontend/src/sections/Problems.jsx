@@ -7,7 +7,7 @@ import SmoothImage from "@/components/SmoothImage";
 import BeforeAfter from "@/sections/BeforeAfter";
 
 // Renders a translation segment array: plain strings as-is,
-// { hl: "..." } wrapped in a green highlight span,
+// { hl: "..." } wrapped in a blue highlight span,
 // { b: "..." } wrapped in a black bold span.
 const Segs = ({ segs, hlClass, bClass = "text-black font-bold" }) =>
   segs.map((s, i) =>
@@ -83,13 +83,13 @@ const problems = [
 const ProblemCard = ({ p, card }) => {
   return (
     <div className="group relative h-full">
-      {/* Deep green glow accent */}
+      {/* Deep blue glow accent */}
       <span
         aria-hidden
         className="absolute -inset-2 rounded-[2rem] pointer-events-none opacity-30 transition-opacity duration-500 group-hover:opacity-60"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgba(37,211,102,0.4) 0%, rgba(37,211,102,0.12) 55%, transparent 75%)",
+            "radial-gradient(circle at 50% 50%, rgba(14,165,233,0.4) 0%, rgba(14,165,233,0.12) 55%, transparent 75%)",
           filter: "blur(10px)",
         }}
       />
@@ -112,7 +112,7 @@ const ProblemCard = ({ p, card }) => {
         />
         {/* Number badge — top-left */}
         <span
-          className="absolute top-4 left-4 grid place-items-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-[#25D366] text-white font-display font-extrabold text-[15px] md:text-[16px] shadow-[0_10px_25px_-8px_rgba(37,211,102,0.6)] tabular-nums"
+          className="absolute top-4 left-4 grid place-items-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-[#0EA5E9] text-white font-display font-extrabold text-[15px] md:text-[16px] shadow-[0_10px_25px_-8px_rgba(14,165,233,0.6)] tabular-nums"
           aria-hidden
         >
           {p.n}
@@ -122,10 +122,10 @@ const ProblemCard = ({ p, card }) => {
       {/* Copy */}
       <div className="flex flex-col flex-1 items-start text-left p-6 md:p-7">
         <h3 className="font-display font-extrabold tracking-[-0.02em] text-[20px] md:text-[22px] leading-[1.1] text-black">
-          <Segs segs={card.title} hlClass="text-[#1EB955]" />
+          <Segs segs={card.title} hlClass="text-[#0284C7]" />
         </h3>
         <p className="mt-4 md:mt-5 text-[15px] md:text-[16px] leading-[1.7] text-black/60 max-w-[540px]">
-          <BodySegs segs={card.body} hlClass="text-[#1EB955] font-semibold" />
+          <BodySegs segs={card.body} hlClass="text-[#0284C7] font-semibold" />
         </p>
       </div>
       </article>
@@ -161,7 +161,7 @@ const ClimaxCard = () => {
             />
             {/* Number badge */}
             <span
-              className="absolute top-4 left-4 grid place-items-center h-10 w-10 rounded-full bg-[#25D366] text-white font-display font-extrabold text-[17px] shadow-[0_10px_25px_-8px_rgba(37,211,102,0.6)] tabular-nums"
+              className="absolute top-4 left-4 grid place-items-center h-10 w-10 rounded-full bg-[#0EA5E9] text-white font-display font-extrabold text-[17px] shadow-[0_10px_25px_-8px_rgba(14,165,233,0.6)] tabular-nums"
               aria-hidden
             >
               7
@@ -171,18 +171,18 @@ const ClimaxCard = () => {
           {/* MIDDLE: Copy + Voice commands */}
           <div className="md:col-span-5 p-5 sm:p-8 md:p-10 flex flex-col justify-center border-t md:border-t-0 md:border-l md:border-r border-black/[0.05]">
             <h3 className="font-display font-extrabold tracking-[-0.02em] text-[22px] sm:text-[26px] md:text-[30px] leading-[1.1] text-black">
-              {c.titleA}<span className="text-[#1EB955]">{c.titleHighlight}</span>
+              {c.titleA}<span className="text-[#0284C7]">{c.titleHighlight}</span>
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
               {c.titleB}
             </h3>
             <p className="mt-3 md:mt-4 text-[13.5px] md:text-[15px] leading-relaxed text-black/60 max-w-md">
-              <Segs segs={c.sub} hlClass="text-[#1EB955] font-semibold" />
+              <Segs segs={c.sub} hlClass="text-[#0284C7] font-semibold" />
             </p>
 
             <ul className="mt-4 md:mt-6 grid grid-cols-1 gap-2.5" data-testid="climax-voice-commands">
               <li className="flex items-start gap-3 rounded-xl bg-[#F5F4EF] px-3 py-2.5 md:px-3.5">
-                <Check className="mt-0.5 h-4 w-4 lg:h-3.5 lg:w-3.5 text-[#25D366] shrink-0" strokeWidth={3.5} />
+                <Check className="mt-0.5 h-4 w-4 lg:h-3.5 lg:w-3.5 text-[#0EA5E9] shrink-0" strokeWidth={3.5} />
                 <span className="text-[12.5px] md:text-[13.5px] font-medium text-black/85 leading-snug italic">
                   PLANMOVE KI erstellt Offerten, Rechnungen & Antworten
                 </span>
@@ -192,7 +192,7 @@ const ClimaxCard = () => {
                   key={i}
                   className="flex items-start gap-3 rounded-xl bg-[#F5F4EF] px-3 py-2.5 md:px-3.5"
                 >
-                  <Check className="mt-0.5 h-4 w-4 lg:h-3.5 lg:w-3.5 text-[#25D366] shrink-0" strokeWidth={3.5} />
+                  <Check className="mt-0.5 h-4 w-4 lg:h-3.5 lg:w-3.5 text-[#0EA5E9] shrink-0" strokeWidth={3.5} />
                   <span className="text-[12.5px] md:text-[13.5px] font-medium text-black/85 leading-snug italic">
                     {text}
                   </span>
@@ -202,7 +202,7 @@ const ClimaxCard = () => {
           </div>
 
           {/* RIGHT: PLANMOVE KI Bot + services checklist */}
-          <div className="md:col-span-3 p-5 sm:p-8 md:p-10 flex flex-col items-center text-center md:items-start md:text-left justify-center bg-gradient-to-br from-[#F9FCF9] to-[#F5F4EF] relative">
+          <div className="md:col-span-3 p-5 sm:p-8 md:p-10 flex flex-col items-center text-center md:items-start md:text-left justify-center bg-gradient-to-br from-[#F9FAFB] to-[#F5F4EF] relative">
             {/* Bot mascot */}
             <div className="relative self-center">
               <div className="mx-auto grid place-items-center h-[96px] w-[96px] md:h-[140px] md:w-[140px] rounded-[1.5rem] md:rounded-[2rem] bg-[#0A0A0C] shadow-[0_25px_50px_-15px_rgba(0,0,0,0.4)] relative overflow-hidden">
@@ -211,10 +211,10 @@ const ClimaxCard = () => {
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(circle at 50% 40%, rgba(37,211,102,0.35), transparent 55%)",
+                      "radial-gradient(circle at 50% 40%, rgba(14,165,233,0.35), transparent 55%)",
                   }}
                 />
-                <Bot className="relative h-12 w-12 md:h-16 md:w-16 text-[#25D366]" strokeWidth={1.6} />
+                <Bot className="relative h-12 w-12 md:h-16 md:w-16 text-[#0EA5E9]" strokeWidth={1.6} />
               </div>
               <span className="mt-3 block font-display font-extrabold text-center text-[15px] md:text-[17px] tracking-tight text-black">
                 {c.momoRestA} <span className="text-black/50 font-medium">{c.momoRestB}</span>
@@ -227,13 +227,13 @@ const ClimaxCard = () => {
                   key={i}
                   className="flex items-center justify-center md:justify-start gap-2 text-center md:text-left text-[12px] md:text-[13.5px] font-medium text-black/80"
                 >
-                  <Check className="h-3.5 w-3.5 text-[#25D366] shrink-0" strokeWidth={3.5} />
+                  <Check className="h-3.5 w-3.5 text-[#0EA5E9] shrink-0" strokeWidth={3.5} />
                   {s}
                 </li>
               ))}
             </ul>
 
-            <span className="mt-5 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] text-[#1EB955] font-semibold">
+            <span className="mt-5 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] text-[#0284C7] font-semibold">
               <Sparkles className="h-3 w-3" />
               {c.magic}
             </span>
@@ -262,7 +262,7 @@ export const Problems = () => {
           className="text-left max-w-4xl mb-12 md:mb-20"
         >
           <h2 className="font-display font-extrabold tracking-[-0.035em] text-[30px] sm:text-[42px] md:text-[54px] leading-[1.05]">
-            {t.problems.headingA}<span className="text-[#25D366]">{t.problems.headingHighlight}</span>
+            {t.problems.headingA}<span className="text-[#0EA5E9]">{t.problems.headingHighlight}</span>
             {t.problems.headingB}
           </h2>
         </motion.div>

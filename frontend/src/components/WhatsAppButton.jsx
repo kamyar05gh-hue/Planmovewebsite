@@ -10,7 +10,7 @@ export const WhatsAppIcon = ({ className = "h-4 w-4" }) => (
  * Simple, elegant WhatsApp CTA:
  * - No glow / lighting effect
  * - No scale / no movement on hover
- * - Darker green (#168222) slides in from the left as a fill
+ * - Darker blue (#0369A1) slides in from the left as a fill
  */
 export const WhatsAppButton = ({
   size = "md",
@@ -31,9 +31,9 @@ export const WhatsAppButton = ({
       target="_blank"
       rel="noopener noreferrer"
       data-testid={testId}
-      className={`pm-wa-btn group relative isolate inline-flex items-center justify-center rounded-full font-bold tracking-tight text-white bg-[#25D366] hover:text-white overflow-hidden whitespace-normal sm:whitespace-nowrap ${sizes[size]} ${className}`}
+      className={`pm-wa-btn group relative isolate inline-flex items-center justify-center rounded-full font-bold tracking-tight text-white bg-[#0EA5E9] hover:text-white overflow-hidden whitespace-normal sm:whitespace-nowrap ${sizes[size]} ${className}`}
     >
-      {/* Slide-in dark-green fill */}
+      {/* Slide-in dark-blue fill */}
       <span aria-hidden className="pm-wa-fill pointer-events-none absolute inset-0" />
       <span className="relative z-10">{label ?? t.whatsappButton.label}</span>
       <span className="relative z-10 grid place-items-center h-6 w-6 md:h-7 md:w-7 rounded-full bg-white/20">

@@ -36,7 +36,7 @@ export const Hero = () => {
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* LEFT — Copy */}
-          <div className="lg:col-span-6 relative z-10">
+          <div className="lg:col-span-5 relative z-10">
             <p
               className="pm-fade-up text-[12px] md:text-[15px] tracking-[0.08em] md:tracking-[0.1em] uppercase font-bold text-[#0047ff]"
               style={{ animationDelay: "0.2s", animationDuration: "0.6s" }}
@@ -140,8 +140,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT — Hero composite visual (desktop only) */}
-          <div className="hidden lg:flex lg:col-span-6 relative justify-center h-full items-center">
+          {/* RIGHT — Hero video (desktop only) */}
+          <div className="hidden lg:flex lg:col-span-7 relative justify-center h-full items-center">
             <HeroVisual />
           </div>
         </div>

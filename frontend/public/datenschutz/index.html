@@ -4,50 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung – PLANMOVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://planmove.ch/datenschutz/">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1a1a2e;
-        background: #f7f7f4; line-height: 1.65; font-size: 16px; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
-  h1 { font-size: 28px; letter-spacing: -0.5px; margin: 0 0 6px; }
-  .updated { color: #777; font-size: 13.5px; margin-bottom: 28px; }
-  h2 { font-size: 19px; margin: 36px 0 10px; letter-spacing: -0.3px; }
-  p, li { color: #333; }
+  body { margin: 0; font-family: 'Manrope', system-ui, -apple-system, sans-serif; color: #09090b;
+        background: #F5F4EF; line-height: 1.7; font-size: 16px;
+        -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 96px; }
+  h1, h2, .brandname { font-family: 'Outfit', 'Manrope', system-ui, sans-serif; }
+  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.03em;
+       line-height: 1.05; margin: 0 0 8px; }
+  .updated { color: rgba(9,9,11,0.45); font-size: 13.5px; font-weight: 600; margin-bottom: 32px; }
+  h2 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin: 44px 0 12px; }
+  p, li { color: rgba(9,9,11,0.7); }
   ul { padding-inline-start: 20px; }
-  .card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px;
-          padding: 16px 18px; margin: 14px 0; }
-  .highlight { border-inline-start: 4px solid #22c55e; }
-  a { color: #16803c; }
-  .top { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-  .top a { font-weight: 700; text-decoration: none; font-size: 14px; }
-  .note { background: #fffbe6; border: 1px solid #f2e4a2; border-radius: 10px;
-          padding: 8px 12px; font-size: 13px; color: #7a6413; margin-bottom: 22px; }
-  .langs { position: relative; display: inline-block; margin-bottom: 26px; }
+  strong { color: #09090b; }
+  .card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px;
+          padding: 18px 20px; margin: 14px 0;
+          box-shadow: 0 10px 25px -18px rgba(2,32,71,0.15); }
+  .highlight { border-inline-start: 4px solid #0EA5E9; }
+  a { color: #0284C7; }
+  a:hover { text-decoration: underline; }
+  .sitehead { max-width: 1400px; margin: 10px auto 40px; }
+  .pill { display: flex; align-items: center; justify-content: space-between;
+          background: rgba(255,255,255,0.92); border: 1px solid rgba(0,0,0,0.06);
+          border-radius: 999px; padding: 8px 18px;
+          box-shadow: 0 8px 32px -8px rgba(0,0,0,0.12); }
+  .pill img { height: 26px; display: block; }
+  .pill .back { font-weight: 700; font-size: 14px; text-decoration: none; color: #09090b; }
+  .pill .back:hover { color: #0284C7; text-decoration: none; }
+  .note { background: #F0F9FF; border: 1px solid #BAE6FD; border-radius: 12px;
+          padding: 10px 14px; font-size: 13.5px; color: #075985; margin-bottom: 26px; }
+  .langs { position: relative; display: inline-block; margin-bottom: 28px; }
   .ld-btn { display: inline-flex; align-items: center; gap: 8px;
-            border: 1px solid rgba(0,0,0,0.14); background: #fff; color: #1a1a2e;
+            border: 1px solid rgba(0,0,0,0.1); background: #fff; color: #09090b;
             border-radius: 12px; padding: 9px 14px; font: inherit; font-size: 14px;
             font-weight: 600; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-  .ld-btn .ld-caret { font-size: 11px; color: #777; }
+  .ld-btn .ld-caret { font-size: 11px; color: rgba(9,9,11,0.5); }
   .ld-menu { position: absolute; top: calc(100% + 6px); inset-inline-start: 0; z-index: 10;
-             background: #fff; border: 1px solid rgba(0,0,0,0.12); border-radius: 14px;
+             background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px;
              box-shadow: 0 10px 30px rgba(0,0,0,0.14); padding: 6px; min-width: 190px;
              max-height: 320px; overflow-y: auto; display: none; }
   .ld-menu.open { display: block; }
   .ld-item { display: flex; align-items: center; gap: 10px; width: 100%;
-             border: 0; background: none; color: #1a1a2e; border-radius: 9px;
+             border: 0; background: none; color: #09090b; border-radius: 9px;
              padding: 9px 11px; font: inherit; font-size: 14px; font-weight: 600;
              cursor: pointer; text-align: start; }
   .ld-item:hover { background: rgba(0,0,0,0.05); }
-  .ld-item.on { background: #e8f5ec; color: #16803c; }
+  .ld-item.on { background: #E0F2FE; color: #0369A1; }
   .ld-flag { font-size: 18px; line-height: 1; }
   [dir="rtl"] { text-align: right; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><a href="https://planmove.ch">← planmove.ch</a></div>
+  <header class="sitehead">
+    <div class="pill">
+      <a href="https://planmove.ch" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><img src="/logo.png" alt="PLANMOVE"><span class="brandname" style="font-weight:800;font-size:19px;letter-spacing:-0.02em;color:#09090b;">PLANMOVE</span></a>
+      <a class="back" href="https://planmove.ch">← planmove.ch</a>
+    </div>
+  </header>
   <div class="langs">
     <button class="ld-btn" id="ldBtn" type="button" aria-haspopup="listbox">
       <span id="ldCurrent">🇩🇪 Deutsch</span><span class="ld-caret">▾</span>

@@ -23,33 +23,57 @@ export const HeroVisual = () => {
   const [muted, setMuted] = useState(true);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const autoPausedRef = useRef(false);
 
   // Autoplay: try with sound first (allowed for returning/engaged visitors);
   // browsers that block unmuted autoplay fall back to muted + unmute on first tap.
+  // Also: always start from 0:00 and pause while scrolled out of view.
   useEffect(() => {
     const v = videoRef.current;
-    if (!v) return;
+    const c = containerRef.current;
+    if (!v || !c) return;
+    v.currentTime = 0;
     v.muted = false;
     const attempt = v.play();
-    if (!attempt || !attempt.catch) return;
-    attempt
-      .then(() => setMuted(false))
-      .catch(() => {
-        v.muted = true;
-        setMuted(true);
-        v.play().catch(() => {});
-        const unmute = () => {
-          v.muted = false;
-          setMuted(false);
-        };
-        window.addEventListener("pointerdown", unmute, { once: true });
-        window.addEventListener("keydown", unmute, { once: true });
-      });
+    if (attempt && attempt.catch) {
+      attempt
+        .then(() => setMuted(false))
+        .catch(() => {
+          v.muted = true;
+          setMuted(true);
+          v.play().catch(() => {});
+          const unmute = () => {
+            v.muted = false;
+            setMuted(false);
+          };
+          window.addEventListener("pointerdown", unmute, { once: true });
+          window.addEventListener("keydown", unmute, { once: true });
+        });
+    }
+    // Pause when the video scrolls out of view; resume when it comes back
+    // (unless the user paused it themselves).
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          if (!v.paused) {
+            v.pause();
+            autoPausedRef.current = true;
+          }
+        } else if (autoPausedRef.current) {
+          autoPausedRef.current = false;
+          v.play().catch(() => {});
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(c);
+    return () => io.disconnect();
   }, []);
 
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
+    autoPausedRef.current = false; // manual control overrides auto-pause
     if (v.paused) v.play();
     else v.pause();
   };

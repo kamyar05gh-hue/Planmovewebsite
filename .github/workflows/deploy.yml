@@ -29,6 +29,26 @@ jobs:
           cd frontend
           yarn build
 
+      - name: Build dashboard into frontend build output
+        run: |
+          cd dashboard
+          npm install --legacy-peer-deps
+          npm run build
+          mkdir -p ../frontend/build/dashboard-website
+          cp -r dist/* ../frontend/build/dashboard-website/
+          cp .htpasswd-dashboard ../frontend/build/dashboard-website/.htpasswd-dashboard
+
+      - name: Protect dashboard with Basic Auth
+        run: |
+          # HOSTPOINT_PATH is the absolute docroot path on the server (same target rsync uses)
+          cat > frontend/build/dashboard-website/.htaccess <<EOF
+          AuthType Basic
+          AuthName "PLANMOVE Dashboard"
+          AuthUserFile ${{ secrets.HOSTPOINT_PATH }}/dashboard-website/.htpasswd-dashboard
+          Require valid-user
+          EOF
+          sed -i 's/^[[:space:]]*//' frontend/build/dashboard-website/.htaccess
+
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.9.0
         with:
